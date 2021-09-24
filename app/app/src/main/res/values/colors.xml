@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="light_mode">#FFFFFF</color>
+    <color name="header_diver_light_moder">#4857AC</color>
+    <color name="sender_light_moder">#0c6178</color>
+    <color name="receiver_light_mode">#b3c2ce</color>
+    <color name="sender_text_light_mode">#FFFFFFFF</color>
+    <color name="receiver_text_light_mode">#FF000000</color>
 </resources>

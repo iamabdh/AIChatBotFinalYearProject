@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    >
+
+    <TextView
+        android:id="@+id/user_message"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:text="this a sample message"
+        android:backgroundTint="@color/sender_light_moder"
+        android:background="@drawable/send_round_box"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:textColor="@color/sender_text_light_mode"
+        />
+    <TextView
+        android:id="@+id/bot_message"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:text="this a sample message"
+        android:backgroundTint="@color/receiver_light_mode"
+        android:background="@drawable/receive_round_box"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:textColor="@color/receiver_text_light_mode"
+        />
+
+</RelativeLayout>
