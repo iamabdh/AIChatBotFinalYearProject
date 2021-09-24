@@ -10,7 +10,7 @@ object SocketHandler {
 
     fun setSocket(){
         try {
-            mSocket = IO.socket("https://project-gpjma.run-us-west2.goorm.io")
+            mSocket = IO.socket("https://aichatbotdemo-lmpnw.run-us-west2.goorm.io")
         } catch (e:Exception){
 
         }
