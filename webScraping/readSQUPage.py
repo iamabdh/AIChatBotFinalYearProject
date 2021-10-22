@@ -1,6 +1,8 @@
 # read data from squ.edu.om main page 
 # 
 # 
+
+
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
