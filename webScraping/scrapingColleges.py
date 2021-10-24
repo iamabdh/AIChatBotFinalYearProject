@@ -98,3 +98,4 @@ for textItem in SWAE_descrParagragh_html:
     SWAEdescr_text += textItem.text +'\n'
 
 print(SWAEdescr_text)
+
