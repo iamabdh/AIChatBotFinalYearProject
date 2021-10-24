@@ -44,4 +44,3 @@ for extend in MSV_extends[0].find_all('li'):
 print(MSV_dataObject)
 
 print(23)
-print(aboutText)
