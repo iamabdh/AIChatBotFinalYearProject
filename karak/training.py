@@ -33,7 +33,7 @@ for intent in intents['intents']:
 
 
 words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in ignoreChars]
-words = sorted(set(words)) # remove any duplication 
+words = sorted(list(set(words))) # remove any duplication 
 classes = sorted(set(classes))
 
 pickle.dump(words, open('words.pkl', 'wb'))

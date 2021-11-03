@@ -16,17 +16,17 @@
       },
 
       {"tag": "SQU",
-        "patterns": ["SQU?", "what is SQU"],
+        "patterns": ["SQU", "what is SQU"],
         "response": ["SQU is Sultan Qaboos University"],
         "context_set": ""
       },
       {"tag": "elearing",
-        "patterns": ["elaring?", "website of elearing"],
+        "patterns": ["elaring", "website of elearing"],
         "response": ["https://elearn.squ.edu.om"],
         "context_set": ""
       },
       {"tag": "website",
-        "patterns": ["wbsite?", "main website?"],
+        "patterns": ["wbsite", "main website?"],
         "response": ["https://squ.edu.om"],
         "context_set": ""
       }

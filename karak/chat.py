@@ -33,10 +33,10 @@ def bagOfWords(sent):
 
 def predictClass(sent):
     bagOfWord = bagOfWords(sent)
-    result = model.predict(np.array([bagOfWord]))[0]
-    print(result)
-    errorThershold = 0.1
-    results = [[i, r] for i, r in enumerate(result) if r > errorThershold]
+    prediction = model.predict(np.array([bagOfWord]))[0]
+    print(prediction)
+    errorThershold = 0.5
+    results = [[i, r] for i, r in enumerate(prediction) if r > errorThershold]
     results.sort(key = lambda x : x[1], reverse = True)
     print(results) 
     return_list = []
