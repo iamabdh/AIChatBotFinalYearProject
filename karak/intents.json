@@ -29,6 +29,12 @@
         "patterns": ["wbsite", "main website?"],
         "response": ["https://squ.edu.om"],
         "context_set": ""
+      },
+      {"tag": "agriculture",
+        "patterns": ["agriculture", "what is agriculture"],
+        "response": [0],
+        "context_set": "",
+        "init": "agri"
       }
 
   ]

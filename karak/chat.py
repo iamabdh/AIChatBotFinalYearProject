@@ -35,7 +35,7 @@ def predictClass(sent):
     bagOfWord = bagOfWords(sent)
     prediction = model.predict(np.array([bagOfWord]))[0]
     print(prediction)
-    errorThershold = 0.5
+    errorThershold = 0.6
     results = [[i, r] for i, r in enumerate(prediction) if r > errorThershold]
     results.sort(key = lambda x : x[1], reverse = True)
     print(results) 
@@ -51,11 +51,13 @@ def getResponses(intents_list, intents_json):
         tag = intents_list[0]['intent']
 
         listOfIntents = intents_json['intents']
-
         for i in listOfIntents:
             if i['tag'] == tag:
-                result = random.choice(i['response'])
-                break
+                if i['response'][0] != 0:
+                    result = random.choice(i['response'])
+                    break
+                else:
+                    result = "some function"
     except IndexError:
         result = "I dont understnad"
 
@@ -65,7 +67,7 @@ print("BOT IS RUNNING")
 
 while True:
     message = input("YOU : ")
-    ints = predictClass(message)
+    ints = predictClass(message.lower())
     print(ints)
     res = getResponses(ints, intents)
     print(res)
