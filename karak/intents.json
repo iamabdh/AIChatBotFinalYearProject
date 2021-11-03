@@ -1,0 +1,18 @@
+{"intents": [
+    {"tag": "greeting",
+      "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "Hey", "greetings"],
+      "response": ["Hello!", "Good to see you again!", "Hi there, how can I help?"],
+      "context_set": ""
+    },
+    {"tag": "goodbye",
+      "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day", "bye", "cao", "see ya"],
+      "response": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
+      "context_set": ""
+    },
+    {"tag": "wifi",
+        "patterns": ["how to connect to wifi?", "how to connect to internet?", "what is wifi password", "wifi"],
+        "response": ["go to portal to connect the wifi"],
+        "context_set": ""
+      }
+  ]
+  }

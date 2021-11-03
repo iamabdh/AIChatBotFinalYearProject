@@ -13,7 +13,7 @@ CAMS_text = str()
 for textItem in CAMSParagragh_html:
     CAMS_text += textItem.text +'\n'
 
-print(CAMS_text)
+# print(CAMS_text)
 
 #Department of Animal and Veterinary Sciences
 page1 = urlopen(url + 'agriculture/Academic-Department/Animal-and-Veterinary-Sciences/Description') 
@@ -41,7 +41,7 @@ PSdescr_text = str()
 for textItem in PS_descrParagragh_html:
     PSdescr_text += textItem.text +'\n'
 
-print(PSdescr_text)
+# print(PSdescr_text)
 
 #epartment of Food Science and Nutrition
 page3 = urlopen(url + 'agriculture/Academic-Department/Food-Science-and-Nutrition/Description') 
@@ -55,7 +55,7 @@ FSNdescr_text = str()
 for textItem in FSN_descrParagragh_html:
     FSNdescr_text += textItem.text +'\n'
 
-print(FSNdescr_text)
+# print(FSNdescr_text)
 
 #Department of Marine Science and Fisheries
 page4 = urlopen(url + 'agriculture/Academic-Department/Marine-Science-and-Fisheries/Description') 
@@ -69,7 +69,7 @@ MSFdescr_text = str()
 for textItem in MSF_descrParagragh_html:
     MSFdescr_text += textItem.text +'\n'
 
-print(MSFdescr_text)
+# print(MSFdescr_text)
 
 #Department of Natural Resource Economics
 page5 = urlopen(url + 'agriculture/Academic-Department/Natural-Resource-Economics/Description') 
@@ -83,7 +83,7 @@ NREdescr_text = str()
 for textItem in NRE_descrParagragh_html:
     NREdescr_text += textItem.text +'\n'
 
-print(NREdescr_text)
+# print(NREdescr_text)
 
 #Department of Soils, Water and Agricultural Engineering
 page6 = urlopen(url + 'agriculture/Academic-Department/Soils-Water-and-Agricultural-Engineering/Description') 
@@ -97,5 +97,5 @@ SWAEdescr_text = str()
 for textItem in SWAE_descrParagragh_html:
     SWAEdescr_text += textItem.text +'\n'
 
-print(SWAEdescr_text)
+# print(SWAEdescr_text)
 
