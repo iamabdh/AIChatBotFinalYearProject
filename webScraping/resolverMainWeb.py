@@ -14,4 +14,3 @@ def resloverIntents(int):
 
     }.get(int, 0) # return 0 if the resolver doesnt find match requests
 
-print(resloverIntents("sss"))
