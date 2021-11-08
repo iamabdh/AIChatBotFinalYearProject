@@ -1,9 +1,14 @@
 
+# add directories for calling submodule
+import os, sys
+currentDir = os.path.dirname(os.path.realpath(__file__))
+parrentDir = os.path.dirname(currentDir)
+sys.path.append(parrentDir)
 
 class ResolverMainPage:
 
     def AboutPage():
-        import aboutPage
+        from webScraping import aboutPage
         return aboutPage.readAboutSQU() 
 
 
@@ -11,6 +16,6 @@ class ResolverMainPage:
 def resloverIntents(int):
     return {
         'AboutSQU' : ResolverMainPage.AboutPage()
-
     }.get(int, 0) # return 0 if the resolver doesnt find match requests
 
+# print(resloverIntents("AboutSQU"))

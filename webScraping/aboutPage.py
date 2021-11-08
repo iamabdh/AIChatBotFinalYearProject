@@ -1,3 +1,11 @@
+# add directories for calling submodule
+import os, sys
+currentDir = os.path.dirname(os.path.realpath(__file__))
+parrentDir = os.path.dirname(currentDir)
+sys.path.append(parrentDir)
+
+
+
 # Read SQU main page and resolve the request in object format
 # The object requested as model from tensorflow equation 
 
