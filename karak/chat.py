@@ -3,6 +3,7 @@ import numpy as np
 import nltk
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model
+from webScraping.resolverMainWeb import resloverIntents
 
 
 lemmatizer = WordNetLemmatizer()
@@ -59,9 +60,9 @@ def getResponses(intents_list, intents_json):
                 else:
                     # excute function that will resolve the kind of initents
                     # excute based on classes that may initats
-                    
-
-                    result = "some function"
+                    if i['flag'] == 1:
+                        import webScraping.resolverMainWeb
+                    result = resloverIntents(i['init'])
     except IndexError:
         result = "I dont understnad"
 
