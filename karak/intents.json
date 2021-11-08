@@ -26,7 +26,7 @@
         "context_set": ""
       },
       {"tag": "website",
-        "patterns": ["wbsite", "main website?"],
+        "patterns": ["website", "main website?"],
         "response": ["https://squ.edu.om"],
         "context_set": ""
       },
@@ -35,6 +35,13 @@
         "response": [0],
         "context_set": "",
         "init": "agri"
+      },
+      {"tag": "about",
+        "patterns": ["about", "about squ", "what is about squ"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "AboutSQU"
       }
 
   ]

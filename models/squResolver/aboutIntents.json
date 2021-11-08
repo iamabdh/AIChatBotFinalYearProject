@@ -1,0 +1,9 @@
+{"intents": [
+    {
+        "tag" : "aboutPageResolvers",
+        "pattens" : ["what is SQU about", "about"],
+        "responses" : [0],
+        "aboutObject" : "aboutPage" 
+    }
+  ]
+}

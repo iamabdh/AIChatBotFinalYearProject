@@ -35,7 +35,7 @@ def predictClass(sent):
     bagOfWord = bagOfWords(sent)
     prediction = model.predict(np.array([bagOfWord]))[0]
     print(prediction)
-    errorThershold = 0.6
+    errorThershold = 0.1
     results = [[i, r] for i, r in enumerate(prediction) if r > errorThershold]
     results.sort(key = lambda x : x[1], reverse = True)
     print(results) 
@@ -57,6 +57,10 @@ def getResponses(intents_list, intents_json):
                     result = random.choice(i['response'])
                     break
                 else:
+                    # excute function that will resolve the kind of initents
+                    # excute based on classes that may initats
+                    
+
                     result = "some function"
     except IndexError:
         result = "I dont understnad"
