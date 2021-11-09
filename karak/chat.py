@@ -54,9 +54,10 @@ def predictClass(sent):
 
 
 def getResponses(intents_list, intents_json):
+    result = ''
     try: 
         tag = intents_list[0]['intent']
-
+            
         listOfIntents = intents_json['intents']
         for i in listOfIntents:
             if i['tag'] == tag:
@@ -68,7 +69,22 @@ def getResponses(intents_list, intents_json):
                     # excute based on classes that may initats
                     if i['flag'] == 1:
                         from webScraping import resolverMainWeb as res
-                        result = res.resloverIntents(i['init'])
+                        '''
+                        retrive response with required intents
+                        that will add to result based on quires
+                        '''
+                        dataObj= res.resloverIntents(i['init'])
+
+                        subText = dataObj.get(i['required']).get('subText') 
+                        extend = dataObj.get(i['required']).get('extend')
+                     
+
+                        for item in subText:
+                            result += item + '\n'
+                        if extend is not None:
+                            for index, item in enumerate(extend):
+                                result += f'{index + 1} ' + item + '\n'  
+                        
     except IndexError:
         result = "I dont understnad"
 

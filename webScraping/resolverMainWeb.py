@@ -18,4 +18,5 @@ def resloverIntents(int):
         'AboutSQU' : ResolverMainPage.AboutPage()
     }.get(int, 0) # return 0 if the resolver doesnt find match requests
 
-# print(resloverIntents("AboutSQU"))
+
+

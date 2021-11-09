@@ -41,7 +41,32 @@
         "flag" : 1, 
         "response": [0],
         "context_set": "",
-        "init": "AboutSQU"
+        "init": "AboutSQU",
+        "required" : "aboutText"
+      },
+      {"tag": "MissonAbout",
+        "patterns": ["misson", "Misson squ", "what is the Misson of squ", "what are the mission", "Misson of squ"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "AboutSQU",
+        "required" : "Mission"
+      },
+      {"tag": "ValuesAbout",
+        "patterns": ["Values", "Values squ", "what is the values of squ", "what are the values", "values of squ", "value"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "AboutSQU",
+        "required" : "Values"
+      },
+      {"tag": "VisionAbout",
+        "patterns": ["vision", "vision squ", "what is the vision of squ", "what are the visson", "vision of squ", "visson", "visions"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "AboutSQU",
+        "required" : "Vision"
       }
 
   ]

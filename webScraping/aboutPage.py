@@ -18,7 +18,7 @@ from bs4 import BeautifulSoup
 url = 'https://www.squ.edu.om/'
 
 def readAboutSQU():
-    aboutObj = []
+    aboutObj = {}
     aboutPageInital = urlopen(url + 'About') 
     aboutPageHtml = aboutPageInital.read().decode('utf-8')
     aboutPageSoup = BeautifulSoup(aboutPageHtml, "html.parser")  
@@ -29,10 +29,10 @@ def readAboutSQU():
 
 
     # store every infos in aboutObj
-    aboutObj.append({
-        "aboutText" : [{
+    aboutObj.update({
+        "aboutText" : {
             "subText" : [str(aboutText)],
-        }]
+        }
     })
 
     #mission, values, vision
@@ -47,16 +47,18 @@ def readAboutSQU():
     MSV_extends = MSV_html[0].find_all('ul') #  only one item belongs to values Update oct/2021
 
     for i in range(len(MSV_titles) -1):
-        aboutObj.append({
-            str(MSV_titles[i].text) : [{
+        aboutObj.update({
+            str(MSV_titles[i].text) : {
                 "subText" : [MSV_subText[i].text if i == 0 else MSV_subText[i+1].text],
                 "extend" : [] 
-            }]
+            }
         })
 
 
-    aboutObj[3]['Values'][0]['subText'] = [MSV_subText[4].text]
+    aboutObj.get('Values').get('subText').append(MSV_subText[4].text)
+
 
     for extend in MSV_extends[0].find_all('li'):
-        aboutObj[3]['Values'][0]['extend'].append(extend.text)
+        aboutObj.get('Values').get('extend').append(extend.text)
+
     return aboutObj
