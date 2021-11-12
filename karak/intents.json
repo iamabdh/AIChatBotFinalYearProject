@@ -67,6 +67,13 @@
         "context_set": "",
         "init": "AboutSQU",
         "required" : "Vision"
+      },
+      {"tag": "facultySearch",
+        "patterns": ["dr.", "dr", "Dr.", "Mr.", "mr.", "mrs.", "prof.", "Prof", "prof", "Dr", "Mrs.", "Mrs"],
+        "flag" : 2, 
+        "response": [0],
+        "context_set": "",
+        "init": "searchFF"
       }
 
   ]

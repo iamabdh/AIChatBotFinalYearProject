@@ -13,9 +13,10 @@ class ResolverMainPage:
 
     def FFSearch(name):
          from webScraping import facultyStaff
-         listingName = name.split()
-         listingName.remove(listingName[0])
-         name = ' '.join(listingName)
+         if name is not None:
+            listingName = name.split()
+            listingName.remove(listingName[0])
+            name = ' '.join(listingName)
          return facultyStaff.searchFF(name)
 
 
@@ -25,4 +26,3 @@ def resloverIntents(int, arg = None):
         'AboutSQU' : ResolverMainPage.AboutPage(),
         'searchFF' : ResolverMainPage.FFSearch(arg),
     }.get(int, 0) # return 0 if the resolver doesnt find match requests
-

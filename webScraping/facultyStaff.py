@@ -48,11 +48,12 @@ def searchFF(name):
 
     drName = name
     drnameList = []
-    for index, DrNameObj in enumerate(rquiredObj):
-        for l in DrNameObj:
-            if drName.lower() == l.lower():
-                drnameList.append(DrNameObj)
-                break
+    if drName is not None:
+        for index, DrNameObj in enumerate(rquiredObj):
+            for l in DrNameObj:
+                if drName.lower() == l.lower():
+                    drnameList.append(DrNameObj)
+                    break
 
   
         

@@ -53,7 +53,7 @@ def predictClass(sent):
     return return_list 
 
 
-def getResponses(intents_list, intents_json):
+def getResponses(intents_list, intents_json, quires = None):
     result = ''
     try: 
         tag = intents_list[0]['intent']
@@ -83,7 +83,27 @@ def getResponses(intents_list, intents_json):
                             result += item + '\n'
                         if extend is not None:
                             for index, item in enumerate(extend):
-                                result += f'{index + 1} ' + item + '\n'  
+                                result += f'{index + 1} ' + item + '\n'
+                    
+                    elif i['flag'] == 2:
+                        '''
+                        flag 2 that resolve  for faculty stuff search 
+                        based static intents that user may required the intent such as Dr. or prof or whatever
+                        the chat will check the all intents if doesnt find any thing will will check faculty stuff 
+                        to resolve the intents 
+                        '''
+                        from webScraping import resolverMainWeb as res
+                        dataObj = res.resloverIntents(i['init'], quires)
+                        if dataObj != 0:
+                            result += 'name: '+ dataObj.get('name') + '\n'
+                            result += 'role: '+ dataObj.get('role') + '\n'
+                            result += 'room: '+ dataObj.get('roomNo') + '\n'
+                            result += 'email: '+ dataObj.get('email') + '\n'
+                        else:
+                            result = "please provide correct and full faculty names"
+
+
+                        
                         
     except IndexError:
         result = "I dont understnad"
@@ -96,5 +116,5 @@ while True:
     message = input("YOU : ")
     ints = predictClass(message.lower())
     print(ints)
-    res = getResponses(ints, intents)
+    res = getResponses(ints, intents, message)
     print(res)
