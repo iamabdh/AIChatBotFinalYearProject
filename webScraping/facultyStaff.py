@@ -99,6 +99,3 @@ def searchFF(name):
            }
     else:
         return 0;
-
-
-print(searchFF("Ahmed"))

@@ -62,6 +62,3 @@ def readAboutSQU():
         aboutObj.get('Values').get('extend').append(extend.text)
 
     return aboutObj
-
-
-print(readAboutSQU("Muhammad Shafiq"))
