@@ -13,6 +13,9 @@ class ResolverMainPage:
 
     def FFSearch(name):
          from webScraping import facultyStaff
+         listingName = name.split()
+         listingName.remove(listingName[0])
+         name = ' '.join(listingName)
          return facultyStaff.searchFF(name)
 
 
