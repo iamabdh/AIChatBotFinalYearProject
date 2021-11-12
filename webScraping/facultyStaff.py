@@ -98,4 +98,4 @@ def searchFF(name):
                    'email'  :   'Not listed'   if   roleNo == 0 else str(newList[email])
            }
     else:
-        return 0;
+        return 0
