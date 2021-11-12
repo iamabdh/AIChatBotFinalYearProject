@@ -9,14 +9,17 @@ class ResolverMainPage:
 
     def AboutPage():
         from webScraping import aboutPage
-        return aboutPage.readAboutSQU() 
+        return aboutPage.readAboutSQU()
+
+    def FFSearch(name):
+         from webScraping import facultyStaff
+         return facultyStaff.searchFF(name)
 
 
 
-def resloverIntents(int):
+def resloverIntents(int, arg = None):
     return {
-        'AboutSQU' : ResolverMainPage.AboutPage()
+        'AboutSQU' : ResolverMainPage.AboutPage(),
+        'searchFF' : ResolverMainPage.FFSearch(arg),
     }.get(int, 0) # return 0 if the resolver doesnt find match requests
-
-
 
