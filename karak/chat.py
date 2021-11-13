@@ -112,9 +112,23 @@ def getResponses(intents_list, intents_json, quires = None):
 
 print("BOT IS RUNNING")
 
-while True:
-    message = input("YOU : ")
+
+
+from flask import Flask
+from flask import request
+
+# setup flask server
+app = Flask(__name__)
+
+@app.route('/getData', methods = ['POST'])
+def getData():
+    message = request.get_json()
+    message = message.get('msg')
     ints = predictClass(message.lower())
     print(ints)
     res = getResponses(ints, intents, message)
-    print(res)
+    return json.dumps({'result' : res})
+
+
+if __name__ == '__main__':
+    app.run(port=5000)
