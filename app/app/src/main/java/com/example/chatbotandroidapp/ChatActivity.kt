@@ -38,7 +38,7 @@ class ChatActivity : AppCompatActivity() {
         val message = input_filed.text.toString()
 
         if (message.isNotEmpty()){
-            mSocket?.emit("data", message)
+            mSocket?.emit("requestToResolve", message)
             messageList.add(Message(message, SEND_ID))
             input_filed.setText("")
             adapter.insertMessage(Message(message, SEND_ID))
@@ -55,7 +55,7 @@ class ChatActivity : AppCompatActivity() {
     }
 
     private fun socketResponse(){
-        mSocket?.on("msgToClient") { res ->
+        mSocket?.on("resolved") { res ->
             runOnUiThread {
                 botResponse(res[0].toString())
             }
