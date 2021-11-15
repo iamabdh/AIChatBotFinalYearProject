@@ -30,7 +30,7 @@ class Engineer():
         
         # store every infos in aboutObj
         aboutElectricl.update({
-            "CAEwelcom" : {
+            "ECEwelcom" : {
                 "subText" : [str(ECEwelcom_text)],
         }
      })
@@ -155,10 +155,6 @@ class Engineer():
             "Industrial Advisory Board Civil-and-Architectura":{
                 "subText":[str(CAE_IAB_subtext[0].text)+str(CAE_IAB_subtext[1].text)],
             },
-            "Advisory Board Responsibilities Civil-and-Architectura":{
-                "subText":[],
-                "extend":[str(CAE_IAB_extend)]
-            }
             
         })
         return aboutCivilandArch

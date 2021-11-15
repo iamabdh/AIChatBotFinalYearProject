@@ -19,9 +19,21 @@ class ResolverMainPage:
             name = ' '.join(listingName)
          return facultyStaff.searchFF(name)
     
-    def engineer():
+    def engineer1():
         from webScraping.scrapingENG2 import Engineer
         return Engineer.electrical()
+
+    def engineer2():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.civilandArch()
+
+    def engineer3():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.MechanicalIndustrial()
+    
+    def engineer4():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.PetroleumChemical()
 
 
     
@@ -31,8 +43,11 @@ class ResolverMainPage:
 def resloverIntents(int, arg = None):
     return {
         'AboutSQU' : ResolverMainPage.AboutPage(),
-        'Electrical': ResolverMainPage.engineer(),
+        'Electrical': ResolverMainPage.engineer1(),
+        'CivilandArch':ResolverMainPage.engineer2(),
+        'MechandIndus':ResolverMainPage.engineer3(),
+        'Petr&Chem':ResolverMainPage.engineer4(),
         'searchFF' : ResolverMainPage.FFSearch(arg),
     }.get(int, 0) # return 0 if the resolver doesnt find match requests
 
-print(resloverIntents('Electrical'))
+print(resloverIntents('CivilandArch'))
