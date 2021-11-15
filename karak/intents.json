@@ -74,6 +74,22 @@
         "response": [0],
         "context_set": "",
         "init": "searchFF"
+      },
+      {"tag": "welcomeElectricl",
+        "patterns": ["about electrical","what is about electrical","tell me about electrical engineering","electrical"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "CAEwelcom"
+      }, 
+      {"tag": "visionElectricl",
+        "patterns": ["electrical vision","what is the vision of electrical engineering"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "VisionElectrical"
       }
 
   ]
