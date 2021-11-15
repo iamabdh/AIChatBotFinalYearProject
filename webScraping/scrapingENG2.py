@@ -55,6 +55,7 @@ class Engineer():
                 "subText":[str(ECE_VM_subText[4].text)]
             },
             "objectivesElectrical":{
+                "subText":[],
                 "extend":[ECE_VM_extends]
             },
 
@@ -66,9 +67,9 @@ class Engineer():
         ECE_QA_subText = ECE_QAParagragh_html[0].text.strip().split("   ")[0]
         
         aboutElectricl.update({
-            "QualityAssuranceElectrical" : [{
+            "QualityAssuranceElectrical" : {
             "subText" : [str(ECE_QA_subText)],
-        }]
+        }
      })
        
         page16 = urlopen(url + 'engineering/About/Departments/Electrical-and-Computer-Engineering/Industrial-Advisory-Board') 
@@ -83,9 +84,10 @@ class Engineer():
 
         aboutElectricl.update({
             "Industrial Advisory Board Electrical":{
-                "subText":[str(ECE_IAB_subtext[0].text)+str(ECE_IAB_subtext[1].text)],
+                "subText":[str(ECE_IAB_subtext[0].text),str(ECE_IAB_subtext[1].text)],
             },
             "Advisory Board Responsibilities Electrical":{
+                "subText":[],
                 "extend":[str(ECE_IAB_extend)]
             }
             
@@ -134,9 +136,9 @@ class Engineer():
         CAE_QA_subText = CAE_QAParagragh_html[0].text.strip().split("   ")[0]
         
         aboutCivilandArch.update({
-            "QualityAssurance Civil-and-Architectural-Engineering" : [{
+            "QualityAssurance Civil-and-Architectural-Engineering" : {
             "subText" : [str(CAE_QA_subText)],
-        }]
+        }
      })
 
         page12 = urlopen(url + 'engineering/About/Departments/Civil-and-Architectural-Engineering/Industrial-Advisory-Board') 
@@ -154,6 +156,7 @@ class Engineer():
                 "subText":[str(CAE_IAB_subtext[0].text)+str(CAE_IAB_subtext[1].text)],
             },
             "Advisory Board Responsibilities Civil-and-Architectura":{
+                "subText":[],
                 "extend":[str(CAE_IAB_extend)]
             }
             
@@ -202,9 +205,9 @@ class Engineer():
         MIE_QA_subText = MIE_QAParagragh_html[0].text.strip().split("   ")[0]
         
         aboutMechanicalandIndustrial.update({
-            "QualityAssurance Mechanical-and-Industrial-Engineering" : [{
+            "QualityAssurance Mechanical-and-Industrial-Engineering" : {
             "subText" : [str(MIE_QA_subText)],
-        }]
+        }
      })
 
         page20 = urlopen(url + 'engineering/About/Departments/Mechanical-and-Industrial-Engineering/Industrial-Advisory-Board') 
@@ -259,7 +262,7 @@ class Engineer():
                 "subText":[str(PCE_VM_subText[1].text)]
             },
             "missionPetroleum-and-Chemical":{
-                "subText":[str(PCE_VM_subText[3].text)+str(PCE_VM_subText[4].text)],
+                "subText":[str(PCE_VM_subText[3].text),str(PCE_VM_subText[4].text)],
                 "extend":[MIE_VM_extends]
             },
         })
@@ -271,9 +274,9 @@ class Engineer():
         PCE_QA_subText = PCE_QAParagragh_html[0].text.strip().split("   ")[0]
         
         aboutPetroleumChemical.update({
-            "QualityAssurance Petroleum-and-Chemical" : [{
+            "QualityAssurance Petroleum-and-Chemical" : {
             "subText" : [str(PCE_QA_subText)],
-            }]
+            }
         })
 
         page24 = urlopen(url + 'engineering/About/Departments/Petroleum-and-Chemical-Engineering/Industrial-Advisory-Board') 
@@ -284,7 +287,7 @@ class Engineer():
 
         aboutPetroleumChemical.update({
             "Industrial Advisory Board Petroleum-and-Chemical":{
-                "subText":[str(PCE_IAB_subtext[0].text)+str(PCE_IAB_subtext[1].text)],
+                "subText":[str(PCE_IAB_subtext[0].text),str(PCE_IAB_subtext[1].text)],
                 "extend":[]
             }
             
