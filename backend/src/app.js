@@ -1,22 +1,72 @@
-let data = document.querySelector('.data')
-let send = document.querySelector('.send')
+let sendMsg = document.querySelector('#chatform')
+let userInput = document.querySelector('.chatbox')
+let chatList = document.querySelector('.chatlist')
+let chatContainer = document.querySelector('.container-chat-box')
+let submitButton = document.querySelector('.submit-button')
 let socket = io()
 
-send.onclick = () => {
-    if(data.value){
-        socket.emit('requestToResolve', data.value)
-        data.value = ''
-    }
-}
 
 
 socket.on('resolved', (msg)=>{
     console.log(msg)
-    document.querySelector('.data-res').innerHTML = msg
+    botResponse(msg)
 })
+
+
+
+
+
+sendMsg.onkeydown = (e) =>{
+    if(e.keyCode == 13){
+        e.preventDefault();
+  
+      //No mix ups with upper and lowercases
+      var input = userInput.value
+  
+      //Empty textarea fix
+      if(input.length > 0) {
+        userResponse(input)
+        socket.emit('requestToResolve', input)
+        userInput.value = ""
+      }
+    }
+  };
+
+submitButton.onclick = (e) => {
+    e.preventDefault();
+    var input = userInput.value
+  
+    //Empty textarea fix
+    if(input.length > 0) {
+      userResponse(input)
+      socket.emit('requestToResolve', input)
+      userInput.value = ""
+    }
+}
+  
+const userResponse = (message) => {
+    //create input
+    var newChat = document.createElement('li');
+    newChat.classList.add('userInput');
+  
+    //adds input of textarea to chatbubble list item
+    newChat.innerHTML = message;
+  
+    //adds chatBubble to chatlist
+    chatList.appendChild(newChat)
+  
+  }
+
+
+const botResponse = (message) => {
+    var newChat = document.createElement('li');
+    newChat.classList.add('botInput');
+    newChat.innerHTML = message;
+    chatList.appendChild(newChat)
+}
+
 
 
 socket.on('connect', () => {
     console.log(socket.id); // an alphanumeric id...
  });
-

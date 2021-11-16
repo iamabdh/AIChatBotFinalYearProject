@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+body {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1em;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.45;
+    background-color: #000000;
+}
+textarea {
+    overflow: hidden;
+}
+
+.container-chat-box {
+    background-color: #000000;
+    flex-flow: row nowrap;
+    align-content: space-between;
+    min-height: 80vh;
+    max-height: 80vh;
+    margin: 0 auto;
+    padding: 1em;
+    padding-bottom: 0;
+}
+.chatlist {
+    font-family: inherit;
+    font-size: 1em;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 35em;
+    max-height: 75vh;
+    margin: 0 auto;
+}
+
+.chatlist .userInput, .chatlist .botInput {
+    padding: 0.85em;
+    margin: 0.5em;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    border-bottom: 1px solid #777;
+}
+
+.chatlist .userInput {
+    text-transform: lowercase;
+    box-shadow: 1px 1px 2px #666;
+    border-top: 4px solid #14b7cc;
+    opacity: 0;
+    animation-name: animateBubble;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-fill-mode: forwards;
+}
+.chatlist .botInput {
+    align-self: flex-start;
+    box-shadow: -1px 1px 2px #666;
+    border-top: 4px solid #e0960b;
+    will-change: auto;
+    height: auto;
+    opacity: 0;
+    animation-name: animateBubble;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+}
+
+.chatlist .botInput:last-child {
+    display: none;
+}
+
+.chatlist .botInput:nth-child(1) {
+    animation-delay: 600ms;
+    animation-play-state: running;
+}
+.chatlist .botInput:nth-child(2) {
+    animation-delay: 1200ms;
+    animation-play-state: running;
+}
+.chatlist .botInput:nth-child(3) {
+    animation-delay: 1800ms;
+    animation-play-state: running;
+}
+
+
+@keyframes animateBubble {
+    0% {
+        transform: translateY(-20%);
+        opacity: 0;
+   }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+   }
+}
+
+#chatform {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    max-width: 35em;
+    margin: 0 auto;
+    padding-top: 1em;
+    font-size: 1em;
+    font-family: Helvetica;
+}
+@media screen and (max-width: 29em) {
+    #chatform {
+        width: 90%;
+   }
+}
+.chatbox-area {
+    margin: 0 auto;
+    position: relative;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+}
+textarea[name="chatbox"] {
+    resize: none;
+    border: 2px solid #fafafa;
+    border-right: 0;
+    width: 70%;
+    background-color: transparent;
+    color: #fff;
+    height: 3em;
+    margin: 0;
+    padding: 0.75em;
+    border-radius: 8px 0px 0px 8px;
+    font-family: inherit;
+    font-size: 1em;
+}
+textarea[name="chatbox"]:focus {
+    outline: none;
+    border: 2px solid #ffffff;
+}
+::-webkit-input-placeholder {
+   /* WebKit, Blink, Edge */
+    color: #fff;
+}
+:-moz-placeholder {
+   /* Mozilla Firefox 4 to 18 */
+    color: #fff;
+    opacity: 1;
+}
+::-moz-placeholder {
+   /* Mozilla Firefox 19+ */
+    color: #fff;
+    opacity: 1;
+}
+input[type="submit"] {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0;
+    width: 25%;
+    margin: 0;
+    background-color: #e9a617;
+    color: #fff;
+    border: 2px solid #e9a617;
+    border-left: 0;
+    border-radius: 0 8px 8px 0;
+    font-family: inherit;
+    font-size: 1em;
+    transition: 200ms all ease-in;
+}
+input[type="submit"]:hover {
+    background-color: #4b8cd7;
+    border-color: #4b8cd7;
+    color: #fff;
+}
+
+
+::-webkit-scrollbar {
+    width: 0.65em;
+   /* for vertical scrollbars */
+    height: 0.65em;
+   /* for horizontal scrollbars */
+}
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+}
