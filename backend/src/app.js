@@ -5,7 +5,8 @@ let chatContainer = document.querySelector('.container-chat-box')
 let submitButton = document.querySelector('.submit-button')
 let socket = io()
 
-
+let animationCounter = 1
+let animationBubbleDelay = 20
 
 socket.on('resolved', (msg)=>{
     console.log(msg)
@@ -63,7 +64,19 @@ const botResponse = (message) => {
     newChat.classList.add('botInput');
     newChat.innerHTML = message;
     chatList.appendChild(newChat)
+    animateBotOutput()
+    setTimeout(function(){
+      chatList.scrollTop = chatList.scrollHeight;
+    }, 0)
 }
+
+//change to SCSS loop
+function animateBotOutput() {
+  chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
+  animationCounter++;
+  chatList.lastElementChild.style.animationPlayState = "running";
+}
+
 
 
 
