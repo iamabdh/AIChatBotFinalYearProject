@@ -42,7 +42,7 @@ def predictClass(sent):
     bagOfWord = bagOfWords(sent)
     prediction = model.predict(np.array([bagOfWord]))[0]
     print(prediction)
-    errorThershold = 0.1
+    errorThershold = 0.6
     results = [[i, r] for i, r in enumerate(prediction) if r > errorThershold]
     results.sort(key = lambda x : x[1], reverse = True)
     print(results) 
