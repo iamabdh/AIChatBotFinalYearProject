@@ -56,7 +56,7 @@ class Engineer():
             },
             "objectivesElectrical":{
                 "subText":[],
-                "extend":[ECE_VM_extends]
+                "extend":ECE_VM_extends
             },
 
         })
@@ -88,7 +88,7 @@ class Engineer():
             },
             "Advisory Board Responsibilities Electrical":{
                 "subText":[],
-                "extend":[str(ECE_IAB_extend)]
+                "extend":str(ECE_IAB_extend)
             }
             
         })
@@ -126,7 +126,7 @@ class Engineer():
             },
             "missionCivil-and-Architectural-Engineering":{
                 "subText":[str(CAE_VM_subText[2].text)],
-                "extend":[CAE_VM_extends]
+                "extend":CAE_VM_extends
             },
         })
         page11 = urlopen(url + 'engineering/About/Departments/Civil-and-Architectural-Engineering/Quality-Assurance') 
@@ -191,7 +191,7 @@ class Engineer():
             },
             "missionMechanical-and-Industrial":{
                 "subText":[str(MIE_VM_subText[4].text)],
-                "extend":[MIE_VM_extends]
+                "extend":MIE_VM_extends
             },
         })
         page19 = urlopen(url + 'engineering/About/Departments/Mechanical-and-Industrial-Engineering/Quality-Assurance') 
@@ -219,7 +219,7 @@ class Engineer():
         aboutMechanicalandIndustrial.update({
             "Industrial Advisory Board Mechanical-and-Industrial":{
                 "subText":[str(MIE_IAB_subtext[0].text)],
-                "extend":[str(MIE_IAB_extend)]
+                "extend":str(MIE_IAB_extend)
             }
             
         })
@@ -259,7 +259,7 @@ class Engineer():
             },
             "missionPetroleum-and-Chemical":{
                 "subText":[str(PCE_VM_subText[3].text),str(PCE_VM_subText[4].text)],
-                "extend":[MIE_VM_extends]
+                "extend":MIE_VM_extends
             },
         })
 
