@@ -49,3 +49,5 @@ def resloverIntents(int, arg = None):
         'Petr&Chem':ResolverMainPage.engineer4(),
         'searchFF' : ResolverMainPage.FFSearch(arg),
     }.get(int, 0) # return 0 if the resolver doesnt find match requests
+
+
