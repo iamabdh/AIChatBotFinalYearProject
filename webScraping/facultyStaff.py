@@ -69,9 +69,10 @@ def searchFF(name):
         newList.remove('')
     while ' ' in newList:
         newList.remove(' ')
-    roleNo = 0
-    roomNo = 0
-    email = 0
+    roleNo = None
+    roomNo = None
+    email = None
+    mobileNo = None
     for index, item in enumerate(newList):
         # checking the role of required Dr name
         itemSP = item.split(",")
@@ -84,7 +85,10 @@ def searchFF(name):
         # check its Room No.
         if 'Room No.' in item:
             roomNo = index + 1
-         
+        if 'Mobile Telephone No.' in item:
+          mobileNo = index + 1
+          if '+' != str(newList[mobileNo])[0]:
+            mobileNo = None
         for indexEmail in item:
             if'@' in indexEmail:
                 email = index
@@ -93,10 +97,11 @@ def searchFF(name):
     if newList is not None:
         if newList[0] is not None:
            return{
-                   'name'   :    str(newList[0]),
-                   'role'   :   'Not listed'   if   roleNo == 0 else str(newList[roleNo]),
-                   'roomNo' :   'Not listed'   if   roleNo == 0 else str(newList[roomNo]),
-                   'email'  :   'Not listed'   if   roleNo == 0 else str(newList[email])
+                    'name'   :    str(newList[0]),
+                    'role'   :   'Not listed'   if   roleNo == None else str(newList[roleNo]),
+                    'roomNo' :   'Not listed'   if   roomNo == None else str(newList[roomNo]),
+                    'Mobile' :   'Not listed'   if   mobileNo == None else str(newList[mobileNo]),
+                    'email'  :   'Not listed'   if   email == None else str(newList[email])
            }
     else:
         return 0
