@@ -98,7 +98,7 @@ def getResponses(intents_list, intents_json, quires = None):
                             result += 'name: '+ dataObj.get('name') + '\n'
                             result += 'role: '+ dataObj.get('role') + '\n'
                             result += 'room: '+ dataObj.get('roomNo') + '\n'
-                            result += 'Mobile: '+ dataObj.get('mobileNo') + '\n'
+                            result += 'Mobile: '+ dataObj.get('Mobile') + '\n'
                             result += 'email: '+ dataObj.get('email') + '\n'
                         else:
                             result = "please provide correct and full faculty names"
