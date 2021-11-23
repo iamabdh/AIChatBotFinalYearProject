@@ -55,6 +55,7 @@ def predictClass(sent):
 
 def getResponses(intents_list, intents_json, quires = None):
     result = ''
+    objectResponse = ''
     try: 
         tag = intents_list[0]['intent']
             
@@ -62,7 +63,12 @@ def getResponses(intents_list, intents_json, quires = None):
         for i in listOfIntents:
             if i['tag'] == tag:
                 if i['response'][0] != 0:
-                    result = random.choice(i['response'])
+                    
+                    reesponseRandomly = random.choice(i['response'])
+                    objectResponse = {
+                        'response' : reesponseRandomly,
+                        'flag' : 0
+                    }
                     break
                 else:
                     # excute function that will resolve the kind of initents
@@ -77,13 +83,11 @@ def getResponses(intents_list, intents_json, quires = None):
 
                         subText = dataObj.get(i['required']).get('subText') 
                         extend = dataObj.get(i['required']).get('extend')
-                     
-
-                        for item in subText:
-                            result += item + '\n'
-                        if extend is not None:
-                            for index, item in enumerate(extend):
-                                result += f'{index + 1} ' + item + '\n'
+                        objectResponse = {
+                            'subText' : subText,
+                            'extend' : extend,
+                            'flag' : 1
+                        }
                     
                     elif i['flag'] == 2:
                         '''
@@ -95,21 +99,35 @@ def getResponses(intents_list, intents_json, quires = None):
                         from webScraping import resolverMainWeb as res
                         dataObj = res.resloverIntents(i['init'], quires)
                         if dataObj != 0:
-                            result += 'name: '+ dataObj.get('name') + '\n'
-                            result += 'role: '+ dataObj.get('role') + '\n'
-                            result += 'room: '+ dataObj.get('roomNo') + '\n'
-                            result += 'Mobile: '+ dataObj.get('Mobile') + '\n'
-                            result += 'email: '+ dataObj.get('email') + '\n'
+                            objectResponse = {
+                                'name' :    dataObj.get('name'),
+                                'role' :    dataObj.get('role'),
+                                'room' :    dataObj.get('roomNo'),
+                                'mobile':   dataObj.get('Mobile'),
+                                'email' :   dataObj.get('email'),
+                                'flag' :    2
+                            }
+
+                            # result += 'name: '+ dataObj.get('name') + '\n'
+                            # result += 'role: '+ dataObj.get('role') + '\n'
+                            # result += 'room: '+ dataObj.get('roomNo') + '\n'
+                            # result += 'Mobile: '+ dataObj.get('Mobile') + '\n'
+                            # result += 'email: '+ dataObj.get('email') + '\n'
                         else:
-                            result = "please provide correct and full faculty names"
+                            objectResponse = {
+                                'flag' : 22
+                            }
 
 
                         
                         
     except IndexError:
-        result = "I dont understnad"
+        object = {
+            'response' :'I dont understnad',
+            'flag' : 20
+            }
 
-    return result
+    return json.dumps(objectResponse)
 
 print("BOT IS RUNNING")
 

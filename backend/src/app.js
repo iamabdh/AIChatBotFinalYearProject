@@ -28,7 +28,7 @@ sendMsg.onkeydown = (e) =>{
         userInput.value = ""
       }
     }
-  };
+};
 
 submitButton.onclick = (e) => {
     e.preventDefault();
@@ -51,15 +51,51 @@ const userResponse = (message) => {
     newChat.innerHTML = message;
   
     //adds chatBubble to chatlist
-    chatList.appendChild(newChat)
-  
-  }
+    chatList.appendChild(newChat)  
+}
 
 
 const botResponse = (message) => {
     var newChat = document.createElement('li');
     newChat.classList.add('botInput');
-    newChat.innerHTML = message;
+    responseChuncked = ''
+    responseTable = ''
+    objectResponsed = JSON.parse(message)
+    if (objectResponsed.flag == 0) {
+      responseChuncked = objectResponsed.response
+    } 
+
+    else if (objectResponsed.flag ==20) {
+      responseChuncked = objectResponsed.response
+    }
+    else if(objectResponsed.flag == 1){
+     
+      objectResponsed.subText.forEach(item => {
+        responseChuncked +=  item+ ' <br/>'
+      });
+      if ( objectResponsed.extend !=null){
+        objectResponsed.extend.forEach(item => {
+          responseChuncked +=  item+ ' <br/>'
+        });
+      }
+      
+    }
+   
+    else if (objectResponsed.flag == 2){
+      responseChuncked += 'Name: ' + objectResponsed.name + '<br/>'
+      responseChuncked += 'Designated: ' + objectResponsed.role + '<br/>'
+      responseChuncked += 'Room: ' + objectResponsed.room + '<br/>'
+      responseChuncked += 'Mobile: ' + objectResponsed.mobile + '<br/>'
+      responseChuncked += 'Email: ' + objectResponsed.email  + '<br/>'
+    }
+
+    else if (objectResponsed.flag == 22){
+      responseChuncked += 'Please enter full name of faculty name <br>'
+      responseChuncked += 'you could type <i>Dr name name</i>'
+    }
+
+    newChat.innerHTML =  responseChuncked
+
     chatList.appendChild(newChat)
     animateBotOutput()
     setTimeout(function(){
@@ -67,13 +103,16 @@ const botResponse = (message) => {
     }, 0)
 }
 
-//change to SCSS loop
 function animateBotOutput() {
   chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
   animationCounter++;
   chatList.lastElementChild.style.animationPlayState = "running";
 }
 
+
+// const changeBorderError = () => {
+//   document.querySelector('.botInput').style.borderTop = '#ff0000'
+// }
 
 socket.on('connect', () => {
     console.log(socket.id); // an alphanumeric id...

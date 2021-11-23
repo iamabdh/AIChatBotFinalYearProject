@@ -25,14 +25,15 @@ body {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     line-height: 1.45;
-    background-color: #000000;
+    background-color: #3a3a3a;
 }
 textarea {
     overflow: hidden;
 }
 
 .container-chat-box {
-    background-color: #000000;
+    background-color: #ddfae0;
+     /* background: url("/src/2825471841_f58c2d6a28_z.jpg"); */
     flex-flow: row nowrap;
     align-content: space-between;
     min-height: 80vh;
