@@ -11,6 +11,12 @@ let request = require("request-promise")
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/src/index.html');
 });
+app.get('/wiget', (req, res) => {
+  res.sendFile(__dirname + '/src/index.html');
+});
+app.get('/mainPage', (req, res) => {
+  res.sendFile(__dirname + '/src/mainPage.html');
+});
 
 io.on('connection', (socket) => {
   console.log("user connected: ", socket.id)

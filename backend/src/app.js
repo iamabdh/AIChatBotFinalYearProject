@@ -14,9 +14,6 @@ socket.on('resolved', (msg)=>{
 })
 
 
-
-
-
 sendMsg.onkeydown = (e) =>{
     if(e.keyCode == 13){
         e.preventDefault();
@@ -76,8 +73,6 @@ function animateBotOutput() {
   animationCounter++;
   chatList.lastElementChild.style.animationPlayState = "running";
 }
-
-
 
 
 socket.on('connect', () => {
