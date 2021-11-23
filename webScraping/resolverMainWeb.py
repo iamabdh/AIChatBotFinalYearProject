@@ -41,13 +41,18 @@ class ResolverMainPage:
 
 
 def resloverIntents(int, arg = None):
-    return {
-        'AboutSQU' : ResolverMainPage.AboutPage(),
-        'Electrical': ResolverMainPage.engineer1(),
-        'CivilandArch':ResolverMainPage.engineer2(),
-        'MechandIndus':ResolverMainPage.engineer3(),
-        'Petr&Chem':ResolverMainPage.engineer4(),
-        'searchFF' : ResolverMainPage.FFSearch(arg),
-    }.get(int, 0) # return 0 if the resolver doesnt find match requests
 
-
+    if int == 'AboutSQU':
+        return ResolverMainPage.AboutPage()
+    elif int == 'Electrical':
+        return ResolverMainPage.engineer1()
+    elif int == 'CivilandArch':
+        return ResolverMainPage.engineer2()
+    elif int == 'MechandIndus':
+        return ResolverMainPage.engineer3()
+    elif int == 'Petr&Chem':
+        return ResolverMainPage.engineer4()
+    elif int == 'searchFF':
+        return  ResolverMainPage.FFSearch(arg)
+    else:
+        return 0

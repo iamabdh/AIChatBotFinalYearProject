@@ -34,7 +34,7 @@ listOfRole = ['Professor',
 def searchFF(name):
     url = 'https://www.squ.edu.om/engineering/Faculty-and-Staff/Department-of-Electrical-and-Computer-Engineering'
 
-    stuffPage = BeautifulSoup(urlopen(url).read().decode('utf-8'), 'html.parser').find_all('li')
+    stuffPage = BeautifulSoup(urlopen(url).read().decode('utf-8'), 'lxml').find_all('li')
 
     objectList = []
     for itemTotal in stuffPage:
