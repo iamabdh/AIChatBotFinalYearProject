@@ -13,11 +13,11 @@ sys.path.append(parrentDir)
 
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open(f'{currentDir}/intents.json').read())
 
-words = pickle.load(open('words.pkl', 'rb'))
-classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('chatbotmodel.h5')
+words = pickle.load(open(f'{currentDir}/words.pkl', 'rb'))
+classes = pickle.load(open(f'{currentDir}/classes.pkl', 'rb'))
+model = load_model(f'{currentDir}/chatbotmodel.h5')
 
 
 def cleanUpSent(sent):
