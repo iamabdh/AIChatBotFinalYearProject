@@ -17,6 +17,9 @@ app.get('/wiget', (req, res) => {
 app.get('/mainPage', (req, res) => {
   res.sendFile(__dirname + '/src/mainPage.html');
 });
+app.get('/logPage', (req, res) => {
+  res.sendFile(__dirname + '/src/logPage.html');
+});
 
 io.on('connection', (socket) => {
   console.log("user connected: ", socket.id)
@@ -52,6 +55,17 @@ io.on('connection', (socket) => {
       console.log(parsedBody)
       let result
       result = parsedBody['result']
+      // not resolved queries will be send to log sheet
+      if (JSON.parse(result).flag > 19){
+        let date = new Date()
+        errorObject = {
+          query: query.msg,
+          time : `${date}`,
+          id:  socket.id
+        }
+
+        io.sockets.emit('notResolved', errorObject)
+      } 
       io.sockets.to(socket.id).emit('resolved', result)
     })
     .catch((err) => {

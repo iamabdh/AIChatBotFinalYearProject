@@ -7,6 +7,7 @@ let socket = io()
 
 let animationCounter = 1
 let animationBubbleDelay = 20
+let loading = false
 
 socket.on('resolved', (msg)=>{
     console.log(msg)
