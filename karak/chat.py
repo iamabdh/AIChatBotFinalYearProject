@@ -42,7 +42,7 @@ def predictClass(sent):
     bagOfWord = bagOfWords(sent)
     prediction = model.predict(np.array([bagOfWord]))[0]
     print(prediction)
-    errorThershold = 0.6
+    errorThershold = 0.7
     results = [[i, r] for i, r in enumerate(prediction) if r > errorThershold]
     results.sort(key = lambda x : x[1], reverse = True)
     print(results) 
@@ -122,7 +122,7 @@ def getResponses(intents_list, intents_json, quires = None):
                         
                         
     except IndexError:
-        object = {
+        objectResponse = {
             'response' :'I dont understnad',
             'flag' : 20
             }
