@@ -88,7 +88,7 @@ class Engineer():
             },
             "Advisory Board Responsibilities Electrical":{
                 "subText":[],
-                "extend":str(ECE_IAB_extend)
+                "extend": ECE_IAB_extend
             }
             
         })
@@ -153,7 +153,7 @@ class Engineer():
 
         aboutCivilandArch.update({
             "Industrial Advisory Board Civil-and-Architectura":{
-                "subText":[str(CAE_IAB_subtext[0].text)+str(CAE_IAB_subtext[1].text)],
+                "subText":[str(CAE_IAB_subtext[0].text), str(CAE_IAB_subtext[1].text)],
             },
             
         })

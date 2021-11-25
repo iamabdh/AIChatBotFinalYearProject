@@ -83,12 +83,16 @@ def getResponses(intents_list, intents_json, quires = None):
 
                         subText = dataObj.get(i['required']).get('subText') 
                         extend = dataObj.get(i['required']).get('extend')
+                       
                         objectResponse = {
                             'subText' : subText,
                             'extend' : extend,
-                            'flag' : 1
+                            'flag' : 1,
+                            'linker': True,
+                            'init' : i['init'],
+                            'notInit' : False,
+                            'additional': [item for item in list(dataObj.keys()) if item != i['required']]
                         }
-                    
                     elif i['flag'] == 2:
                         '''
                         flag 2 that resolve  for faculty stuff search 
@@ -107,12 +111,6 @@ def getResponses(intents_list, intents_json, quires = None):
                                 'email' :   dataObj.get('email'),
                                 'flag' :    2
                             }
-
-                            # result += 'name: '+ dataObj.get('name') + '\n'
-                            # result += 'role: '+ dataObj.get('role') + '\n'
-                            # result += 'room: '+ dataObj.get('roomNo') + '\n'
-                            # result += 'Mobile: '+ dataObj.get('Mobile') + '\n'
-                            # result += 'email: '+ dataObj.get('email') + '\n'
                         else:
                             objectResponse = {
                                 'flag' : 22
@@ -145,9 +143,32 @@ def getData():
     message = message.get('msg')
     ints = predictClass(message.lower())
     print(ints)
-    res = getResponses(ints, intents, message)
-    return json.dumps({'result' : res})
+    response = getResponses(ints, intents, message)
+    return json.dumps({'result' : response})
 
+
+
+
+
+@app.route('/getInitData', methods = ['POST'])
+def getInitData():
+    objectDataInit = request.get_json()
+
+    from webScraping import resolverMainWeb as res
+    dataObj= res.resloverIntents(objectDataInit.get('initData'))
+    subText = dataObj.get(objectDataInit.get('required')).get('subText') 
+    extend = dataObj.get(objectDataInit.get('required')).get('extend')
+
+
+    objectResponse = json.dumps({
+        'subText' : subText,
+        'extend' : extend,
+        'flag' : 1,
+        'linker': True if len(objectDataInit.get('additional')) > 0 else False,
+        'init' : objectDataInit.get('initData'),
+        'notInit' : False,
+        'additional': objectDataInit.get('additional')})
+    return json.dumps({'result' : objectResponse})
 
 if __name__ == '__main__':
     app.run(port=5000)

@@ -24,7 +24,6 @@ sendMsg.onkeydown = (e) =>{
       //Empty textarea fix
       if(input.length > 0) {
         userResponse(input)
-        socket.emit('requestToResolve', input)
         userInput.value = ""
       }
     }
@@ -37,12 +36,12 @@ submitButton.onclick = (e) => {
     //Empty textarea fix
     if(input.length > 0) {
       userResponse(input)
-      socket.emit('requestToResolve', input)
       userInput.value = ""
     }
 }
   
 const userResponse = (message) => {
+
     //create input
     var newChat = document.createElement('li');
     newChat.classList.add('userInput');
@@ -52,6 +51,32 @@ const userResponse = (message) => {
   
     //adds chatBubble to chatlist
     chatList.appendChild(newChat)  
+
+    // emit data to server using requestToRresolve 
+    socket.emit('requestToResolve', message)
+}
+
+
+const userResponseWithButton = (input, init, arrayButton) => {
+   //create input
+   var newChat = document.createElement('li');
+   newChat.classList.add('userInput');
+ 
+   //adds input of textarea to chatbubble list item
+   newChat.innerHTML = input;
+ 
+   //adds chatBubble to chatlist
+   chatList.appendChild(newChat) 
+
+   let responseToServerButton = {
+     flagInit: 1,
+     required: input,
+     initData: init,
+     additional: arrayButton 
+   }
+   console.log(arrayButton)
+    // emit data to server using Button request
+    socket.emit('requestToResolveButton', responseToServerButton)
 }
 
 
@@ -88,7 +113,6 @@ const botResponse = (message) => {
       responseChuncked += 'Mobile: ' + objectResponsed.mobile + '<br/>'
       responseChuncked += 'Email: ' + objectResponsed.email  + '<br/>'
     }
-
     else if (objectResponsed.flag == 22){
       responseChuncked += 'Please enter full name of faculty name <br>'
       responseChuncked += 'you could type <i>Dr name name</i>'
@@ -101,13 +125,51 @@ const botResponse = (message) => {
     setTimeout(function(){
       chatList.scrollTop = chatList.scrollHeight;
     }, 0)
+
+    if(objectResponsed.linker){
+      userButton(
+      objectResponsed.additional,
+      objectResponsed.init,
+      objectResponsed.notInit
+      )
+    }
+
 }
+
+const userButton = (buttonData, initData, requestNotInit) => {
+ let newButtonContainer = document.createElement('div');
+ newButtonContainer.classList.add('container-user-button')
+  buttonData.forEach(data => {
+    let newButton = document.createElement('button');
+    newButton.classList.add('userButton');  
+    
+    newButton.onclick = () => {
+      let newArrayButton = []
+      buttonData.forEach(itemArray => {
+        if(data != itemArray){
+          newArrayButton.push(itemArray)
+        }
+      })
+      if (!requestNotInit){ userResponseWithButton(data, initData, newArrayButton);} else {userResponse(data)}
+   
+    }
+    newButton.innerHTML = data;
+
+    newButtonContainer.appendChild(newButton)  
+  })
+  chatList.appendChild(newButtonContainer)
+}
+
+
+
+
 
 function animateBotOutput() {
   chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
   animationCounter++;
   chatList.lastElementChild.style.animationPlayState = "running";
 }
+
 
 
 // const changeBorderError = () => {
