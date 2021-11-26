@@ -19,6 +19,15 @@ class ResolverMainPage:
             name = ' '.join(listingName)
          return facultyStaff.searchFF(name)
     
+    def degreeSearch(yearDegree):
+        from webScraping import degreePlanF
+        if yearDegree is not None:
+            listYeareDegree=yearDegree.split()
+            year=listYeareDegree[0]
+            print(year)
+        return degreePlanF.degreePlan(year)
+
+    
     def engineerECE():
         from webScraping.scrapingENG2 import Engineer
         return Engineer.electrical()
@@ -36,7 +45,6 @@ class ResolverMainPage:
         return Engineer.PetroleumChemical()
 
 
-    
 
 
 
@@ -54,5 +62,7 @@ def resloverIntents(int, arg = None):
         return ResolverMainPage.engineerPCE()
     elif int == 'searchFF':
         return  ResolverMainPage.FFSearch(arg)
+    elif int == 'degreePlan':
+        return  ResolverMainPage.degreeSearch(arg)
     else:
         return 0
