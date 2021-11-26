@@ -24,7 +24,6 @@ class ResolverMainPage:
         if yearDegree is not None:
             listYeareDegree=yearDegree.split()
             year=listYeareDegree[0]
-            print(year)
         return degreePlanF.degreePlan(year)
 
     
