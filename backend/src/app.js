@@ -114,6 +114,9 @@ const botResponse = (message) => {
       responseChuncked += 'Mobile: ' + objectResponsed.mobile + '<br/>'
       responseChuncked += 'Email: ' + objectResponsed.email  + '<br/>'
     }
+    else if (objectResponsed.flag == 3){
+      responseChuncked += 'Degree Plan Link: ' + objectResponsed.Link + '<br/>'
+    }
     else if (objectResponsed.flag == 22){
       responseChuncked += 'Please enter full name of faculty name <br>'
       responseChuncked += 'you could type <i>Dr name name</i>'

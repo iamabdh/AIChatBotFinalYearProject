@@ -121,7 +121,7 @@ def getResponses(intents_list, intents_json, quires = None):
                         dataObj = res.resloverIntents(i['init'], quires)
                         if dataObj != 0:
                              objectResponse = {
-                                'Link: ': dataObj.get('The degree Link: '),
+                                'Link': dataObj.get('The degree Link: '),
                                 'flag': 3
                             }
                

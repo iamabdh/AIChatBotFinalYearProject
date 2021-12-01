@@ -22,24 +22,29 @@ def degreePlan(year):
     degreeLinks=[]
     for link in degreePlan_html:
         degreeLinks.append(link.get('href'))
+    # print(degreeLinks[2])
+    # exit(1)
 
     degreeYear=year
     if (degreeYear=='2021') :
-        return {'The degree Link: ': url1+degreeLinks[0]}
+        return {'The degree Link: ': str(str(url1)+degreeLinks[0])}
     elif (degreeYear=='2020') :
-        return {'The degree Link: ': url1+degreeLinks[1]}
+        return {'The degree Link: ': str(str(url1)+degreeLinks[1])}
     elif (degreeYear=='2019') :
-        return {'The degree Link: ': url+degreeLinks[2]}
+        return {'The degree Link: ': str(str(url1)+degreeLinks[2])}
     elif (degreeYear=='2018') :
-        return {'The degree Link: ': url1+degreeLinks[3]}
+        return {'The degree Link: ': str(str(url1)+degreeLinks[3])}
     elif (degreeYear=='2017') :
-        return {'The degree Link: ': url1+degreeLinks[4]}
+        return {'The degree Link: ':str( str(url1)+degreeLinks[4])}
     elif (degreeYear=='2016') :
-        return {'The degree Link: ': url1+degreeLinks[5]}
+        return {'The degree Link: ': str(str(url1)+degreeLinks[5])}
     elif (degreeYear=='2015') :
-        return {'The degree Link: ': url1+degreeLinks[6]}
+        return {'The degree Link: ': str(str(url1)+degreeLinks[6])}
     else:
         return 0
+
+
+print(degreePlan('2019'))
 
 
 
