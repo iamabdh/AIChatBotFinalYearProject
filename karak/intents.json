@@ -78,6 +78,11 @@
         "init": "AboutSQU",
         "required" : "Vision"
       },
+      {"tag": "searchFaculty",
+        "patterns": ["search faculty", "faculty", "faculty search"], 
+        "response": ["For searching faculty information please type: Dr first name last name"],
+        "context_set": ""
+      },
       {"tag": "facultySearch",
         "patterns": ["dr.", "dr", "Dr.", "Mr.", "mr.", "mrs.", "prof.", "Prof", "prof", "Dr", "Mrs.", "Mrs"],
         "flag" : 2, 
@@ -86,7 +91,7 @@
         "init": "searchFF"
       },
       {"tag": "welcomeElectricl",
-        "patterns": ["about electrical engineering","what is about electrical","tell me about electrical engineering","electrical engineering"],
+        "patterns": ["about electrical engineering","what is about electrical","tell me about electrical engineering","electrical engineering", "ece"],
         "flag" : 1, 
         "response": [0],
         "context_set": "",

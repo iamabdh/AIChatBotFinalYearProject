@@ -32,7 +32,7 @@ io.on('connection', (socket) => {
     linker: true,
     init: null,
     notInit : true,
-    additional: ['About', 'FAQ', 'Library', 'Degree Plan', 'Elearning']
+    additional: ['About', 'FAQ', 'Library', 'Degree Plan', 'Search Faculty']
   })
   )
 
