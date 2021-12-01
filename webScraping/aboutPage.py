@@ -30,7 +30,7 @@ def readAboutSQU():
 
     # store every infos in aboutObj
     aboutObj.update({
-        "aboutText" : {
+        "About" : {
             "subText" : [str(aboutText)],
         }
     })

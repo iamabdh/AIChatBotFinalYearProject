@@ -26,13 +26,13 @@ io.on('connection', (socket) => {
 
   // welecoming message to new user
   io.sockets.to(socket.id).emit('resolved', JSON.stringify({
-    subText : ['&#128075; Hi there this is SQU domain ChatBot', 'Ask me anythings related to SQU and I will try my best', '', 'BTW This is beta version. Dont Be Harsh On Me!'],
+    subText : ['&#128075; Hi there this is SQU domain ChatBot', 'Ask me anythings related to SQU and I will try my best', '', 'This is beta version'],
     extend : [],
     flag : 1, 
     linker: true,
     init: null,
     notInit : true,
-    additional: ['About', 'FAQ', 'Labriry', 'Degree Plan', 'Elearning']
+    additional: ['About', 'FAQ', 'Library', 'Degree Plan', 'Elearning']
   })
   )
 

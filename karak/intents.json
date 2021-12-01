@@ -52,7 +52,7 @@
         "response": [0],
         "context_set": "",
         "init": "AboutSQU",
-        "required" : "aboutText"
+        "required" : "About"
       },
       {"tag": "MissonAbout",
         "patterns": ["misson", "Misson squ", "what is the Misson of squ", "what are the mission", "Misson of squ"],

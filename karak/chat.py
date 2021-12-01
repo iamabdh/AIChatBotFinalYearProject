@@ -121,7 +121,7 @@ def getResponses(intents_list, intents_json, quires = None):
                         
     except IndexError:
         objectResponse = {
-            'response' :'I dont understnad',
+            'response' :"I don't understand!",
             'flag' : 20
             }
 
