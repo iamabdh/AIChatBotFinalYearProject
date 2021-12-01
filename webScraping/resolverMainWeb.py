@@ -22,7 +22,7 @@ class ResolverMainPage:
     def degreeSearch(yearDegree):
         from webScraping import degreePlanF
         if yearDegree is not None:
-            listYeareDegree=yearDegree.split()
+            listYeareDegree=yearDegree.split('-')
             year=listYeareDegree[0]
         return degreePlanF.degreePlan(year)
 
@@ -65,3 +65,4 @@ def resloverIntents(int, arg = None):
         return  ResolverMainPage.degreeSearch(arg)
     else:
         return 0
+

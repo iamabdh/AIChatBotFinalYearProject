@@ -43,9 +43,17 @@
       },
       {"tag": "DegreePlan",
         "patterns": ["degree plan", "degree plans","plan"],
-        "response": ["To get the degree plan, write the year followed by 'Degree Plan'. For example: 2020 degree plan"],
+        "response": ["To get the degree plan, write the year followed by '-' then 'degreeplan'. For example: 2020-degreeplan"],
         "context_set": ""
       },
+      {"tag": "degreePlanSearch",
+        "patterns": ["2021-degreeplan", "2020-degreeplan","2019-degreeplan","2018-degreeplan","2017-degreeplan","2016-degreeplan","2015-degreeplan"],
+        "flag" : 3, 
+        "response": [0],
+        "context_set": "",
+        "init": "degreePlan"
+      },
+      
       {"tag": "about",
         "patterns": ["about", "about squ", "what is about squ"],
         "flag" : 1, 

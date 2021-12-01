@@ -115,9 +115,16 @@ def getResponses(intents_list, intents_json, quires = None):
                             objectResponse = {
                                 'flag' : 22
                             }
-
-
-                        
+                    
+                    elif i['flag'] == 3:
+                        from webScraping import resolverMainWeb as res
+                        dataObj = res.resloverIntents(i['init'], quires)
+                        if dataObj != 0:
+                             objectResponse = {
+                                'Link: ': dataObj.get('The degree Link: '),
+                                'flag': 3
+                            }
+               
                         
     except IndexError:
         objectResponse = {
