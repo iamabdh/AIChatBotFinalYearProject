@@ -116,7 +116,7 @@ const botResponse = (message) => {
     }
     else if (objectResponsed.flag == 22){
       responseChuncked += 'Please enter full name of faculty name <br>'
-      responseChuncked += 'you could type <i>Dr name name</i>'
+      responseChuncked += 'you could type <i>Dr first-name last-name</i>'
     }
 
     newChat.innerHTML =  responseChuncked

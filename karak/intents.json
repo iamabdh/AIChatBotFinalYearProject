@@ -80,7 +80,7 @@
       },
       {"tag": "searchFaculty",
         "patterns": ["search faculty", "faculty", "faculty search"], 
-        "response": ["For searching faculty information please type: Dr first name last name"],
+        "response": ["For searching faculty information please type: Dr 'first-name last-name' "],
         "context_set": ""
       },
       {"tag": "facultySearch",
@@ -91,7 +91,7 @@
         "init": "searchFF"
       },
       {"tag": "welcomeElectricl",
-        "patterns": ["about electrical engineering","what is about electrical","tell me about electrical engineering","electrical engineering", "ece"],
+        "patterns": ["about electrical engineering","what is about electrical","tell me about electrical engineering","electrical engineering", "ece", "what about ece department"],
         "flag" : 1, 
         "response": [0],
         "context_set": "",
