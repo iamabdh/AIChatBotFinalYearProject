@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/style/form-login.css" />
+
+    <title>Log In Page</title>
+  </head>
+  <body>
+    <div class="parent-form">
+      <div class="header-form">
+        <img src="/public/assets/loginform.svg" />
+        <p>Login to Your Account</p>
+      </div>
+      <div class="form-login">
+        <form
+          action="/user/enterLogin"
+          method="post"
+          class="form-login-card"
+          name="form-login"
+          onsubmit="return LogValidator()"
+        >
+          <input
+            type="text"
+            placeholder="username"
+            class="username"
+            name="username"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            class="user-passward"
+            name="userPassward"
+          />
+          <input type="submit" value="Login" />
+        </form>
+        <div class="login-footer-form">
+          <div class="login">
+            <a href="/user/register"> or Sign Up </a>
+          </div>
+          <div class="forget-password">
+            <a href="/">forget password ? </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/public/script/validationForm.js"></script>
+  </body>
+</html>

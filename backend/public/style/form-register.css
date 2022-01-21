@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  background-image: url("/public/assets/Solar\ system-pana.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+
+  background-color: #25a5be;
+}
+
+.parent-form {
+  width: 300px;
+  padding: 30px;
+  background: #ffffff;
+  margin: 10% auto;
+  border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.parent-form .header-form img {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.parent-form .header-form p {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  color: #1890ff;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 10px;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid #1890ff;
+}
+
+input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+  margin-top: 30px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  background-color: #25a5be;
+}
+
+input[type="submit"]:hover {
+  background-color: coral;
+}
+
+.register-footer-form {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.register-footer-form .register {
+  width: 100%;
+  margin-bottom: 30px;
+  color: #25a5be;
+  font-size: 14px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
