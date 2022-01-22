@@ -1,6 +1,6 @@
 const LogValidator = () => {
   let logUserName = document.forms["form-login"]["username"];
-  let logPassword = document.forms["form-login"]["userPassward"];
+  let logPassword = document.forms["form-login"]["userPassword"];
   if (logUserName.value == "") {
     logUserName.placeholder = "Please complete this field";
     logUserName.focus();
