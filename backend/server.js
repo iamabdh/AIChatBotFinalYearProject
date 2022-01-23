@@ -1,6 +1,6 @@
-const path = require("path")
-const dotenv = require("dotenv")
-// Load config 
+const path = require("path");
+const dotenv = require("dotenv");
+// Load config
 dotenv.config({ path: "./config/.env" });
 
 const express = require("express");
@@ -9,15 +9,26 @@ const http = require("http");
 const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
 app.use(express.static(__dirname));
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 let request = require("request-promise");
 const authRoutes = require("./routes/authRoutes");
 const mongoose = require("mongoose");
+const expressSession = require("express-session");
+
 // connect to database
 require("./models/connectMongoDB");
 
+// setup session
+
+app.use(
+  expressSession({
+    secret: "session",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 // only for site
 app.get("/", (req, res) => {
@@ -33,10 +44,8 @@ app.get("/logPage", (req, res) => {
   res.sendFile(__dirname + "/public/static/logPage.html");
 });
 
-
 // set up routes
 app.use("/user", authRoutes);
-
 
 io.on("connection", (socket) => {
   console.log("user connected: ", socket.id);

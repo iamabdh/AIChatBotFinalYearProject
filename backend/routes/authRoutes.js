@@ -19,7 +19,7 @@ router.post("/enterLogin", (req, res) => {
       if (currentUser) {
         bcrypt.compare(userPassword, currentUser.password, (err, result) => {
           if (result) {
-            console.log(result);
+            res.redirect("/user/dashboard")
           } else {
             res.redirect("/user/login");
           }
