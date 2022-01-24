@@ -14,21 +14,15 @@ app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
 let request = require("request-promise");
 const authRoutes = require("./routes/authRoutes");
+const authLogDashboard = require("./routes/authLogDashboard");
 const mongoose = require("mongoose");
 const expressSession = require("express-session");
+const cookieParser = require("cookie-parser");
 
 // connect to database
 require("./models/connectMongoDB");
 
-// setup session
-
-app.use(
-  expressSession({
-    secret: "session",
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+app.use(cookieParser());
 
 // only for site
 app.get("/", (req, res) => {
@@ -40,12 +34,10 @@ app.get("/wiget", (req, res) => {
 app.get("/mainPage", (req, res) => {
   res.sendFile(__dirname + "/public/static/mainPage.html");
 });
-app.get("/logPage", (req, res) => {
-  res.sendFile(__dirname + "/public/static/logPage.html");
-});
 
 // set up routes
 app.use("/user", authRoutes);
+app.use("/e", authLogDashboard);
 
 io.on("connection", (socket) => {
   console.log("user connected: ", socket.id);

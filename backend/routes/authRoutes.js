@@ -4,8 +4,16 @@ const PathToStatic = path.join(__dirname, "../");
 const router = require("express").Router();
 const userSchema = require("../models/userSchema");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-// Site Login and Register for admin
+// jwt setup
+const createToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECERT, {
+    expiresIn: 24 * 60 * 60 * 1000,
+  });
+};
+
+// Site Login and Register pages
 
 router.get("/login", (req, res) => {
   res.sendFile(PathToStatic + "/public/static/loginPage.html");
@@ -19,7 +27,13 @@ router.post("/enterLogin", (req, res) => {
       if (currentUser) {
         bcrypt.compare(userPassword, currentUser.password, (err, result) => {
           if (result) {
-            res.redirect("/user/dashboard")
+            // success
+            const token = createToken(currentUser._id);
+            res.cookie("jwt", token, {
+              httpOnly: true,
+              maxAge: 24 * 60 * 60 * 1000,
+            });
+            res.redirect("/e/dashboard");
           } else {
             res.redirect("/user/login");
           }
@@ -76,6 +90,13 @@ router.post("/enterRegister", (req, res) => {
     .catch((err) => {
       console.log(err);
     });
+});
+
+// @desc user loging out
+// @route GET /user/logout
+router.get("/logout", (req, res) => {
+  res.cookie('jwt', '', { maxAge: 1 });
+  res.redirect("/user/login");
 });
 
 module.exports = router;
