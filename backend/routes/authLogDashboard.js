@@ -22,7 +22,7 @@ const authCheck = (req, res, next) => {
 };
 
 router.get("/dashboard", authCheck, (req, res) => {
-  res.sendFile(PathToStatic + "/public/static/logPage.html");
+  res.sendFile(PathToStatic + "/public/static/dashboard.html");
 });
 
 module.exports = router;

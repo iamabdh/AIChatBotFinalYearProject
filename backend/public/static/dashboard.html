@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/style/dashboardStyle.css" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <div class="user-profile">Hi user</div>
+      <div class="logout-btn">
+        <a href="/user/logout">Log out</a>
+      </div>
+    </header>
+
+    <div class="table-container">
+      <div class="table-view">
+        <table class="table-content">
+          <tr>
+            <th>Query</th>
+            <th>Time</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="container-add-intent">
+      <button class="add-intent">Add Intent</button>
+      <dialog>
+        <form action="/upload/intent" class="form-add-intent"> 
+          <label>
+            <span>Tag</span> <input type="text" name="tag" class="tag-input" />
+          </label>
+          <label><span>Pattern</span>
+            <div class="pattern-zone">
+              <input type="button" value="+" class="add-pattern"/>
+            </div>
+            </label>
+          <label
+            ><span>Flag</span>
+            <input type="number" name="flag" class="flag-input" />
+          </label>
+          <label
+            ><span>Init</span>
+            <input type="text" name="init" class="init-input" />
+          </label>
+          <label
+            ><span>required</span>
+            <input type="text" name="required" class="required-input" />
+          </label>
+        </form>
+        <div class="container-confirm-discard">
+          <button class="confirm-button">Confirm</button>
+          <button class="discard-button">Discard</button>
+        </div>
+      </dialog>
+    </div>
+    <script src="/public/script/dashboard.js"></script>
+  </body>
+</html>

@@ -18,6 +18,13 @@ const authLogDashboard = require("./routes/authLogDashboard");
 const mongoose = require("mongoose");
 const expressSession = require("express-session");
 const cookieParser = require("cookie-parser");
+const morgan = require("morgan");
+
+
+// setup morgan for development 
+if (process.env.NODE_ENV === "development"){
+  app.use(morgan("dev"))
+}
 
 // connect to database
 require("./models/connectMongoDB");
@@ -119,5 +126,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(3000, () => {
-  console.log("listening on *:3000");
+  console.log(`Server running in ${process.env.NODE_ENV} mode on port 3000`);
 });
