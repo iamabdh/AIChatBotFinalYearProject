@@ -5,7 +5,9 @@
   "main": "server.js",
   "scripts": {
     "start": "corss-env NODE_ENV=production node server",
-    "dev": "cross-env NODE_ENV=development nodemon server"
+    "dev": "cross-env NODE_ENV=development nodemon server",
+    "predev": "fuser -k 3000/tcp && echo 'Terminated' || echo 'Nothing was running on the PORT'",
+    "restart": "kill-port 3000"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +20,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
+    "kill-port": "^1.6.1",
     "mongoose": "^6.1.7",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.13",

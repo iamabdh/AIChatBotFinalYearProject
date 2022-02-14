@@ -12,12 +12,12 @@ class ResolverMainPage:
         return aboutPage.readAboutSQU()
 
     def FFSearch(name):
-         from webScraping import facultyStaff
+         from webScraping import FSearchUC
          if name is not None:
             listingName = name.split()
             listingName.remove(listingName[0])
             name = ' '.join(listingName)
-         return facultyStaff.searchFF(name)
+         return FSearchUC.searchFF(name)
     
     def degreeSearch(yearDegree):
         from webScraping import degreePlanF

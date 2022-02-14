@@ -10,8 +10,8 @@ let animationBubbleDelay = 20
 let loading = false
 
 socket.on('resolved', (msg)=>{
-    console.log(msg)
-    botResponse(msg)
+    // console.log(msg)
+    botResponse(msg, false)
 })
 
 
@@ -81,7 +81,7 @@ const userResponseWithButton = (input, init, arrayButton) => {
 }
 
 
-const botResponse = (message) => {
+const botResponse = (message, botFlag) => {
     var newChat = document.createElement('li');
     newChat.classList.add('botInput');
     responseChuncked = ''
@@ -104,15 +104,22 @@ const botResponse = (message) => {
           responseChuncked +=  item+ ' <br/>'
         });
       }
+   
       
     }
    
-    else if (objectResponsed.flag == 2){
-      responseChuncked += 'Name: ' + objectResponsed.name + '<br/>'
-      responseChuncked += 'Designated: ' + objectResponsed.role + '<br/>'
-      responseChuncked += 'Room: ' + objectResponsed.room + '<br/>'
-      responseChuncked += 'Mobile: ' + objectResponsed.mobile + '<br/>'
-      responseChuncked += 'Email: ' + objectResponsed.email  + '<br/>'
+    else if (objectResponsed.flag == 2 || botFlag == true){
+      if(!botFlag) {
+        responseChuncked = "Which college(s) ?"
+        userSelectionStuff(objectResponsed.searchFFResult)
+      } else {
+        responseChuncked += 'Name: ' + objectResponsed.name + '<br/>'
+        responseChuncked += 'Designated: ' + objectResponsed.role + '<br/>'
+        responseChuncked += 'Room: ' + objectResponsed.room + '<br/>'
+        responseChuncked += 'Mobile: ' + objectResponsed.mobile + '<br/>'
+        responseChuncked += 'Email: ' + objectResponsed.email  + '<br/>'
+      }
+   
     }
     else if (objectResponsed.flag == 22){
       responseChuncked += 'Please enter full name of faculty name <br>'
@@ -120,6 +127,7 @@ const botResponse = (message) => {
     }
 
     newChat.innerHTML =  responseChuncked
+
 
     chatList.appendChild(newChat)
     animateBotOutput()
@@ -152,7 +160,6 @@ const userButton = (buttonData, initData, requestNotInit) => {
         }
       })
       if (!requestNotInit){ userResponseWithButton(data, initData, newArrayButton);} else {userResponse(data)}
-   
     }
     newButton.innerHTML = data;
 
@@ -162,8 +169,50 @@ const userButton = (buttonData, initData, requestNotInit) => {
 }
 
 
+const userSelectionStuff = (buttonData) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button');
+    for (const col in buttonData){
+      let newButton = document.createElement('button');
+      newButton.classList.add('userButton');
+       newButton.onclick = () => {
+         userResponseWithButtonCol(col)
+         userSelectionCol(buttonData[col])
+       }
+      newButton.innerHTML = col;
+      newButtonContainer.appendChild(newButton) 
+    } 
+  
+  chatList.appendChild(newButtonContainer)
+}
+const userResponseWithButtonCol = (name) => {
+   //create input
+   var newChat = document.createElement('li');
+   newChat.classList.add('userInput');
+ 
+   //adds input of textarea to chatbubble list item
+   newChat.innerHTML = name;
+ 
+   //adds chatBubble to chatlist
+   chatList.appendChild(newChat)
 
+}
 
+const userSelectionCol = (colObj) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button');
+  for (const order in colObj) {
+    let newButton = document.createElement('button');
+    newButton.classList.add('userButton');  
+    newButton.innerHTML = colObj[order].name
+    newButtonContainer.appendChild(newButton)
+    newButton.onclick = () => {
+      userResponseWithButtonCol(colObj[order].name)
+      botResponse(JSON.stringify(colObj[order]), true)
+    } 
+  }
+  chatList.appendChild(newButtonContainer)
+}
 
 function animateBotOutput() {
   chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";
@@ -178,5 +227,5 @@ function animateBotOutput() {
 // }
 
 socket.on('connect', () => {
-    console.log(socket.id); // an alphanumeric id...
+    console.log("Connected to Server")
  });

@@ -104,11 +104,7 @@ def getResponses(intents_list, intents_json, quires = None):
                         dataObj = res.resloverIntents(i['init'], quires)
                         if dataObj != 0:
                             objectResponse = {
-                                'name' :    dataObj.get('name'),
-                                'role' :    dataObj.get('role'),
-                                'room' :    dataObj.get('roomNo'),
-                                'mobile':   dataObj.get('Mobile'),
-                                'email' :   dataObj.get('email'),
+                                "searchFFResult": dataObj,
                                 'flag' :    2
                             }
                         else:
