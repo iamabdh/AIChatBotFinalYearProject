@@ -92,6 +92,54 @@ class Engineer():
             }
             
         })
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/Electrical-and-Computer-Engineering')
+        html100 = page100.read().decode('utf-8')
+        ECE_About_html = BeautifulSoup(html100, "html.parser")
+        ECE_AboutParagragh_html = ECE_About_html.find_all('div', {'id': 'ResponsiveTabs_6031'})
+        ECE_About = ECE_AboutParagragh_html[0].find_all('p')
+        ECE_About_subtext=ECE_About[0].text +ECE_About[2].text
+        commonCourseECE=ECE_About[29].text
+        CSPcourse=ECE_About[32].text
+        CSNcourse=ECE_About[35].text
+        EICcourse=ECE_About[38].text
+        PSEcourse=ECE_About[41].text
+        trainCourse=ECE_About[44].text
+        ECE_About_outcomes = ECE_AboutParagragh_html[0].find_all('li')[7:14]
+        for index in range(0,len(ECE_About_outcomes)):
+            ECE_About_outcomes[index]=ECE_About_outcomes[index].text
+        
+
+        aboutElectricl.update({
+            "aboutECE":{
+                "subText":[ECE_About_subtext],
+            },
+            "commonCourseECE":{
+                "subText":[commonCourseECE],
+        
+            },
+            "CSPcourse":{
+                "subText":[CSPcourse],
+            },
+            "CSNcourse":{
+                "subText":[CSNcourse],
+            },
+            "EICcourse":{
+                "subText":[EICcourse],
+            },
+            "PSEcourse":{
+                "subText":[PSEcourse],
+            },
+            
+            "PSEcourse":{
+                "subText":[PSEcourse],
+            }, 
+            "trainCourse":{
+                "subText":[trainCourse],
+            }, 
+            "outcomesOfECEstudents":{
+                "subText":ECE_About_outcomes,
+            }    
+        })
 
         return aboutElectricl
     
@@ -156,6 +204,39 @@ class Engineer():
                 "subText":[str(CAE_IAB_subtext[0].text), str(CAE_IAB_subtext[1].text)],
             },
             
+        })
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/-Civil-Engineering')
+        html100 = page100.read().decode('utf-8')
+        CAE_About_html = BeautifulSoup(html100, "html.parser")
+        CAE_AboutParagragh_html = CAE_About_html.find_all('div', {'id': 'ResponsiveTabs_6029'})
+        CAE_About = CAE_AboutParagragh_html[0].find_all('p')
+        CAE_AboutOverview=CAE_About[0].text
+        CAEcommonCourses=CAE_About[26].text
+        civilSpecialCoreses=CAE_About[29].text
+        civilTraining=CAE_About[32].text
+        civilOutcomes = CAE_AboutParagragh_html[0].find_all('li')[6:9]
+        for index in range(0,len(civilOutcomes)):
+            civilOutcomes[index]=civilOutcomes[index].text
+        aboutCivilandArch.update({
+            "civilEngineeringOverview":{
+                "subText":[CAE_AboutOverview]
+            },
+            "civilEngineeringCommonCourses":{
+                "subText":[CAEcommonCourses],
+                "extend":[]
+            },
+            "civilEngineeringSpecialCourses":{
+                "subText":[civilSpecialCoreses],
+                "extend":[]
+            },
+            "civilEngineeringTraining":{
+                "subText":[civilTraining],
+                "extend":[]
+            },
+            "civilEngineeringOutcomes":{
+                "subText":civilOutcomes,
+                "extend":[]
+            },
         })
         return aboutCivilandArch
 
