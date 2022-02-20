@@ -104,7 +104,6 @@ const botResponse = (message, botFlag) => {
           responseChuncked +=  item+ ' <br/>'
         });
       }
-   
       
     }
    
