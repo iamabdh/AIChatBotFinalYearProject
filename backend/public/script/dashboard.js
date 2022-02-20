@@ -6,21 +6,27 @@ const addPattern = document.querySelector(".add-pattern");
 const removePattern = document.querySelector(".remove-pattern");
 let patternZone = document.querySelector(".pattern-zone")
 let numberOfpattern = 0;
-addIntentButton.onclick = () => {
-  dialog.showModal();
-  numberOfpattern = 0;
-};
-discardButton.onclick = () => {
-  dialog.close();
-};
+// addIntentButton.onclick = () => {
+//   dialog.showModal();
+//   numberOfpattern = 0;
+// };
+// discardButton.onclick = () => {
+//   dialog.close();
+// };
 
-addPattern.onclick = () => {
-    let newPatternInput = document.createElement("input")
-    newPatternInput.classList.add("stackInput")
-    newPatternInput.type = "text"
-    newPatternInput.name = `pattern_${numberOfpattern++}`
-    patternZone.appendChild(newPatternInput)
+// addPattern.onclick = () => {
+//     let newPatternInput = document.createElement("input")
+//     newPatternInput.classList.add("stackInput")
+//     newPatternInput.type = "text"
+//     newPatternInput.name = `pattern_${numberOfpattern++}`
+//     patternZone.appendChild(newPatternInput)
+// }
 
-}
+
+fetch("http://127.0.0.1:3000/e/data")
+.then(res => console.log(res))
+.catch(err => console.log(err))
+
+
 
 

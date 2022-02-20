@@ -7,7 +7,7 @@ module.exports = mongoose.model(
             query: {type: String, required: true},
         }, 
         {
-            timeseries: true
+            timestamps: true
         }
     )
 );

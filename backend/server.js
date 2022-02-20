@@ -16,9 +16,12 @@ let request = require("request-promise");
 const authRoutes = require("./routes/authRoutes");
 const authLogDashboard = require("./routes/authLogDashboard");
 const mongoose = require("mongoose");
+const QueryUnresolved = require("./models/unresolvedQuerySchema");
 const expressSession = require("express-session");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
+const cros = require("cors")
+app.use(cros())
 
 
 // setup morgan for development 
@@ -86,16 +89,20 @@ io.on("connection", (socket) => {
         console.log(parsedBody);
         let result;
         result = parsedBody["result"];
-        // not resolved queries will be send to log sheet
+        // not resolved queries will be send to DB
+        // the server will alert dashboard script to update request to DB 
+        // DB =>  mongo DB Atlas
         if (JSON.parse(result).flag > 19) {
-          let date = new Date();
-          errorObject = {
-            query: query.msg,
-            time: `${date}`,
-            id: socket.id,
-          };
-
-          io.sockets.emit("notResolved", errorObject);
+        
+          new QueryUnresolved({
+            query: query.msg
+          })
+          .save()
+          .then((query) => {
+            console.log("query unresolved added to DB: ", query)
+          })
+          .catch(err => console.log(err))
+          io.sockets.emit("notResolved", );
         }
         io.sockets.to(socket.id).emit("resolved", result);
       })
