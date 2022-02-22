@@ -118,11 +118,22 @@ const botResponse = (message, botFlag) => {
         responseChuncked += 'Mobile: ' + objectResponsed.mobile + '<br/>'
         responseChuncked += 'Email: ' + objectResponsed.email  + '<br/>'
       }
-   
     }
     else if (objectResponsed.flag == 22){
       responseChuncked += 'Please enter full name of faculty name <br>'
       responseChuncked += 'you could type <i>Dr first-name last-name</i>'
+    }
+
+    else if (objectResponsed.flag == 3) {
+      bubbleStaffServices(objectResponsed.StaffServices)
+      responseChuncked = "Which services ?"
+    }
+    else if (objectResponsed.flag == 4) {
+      bubbleOnlineServices(objectResponsed.OnlineServices)
+      responseChuncked = "Which services ?"
+    } else if (objectResponsed.flag == 5) {
+      bubbleJobServices(objectResponsed.JobServices)
+      responseChuncked = "Choose position ?"
     }
 
     newChat.innerHTML =  responseChuncked
@@ -143,6 +154,19 @@ const botResponse = (message, botFlag) => {
     }
 
 }
+
+const botResponseWithButton =  (response) => {
+  var newChat = document.createElement('li');
+  newChat.classList.add('botInput');
+  newChat.innerHTML =  response;
+  chatList.appendChild(newChat)
+  animateBotOutput()
+  setTimeout(function(){
+    chatList.scrollTop = chatList.scrollHeight;
+  }, 0)
+}
+
+// flag 1
 
 const userButton = (buttonData, initData, requestNotInit) => {
  let newButtonContainer = document.createElement('div');
@@ -167,7 +191,7 @@ const userButton = (buttonData, initData, requestNotInit) => {
   chatList.appendChild(newButtonContainer)
 }
 
-
+// flag 2
 const userSelectionStuff = (buttonData) => {
   let newButtonContainer = document.createElement('div');
   newButtonContainer.classList.add('container-user-button');
@@ -184,13 +208,13 @@ const userSelectionStuff = (buttonData) => {
   
   chatList.appendChild(newButtonContainer)
 }
-const userResponseWithButtonCol = (name) => {
+const userResponseWithButtonCol = (query) => {
    //create input
    var newChat = document.createElement('li');
    newChat.classList.add('userInput');
  
    //adds input of textarea to chatbubble list item
-   newChat.innerHTML = name;
+   newChat.innerHTML = query;
  
    //adds chatBubble to chatlist
    chatList.appendChild(newChat)
@@ -211,6 +235,119 @@ const userSelectionCol = (colObj) => {
     } 
   }
   chatList.appendChild(newButtonContainer)
+}
+
+// flag 3
+
+const bubbleStaffServices = (staffServiceObj) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button');
+  for (const service in staffServiceObj){
+      for (const item in staffServiceObj[service]) {
+        let newButton = document.createElement('button');
+        newButton.classList.add('userButton');
+        newButton.onclick = () => {
+          userResponseWithButtonCol(service)
+          botResponseWithButton(staffServiceObj[service][item][0])
+        }
+        newButton.innerHTML = service;
+        newButtonContainer.appendChild(newButton) 
+    }
+  }
+  chatList.appendChild(newButtonContainer)
+}
+
+// flag 4
+
+const bubbleOnlineServices = (onlineServices) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button');
+  for (const service in onlineServices){
+      for (const item in onlineServices[service]) {
+        let newButton = document.createElement('button');
+        newButton.classList.add('userButton');
+        newButton.onclick = () => {
+          userResponseWithButtonCol(service)
+          botResponseWithButton( "Redirect to: " +onlineServices[service][item])
+          window.open(onlineServices[service][item],  "_blank")
+        }
+        newButton.innerHTML = service;
+        newButtonContainer.appendChild(newButton) 
+    }
+  }
+  chatList.appendChild(newButtonContainer)
+}
+
+
+// flag 5
+
+// list position of jobs
+const bubbleJobServices = (jobServices) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button');
+  for (const jobPosition in jobServices){
+    let newButton = document.createElement('button');
+    newButton.classList.add('userButton');
+
+    newButton.onclick = () => {
+      userResponseWithButtonCol(jobPosition)
+      bubbleListPosition(jobServices[jobPosition])
+    }
+    newButton.innerHTML = jobPosition;
+    newButtonContainer.appendChild(newButton) 
+  }
+  chatList.appendChild(newButtonContainer)
+}
+
+// list Department of that positions
+const bubbleListPosition = (objPosition) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button');
+  for (const id in objPosition) {
+    let newButton = document.createElement('button');
+    newButton.classList.add('userButton');
+    newButton.onclick = () => {
+      userResponseWithButtonCol(objPosition[id].Department)
+      listPositionOnCard(objPosition[id])
+    }
+    newButton.innerHTML = objPosition[id].Department;
+    newButtonContainer.appendChild(newButton)     
+  }
+  chatList.appendChild(newButtonContainer)
+}
+
+// List Position on card 
+
+const listPositionOnCard = (positionData) => {
+  var newChat = document.createElement('li');
+  newChat.classList.add('botInput');
+  let responseChuncked = ""
+  responseChuncked += 'College: ' + positionData.College + '<br/>'
+  responseChuncked += 'Department: ' + positionData.Department + '<br/>'
+  responseChuncked += 'Minimum Experience: ' + positionData.Experience + '<br/>'
+  responseChuncked += 'Minimum Qualification: ' + positionData.Qualification  + '<br/>'
+  responseChuncked += "Closing Date: " + positionData.Closing + '</br>'
+  newChat.innerHTML =  responseChuncked;
+  chatList.appendChild(newChat)
+  animateBotOutput()
+  setTimeout(function(){
+    chatList.scrollTop = chatList.scrollHeight;
+  }, 0)
+
+
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button');
+  let newButton = document.createElement('button');
+  newButton.classList.add('userButton');
+  newButton.onclick = () => {
+    userResponseWithButtonCol("Read More")
+    botResponseWithButton( "Redirect to: " +positionData.link)
+    window.open(positionData.link,  "_blank")
+  }
+  newButton.innerHTML = "Read More";
+  newButtonContainer.appendChild(newButton)
+  chatList.appendChild(newButtonContainer)
+  
 }
 
 function animateBotOutput() {

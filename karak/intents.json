@@ -358,8 +358,30 @@
         "context_set": "",
         "init": "Petr&Chem",
         "required" : "Industrial Advisory Board Petroleum-and-Chemical"
-      }
-      
-
+      }, 
+      {
+        "tag" : "StaffServices",
+        "patterns": ["Staff Services", "staff service" , "what are staff services provided by squ", "services squ staff", "is there staff service"],
+        "flag": 3, 
+        "response": [0],
+        "context_set": "",
+        "init": "StaffServices"
+      },
+      {
+        "tag" : "OnlineServices",
+        "patterns": ["Online Services", "online service" , "what are online services provided by squ", "services squ online", "is there online service"],
+        "flag": 4, 
+        "response": [0],
+        "context_set": "",
+        "init": "OnlineServices"
+      }, 
+      {
+        "tag" : "JobServices",
+        "patterns": ["Job Services", "job service" , "what are Job services provided by squ", "services squ job", "is there job service", "job", "vacancy job", "careers", "career"],
+        "flag": 5, 
+        "response": [0],
+        "context_set": "",
+        "init": "Job"
+      } 
   ]
   }
