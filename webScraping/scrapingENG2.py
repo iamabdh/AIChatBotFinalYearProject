@@ -105,8 +105,9 @@ class Engineer():
         PSEcourse=ECE_About[41].text
         trainCourse=ECE_About[44].text
         ECE_About_outcomes = ECE_AboutParagragh_html[0].find_all('li')[7:14]
-        for index in range(0,len(ECE_About_outcomes)):
-            ECE_About_outcomes[index]=ECE_About_outcomes[index].text
+        ECEoutcomes=[]
+        for index,j in enumerate(ECE_About_outcomes):
+            ECEoutcomes.append(f'{index+1}. {j.text}')
         
 
         aboutElectricl.update({
@@ -140,6 +141,7 @@ class Engineer():
                 "subText":ECE_About_outcomes,
             }    
         })
+        
 
         return aboutElectricl
     
@@ -239,6 +241,161 @@ class Engineer():
             },
         })
         return aboutCivilandArch
+    def CivilEng():
+        aboutCivil={}
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/-Civil-Engineering')
+        html100 = page100.read().decode('utf-8')
+        CAE_About_html = BeautifulSoup(html100, "html.parser")
+        CAE_AboutParagragh_html = CAE_About_html.find_all('div', {'id': 'ResponsiveTabs_6029'})
+        CAE_About = CAE_AboutParagragh_html[0].find_all('p')
+        CAE_AboutOverview=CAE_About[0].text
+        CAEcommonCourses=CAE_About[26].text
+        civilSpecialCoreses=CAE_About[29].text
+        civilTraining=CAE_About[32].text
+        civilOutcomes = CAE_AboutParagragh_html[0].find_all('li')[6:9]
+        for index in range(0,len(civilOutcomes)):
+            civilOutcomes[index]=civilOutcomes[index].text
+        aboutCivil.update({
+            "civilEngineeringOverview":{
+                "subText":[CAE_AboutOverview]
+            },
+            "civilEngineeringCommonCourses":{
+                "subText":[CAEcommonCourses],
+                "extend":[]
+            },
+            "civilEngineeringSpecialCourses":{
+                "subText":[civilSpecialCoreses],
+                "extend":[]
+            },
+            "civilEngineeringTraining":{
+                "subText":[civilTraining],
+                "extend":[]
+            },
+            "civilEngineeringOutcomes":{
+                "subText":civilOutcomes,
+                "extend":[]
+            },
+        })
+        return aboutCivil
+    def ArchEng():
+        ArchObject={}
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/Architectural-Engineering')
+        html100 = page100.read().decode('utf-8')
+        Arch_About_html = BeautifulSoup(html100, "html.parser")
+        Arch_Paragragh_html = Arch_About_html.find_all('div', {'id': 'ResponsiveTabs_6024'})
+        Arch_About = Arch_Paragragh_html[0].find_all('p')
+        ArchText=Arch_About[0].text
+        ArchCommonCourses=Arch_About[28].text
+        ArchSpecialCourses=Arch_About[31].text
+        ArchTrainingCourse=Arch_About[34].text
+        ArchOutcomes=Arch_About[37].text+Arch_About[38].text+Arch_About[39].text
+        ArchObject.update({
+            "ArchitecturalEngineeringOverview":{
+                "subText":[ArchText]
+            },
+            "ArchitecturalEngineeringCommonCourses":{
+                "subText":[ArchCommonCourses],
+                "extend":[]
+            },
+            "ArchitecturalEngineeringSpecialCourses":{
+                "subText":[ArchSpecialCourses],
+                "extend":[]
+            },
+            "ArchitecturalEngineeringTraining":{
+                "subText":[ArchTrainingCourse],
+                "extend":[]
+            },
+            "ArchitecturalEngineeringOutcomes":{
+                "subText":[ArchOutcomes],
+                "extend":[]
+            },
+            
+        })
+
+
+    
+
+
+        return ArchObject
+    def MechEng():
+        Mechobject={}
+        
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/Mechanical-Engineering')
+        html100 = page100.read().decode('utf-8')
+        Mech_About_html = BeautifulSoup(html100, "html.parser")
+        Mech_Paragragh_html = Mech_About_html.find_all('div', {'id': 'ResponsiveTabs_6033'})
+        Mech_About = Mech_Paragragh_html[0].find_all('p')
+        Mech_text=Mech_About[0].text+Mech_About[1].text+Mech_About[2].text
+        MechCommonCourses=Mech_About[29].text
+        MechSpecialCourses=Mech_About[32].text
+        MechTrainingCourse=Mech_About[35].text
+        MechOutcomes=Mech_Paragragh_html[0].find_all('li')[6:11]
+        for index in range(0,len(MechOutcomes)):
+            MechOutcomes[index]=MechOutcomes[index].text
+        Mechobject.update({
+            "mechanicalEngineeringOverview":{
+                "subText":[Mech_text]
+            },
+            "mechanicalEngineeringCommonCourses":{
+                "subText":[MechCommonCourses],
+                "extend":[]
+            },
+            "mechanicalEngineeringSpecialCourses":{
+                "subText":[MechSpecialCourses],
+                "extend":[]
+            },
+            "mechanicalEngineeringTraining":{
+                "subText":[MechTrainingCourse],
+                "extend":[]
+            },
+            "mechanicalEngineeringOutcomes":{
+                "subText":MechOutcomes,
+                "extend":[]
+            },
+        })
+
+        return Mechobject
+    
+    def IndustEng():
+        Industobject={}
+        
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/Industrial-Engineering')
+        html100 = page100.read().decode('utf-8')
+        Indust_About_html = BeautifulSoup(html100, "html.parser")
+        Indust_Paragragh_html = Indust_About_html.find_all('div', {'id': 'ResponsiveTabs_6032'})
+        Indust_About = Indust_Paragragh_html[0].find_all('p')
+        Indust_text=Indust_About[0].text+Indust_About[1].text+Indust_About[2].text
+        IndustCommonCourses=Indust_About[28].text
+        IndustSpecialCourses=Indust_About[31].text
+        IndustTrainingCourse=Indust_About[34].text
+        IndustOutcomes=Indust_Paragragh_html[0].find_all('li')[6:11]
+        for index in range(0,len(IndustOutcomes)):
+            IndustOutcomes[index]=IndustOutcomes[index].text
+
+        Industobject.update({
+            "industerialEngineeringOverview":{
+                "subText":[Indust_text]
+            },
+            "industerialEngineeringCommonCourses":{
+                "subText":[IndustCommonCourses],
+                "extend":[]
+            },
+            "industerialEngineeringSpecialCourses":{
+                "subText":[IndustSpecialCourses],
+                "extend":[]
+            },
+            "industerialEngineeringTraining":{
+                "subText":[IndustTrainingCourse],
+                "extend":[]
+            },
+            "industerialEngineeringOutcomes":{
+                "subText":IndustOutcomes,
+                "extend":[]
+            },
+        })
+
+        return Industobject
+
 
     def MechanicalIndustrial():
         aboutMechanicalandIndustrial={}
@@ -306,6 +463,129 @@ class Engineer():
         })
 
         return aboutMechanicalandIndustrial
+    
+    def MechatroEng():
+        Mechatroobject={}
+        
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/Mechatronics-Engineering')
+        html100 = page100.read().decode('utf-8')
+        Mechatro_About_html = BeautifulSoup(html100, "html.parser")
+        Mechatro_Paragragh_html = Mechatro_About_html.find_all('div', {'id': 'ResponsiveTabs_6034'})
+        Mechatro_About = Mechatro_Paragragh_html[0].find_all('p')
+        Mechatro_text=Mechatro_About[0].text
+        MechatroCommonCourses=Mechatro_About[27].text
+        MechatroSpecialCourses=Mechatro_About[31].text
+        MechatroTrainingCourse=Mechatro_About[34].text
+        MechatroOutcomes=Mechatro_Paragragh_html[0].find_all('li')[6:9]
+        for index in range(0,len(MechatroOutcomes)):
+            MechatroOutcomes[index]=MechatroOutcomes[index].text
+
+        
+        Mechatroobject.update({
+            "MechatronicsEngineeringOverview":{
+                "subText":[Mechatro_text]
+            },
+            "MechatronicsEngineeringCommonCourses":{
+                "subText":[MechatroCommonCourses],
+                "extend":[]
+            },
+            "MechatronicsEngineeringSpecialCourses":{
+                "subText":[MechatroSpecialCourses],
+                "extend":[]
+            },
+            "MechatronicsEngineeringTraining":{
+                "subText":[MechatroTrainingCourse],
+                "extend":[]
+            },
+            "MechatronicsEngineeringOutcomes":{
+                "subText":MechatroOutcomes,
+                "extend":[]
+            },
+        })
+
+        return Mechatroobject
+
+    def ChemEng():
+        ChemObject={}
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/Chemical-and-Process-Engineering')
+        html100 = page100.read().decode('utf-8')
+        Chem_About_html = BeautifulSoup(html100, "html.parser")
+        Chem_Paragragh_html = Chem_About_html.find_all('div', {'id': 'ResponsiveTabs_6035'})
+        Chem_About = Chem_Paragragh_html[0].find_all('p')
+        ChemText=Chem_About[0].text
+        ChemCommonCourses=Chem_About[26].text
+        ChemSpecialCourses=Chem_About[29].text
+        ChemTrainingCourse=Chem_About[32].text
+        ChemOutcomes=Chem_Paragragh_html[0].find_all('li')[5:8]
+        for index in range(0,len(ChemOutcomes)):
+            ChemOutcomes[index]=ChemOutcomes[index].text
+        
+        ChemObject.update({
+            "ChemicalEngineeringOverview":{
+                "subText":[ChemText]
+            },
+            "ChemicalEngineeringCommonCourses":{
+                "subText":[ChemCommonCourses],
+                "extend":[]
+            },
+            "ChemicalEngineeringSpecialCourses":{
+                "subText":[ChemSpecialCourses],
+                "extend":[]
+            },
+            "ChemicalEngineeringTraining":{
+                "subText":[ChemTrainingCourse],
+                "extend":[]
+            },
+            "ChemicalEngineeringOutcomes":{
+                "subText":ChemOutcomes,
+                "extend":[]
+            },
+            
+        })
+
+
+        return ChemObject
+
+    def PetroEng():
+        PetroObject={}
+        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/Petroleum-and-Natural-Gas-Engineering')
+        html100 = page100.read().decode('utf-8')
+        Petro_About_html = BeautifulSoup(html100, "html.parser")
+        Petro_Paragragh_html = Petro_About_html.find_all('div', {'id': 'ResponsiveTabs_6036'})
+        Petro_About = Petro_Paragragh_html[0].find_all('p')
+        PetroText=Petro_About[0].text
+        PetroCommonCourses=Petro_About[27].text
+        PetroSpecialCourses=Petro_About[31].text
+        PetroTrainingCourse=Petro_About[33].text
+        PetroOutcomes=Petro_Paragragh_html[0].find_all('li')[5:8]
+        for index in range(0,len(PetroOutcomes)):
+            PetroOutcomes[index]=PetroOutcomes[index].text
+        
+        PetroObject.update({
+            "PetroleumEngineeringOverview":{
+                "subText":[PetroText]
+            },
+            "PetroleumEngineeringCommonCourses":{
+                "subText":[PetroCommonCourses],
+                "extend":[]
+            },
+            "PetroleumEngineeringSpecialCourses":{
+                "subText":[PetroSpecialCourses],
+                "extend":[]
+            },
+            "PetroleumEngineeringTraining":{
+                "subText":[PetroTrainingCourse],
+                "extend":[]
+            },
+            "PetroleumEngineeringOutcomes":{
+                "subText":PetroOutcomes,
+                "extend":[]
+            },
+            
+        })
+
+
+        return PetroObject
 
     def PetroleumChemical():
         aboutPetroleumChemical={}
@@ -373,3 +653,5 @@ class Engineer():
 
 
         return aboutPetroleumChemical
+
+print(Engineer.PetroEng())

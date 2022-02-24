@@ -42,6 +42,27 @@ class ResolverMainPage:
     def engineerPCE():
         from webScraping.scrapingENG2 import Engineer
         return Engineer.PetroleumChemical()
+    def engineerArch():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.ArchEng()
+    def engineerCivil():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.CivilEng()
+    def engineerMech():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.MechEng()
+    def engineerIndust():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.IndustEng()
+    def engineerMecatro():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.MechatroEng()
+    def engineerChem():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.ChemEng()
+    def engineerPetro():
+        from webScraping.scrapingENG2 import Engineer
+        return Engineer.PetroEng()
 
 
 
@@ -55,10 +76,24 @@ def resloverIntents(int, arg = None):
         return ResolverMainPage.engineerECE()
     elif int == 'CivilandArch':
         return ResolverMainPage.engineerCAE()
+    elif int == 'CivilEngineering':
+        return ResolverMainPage.engineerCivil()
+    elif int == 'ArchEngineering':
+        return ResolverMainPage.engineerArch()
     elif int == 'MechandIndus':
         return ResolverMainPage.engineerMIE()
+    elif int == 'MechEngineering':
+        return ResolverMainPage.engineerMech()
+    elif int == 'IndustEngineering':
+        return ResolverMainPage.engineerIndust()
+    elif int == 'MechatroEngineering':
+        return ResolverMainPage.engineerMecatro()
     elif int == 'Petr&Chem':
         return ResolverMainPage.engineerPCE()
+    elif int == 'ChemEngineering':
+        return ResolverMainPage.engineerChem()
+    elif int == 'PetroEngineering':
+        return ResolverMainPage.engineerPetro()
     elif int == 'searchFF':
         return  ResolverMainPage.FFSearch(arg)
     elif int == 'degreePlan':
