@@ -35,6 +35,12 @@ header {
   width: 80%;
   margin: 0 auto;
 }
+
+.title-table {
+  text-align: center;
+  margin: 10px;
+  font-size: 25px;
+}
 table {
   border-collapse: collapse;
   width: 100%;

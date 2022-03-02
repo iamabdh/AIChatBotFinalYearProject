@@ -54,9 +54,13 @@ textarea {
     max-height: 75vh;
     margin: 0 auto;
 }
-.chatlist .container-user-button {
+.chatlist {
     align-self: flex-start;
     width: 50%;
+}
+.container-user-button {
+    align-self: flex-start;
+    width: 80%;
 }
 .chatlist .userInput, .chatlist .botInput{
     padding: 0.85em;
@@ -100,12 +104,13 @@ textarea {
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
-    border-radius: 20%;
+    border-radius: 30%;
     transition-duration: 0.4s;
     cursor: pointer;
     animation-name: animateButton;
     animation-duration: 1000ms;
 }
+
 .chatlist .container-user-button .userButton:hover {border: 1px solid #e7e7e7;}
 
 

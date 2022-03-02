@@ -9,13 +9,16 @@
   </head>
   <body>
     <header>
-      <div class="user-profile">Hi user</div>
+      <div class="user-profile">Hi user <span class="user-name"> </span></div>
       <div class="logout-btn">
         <a href="/user/logout">Log out</a>
       </div>
     </header>
 
     <div class="table-container">
+      <div class="title-table">
+        Unresolved Queries
+      </div>
       <div class="table-view">
         <table class="table-content">
           <tr>
@@ -25,7 +28,7 @@
         </table>
       </div>
     </div>
-    <div class="container-add-intent">
+    <!-- <div class="container-add-intent">
       <button class="add-intent">Add Intent</button>
       <dialog>
         <form action="/upload/intent" class="form-add-intent"> 
@@ -55,7 +58,7 @@
           <button class="discard-button">Discard</button>
         </div>
       </dialog>
-    </div>
+    </div> -->
     <script src="/public/script/dashboard.js"></script>
   </body>
 </html>

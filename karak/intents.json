@@ -138,6 +138,63 @@
         "init": "Electrical",
         "required" : "Industrial Advisory Board Electrical"
       },
+      {"tag": "aboutECE",
+        "patterns": ["about ece","overview ece","overview of Electrical and Computer Engineering","electrical"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "aboutECE"
+      },
+      {"tag": "commonCourseECE",
+        "patterns": ["common courses in ece","general courses in ece","electrical common courses","ece courses"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "commonCourseECE"
+      },
+      {"tag": "CSPcourse",
+        "patterns": ["csp courses","Communications and Signal Processing Courses","courses csp"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "CSPcourse"
+      },
+      {"tag": "CSNcourse",
+        "patterns": ["csn courses","Computer Systems and Networks Courses","courses csn"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "CSNcourse"
+      },
+      {"tag": "EICcourse",
+        "patterns": ["eic courses","Electronic Instrumentation and Control Courses","courses eic"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "EICcourse"
+      },
+      {"tag": "PSEcourse",
+        "patterns": ["pse courses","Power Systems and Energy Courses","courses pse"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "PSEcourse"
+      },
+      {"tag": "trainCourse",
+        "patterns": ["ece training","Electrical and Computer Engineering training","training in ece"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "Electrical",
+        "required" : "trainCourse"
+      },
+
       {"tag": "CAEwlcome",
         "patterns": ["about Civil and Architectural Engineering","what is about Civil and Architectural Engineering","tell me about Civil and Architectural Engineering","Civil and Architectural Engineering"],
         "flag" : 1, 
@@ -187,6 +244,39 @@
         "init": "CivilandArch",
         "required" : "Advisory Board Responsibilities Civil-and-Architectura"
       },
+      {"tag": "civilEngineeringOverview",
+        "patterns": ["overview of civil engineering","overview civil"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "CivilandArch",
+        "required" : "civilEngineeringOverview"
+      },
+      {"tag": "civilEngineeringCommonCourses",
+        "patterns": ["common courses in civil engineering","civil common coourses"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "CivilandArch",
+        "required" : "civilEngineeringCommonCourses"
+      },
+      {"tag": "civilEngineeringSpecialCourses",
+        "patterns": ["special courses in civil engineering","civil special courses"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "CivilandArch",
+        "required" : "civilEngineeringSpecialCourses"
+      },
+      {"tag": "civilEngineeringTraining",
+        "patterns": ["training in civil engineering","civil training"],
+        "flag" : 1, 
+        "response": [0],
+        "context_set": "",
+        "init": "CivilandArch",
+        "required" : "civilEngineeringTraining"
+      },
+      
       {"tag": "MIEwlcome",
         "patterns": ["about Mechanical and Industrial Engineering","what is about Mechanical and Industrial","tell me about Mechanical and Industrial Engineering","Mechanical and Industrial Engineering"],
         "flag" : 1, 
@@ -268,8 +358,30 @@
         "context_set": "",
         "init": "Petr&Chem",
         "required" : "Industrial Advisory Board Petroleum-and-Chemical"
-      }
-      
-
+      }, 
+      {
+        "tag" : "StaffServices",
+        "patterns": ["Staff Services", "staff service" , "what are staff services provided by squ", "services squ staff", "is there staff service"],
+        "flag": 3, 
+        "response": [0],
+        "context_set": "",
+        "init": "StaffServices"
+      },
+      {
+        "tag" : "OnlineServices",
+        "patterns": ["Online Services", "online service" , "what are online services provided by squ", "services squ online", "is there online service"],
+        "flag": 4, 
+        "response": [0],
+        "context_set": "",
+        "init": "OnlineServices"
+      }, 
+      {
+        "tag" : "JobServices",
+        "patterns": ["Job Services", "job service" , "what are Job services provided by squ", "services squ job", "is there job service", "job", "vacancy job", "careers", "career"],
+        "flag": 5, 
+        "response": [0],
+        "context_set": "",
+        "init": "Job"
+      } 
   ]
   }

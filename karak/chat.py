@@ -104,17 +104,59 @@ def getResponses(intents_list, intents_json, quires = None):
                         dataObj = res.resloverIntents(i['init'], quires)
                         if dataObj != 0:
                             objectResponse = {
-                                'name' :    dataObj.get('name'),
-                                'role' :    dataObj.get('role'),
-                                'room' :    dataObj.get('roomNo'),
-                                'mobile':   dataObj.get('Mobile'),
-                                'email' :   dataObj.get('email'),
+                                "searchFFResult": dataObj,
                                 'flag' :    2
                             }
                         else:
                             objectResponse = {
                                 'flag' : 22
                             }
+                    elif i['flag'] == 3:
+                        """
+
+                        """
+                        from webScraping import resolverMainWeb as res
+                        dataObj = res.resloverIntents(i['init'], quires)
+                        if dataObj != 0:
+                            objectResponse = {
+                                "StaffServices": dataObj,
+                                'flag' :   3
+                            }
+                        else:
+                            objectResponse = {
+                                'flag' : 33
+                            }
+                    elif i['flag'] == 4:
+                        """
+
+                        """
+                        from webScraping import resolverMainWeb as res
+                        dataObj = res.resloverIntents(i['init'], quires)
+                        if dataObj != 0:
+                            objectResponse = {
+                                "OnlineServices": dataObj,
+                                'flag' :   4
+                            }
+                        else:
+                            objectResponse = {
+                                'flag' : 44
+                            }
+                    elif i['flag'] == 5:
+                        """
+
+                        """
+                        from webScraping import resolverMainWeb as res
+                        dataObj = res.resloverIntents(i['init'], quires)
+                        if dataObj != 0:
+                            objectResponse = {
+                                "JobServices": dataObj,
+                                'flag' :   5
+                            }
+                        else:
+                            objectResponse = {
+                                'flag' : 55
+                            }
+
 
 
                         

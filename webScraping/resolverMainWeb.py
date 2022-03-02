@@ -12,12 +12,12 @@ class ResolverMainPage:
         return aboutPage.readAboutSQU()
 
     def FFSearch(name):
-         from webScraping import facultyStaff
+         from webScraping import FSearchUC
          if name is not None:
             listingName = name.split()
             listingName.remove(listingName[0])
             name = ' '.join(listingName)
-         return facultyStaff.searchFF(name)
+         return FSearchUC.searchFF(name)
     
     def degreeSearch(yearDegree):
         from webScraping import degreePlanF
@@ -25,8 +25,17 @@ class ResolverMainPage:
             listYeareDegree=yearDegree.split()
             year=listYeareDegree[0]
         return degreePlanF.degreePlan(year)
-
     
+    def JobServices():
+        from webScraping.Services import Services
+        return Services.Job()
+    def StaffServices():
+         from webScraping.Services import Services
+         return Services.StaffServices()
+    def OnlineServices():
+        from webScraping.Services import Services
+        return Services.OnlineServices()
+
     def engineerECE():
         from webScraping.scrapingENG2 import Engineer
         return Engineer.electrical()
@@ -47,21 +56,27 @@ class ResolverMainPage:
 
 
 
-def resloverIntents(int, arg = None):
+def resloverIntents(init, arg = None):
 
-    if int == 'AboutSQU':
+    if init == 'AboutSQU':
         return ResolverMainPage.AboutPage()
-    elif int == 'Electrical':
+    elif init == 'Electrical':
         return ResolverMainPage.engineerECE()
-    elif int == 'CivilandArch':
+    elif init == 'CivilandArch':
         return ResolverMainPage.engineerCAE()
-    elif int == 'MechandIndus':
+    elif init == 'MechandIndus':
         return ResolverMainPage.engineerMIE()
-    elif int == 'Petr&Chem':
+    elif init == 'Petr&Chem':
         return ResolverMainPage.engineerPCE()
-    elif int == 'searchFF':
+    elif init == 'searchFF':
         return  ResolverMainPage.FFSearch(arg)
-    elif int == 'degreePlan':
+    elif init == 'degreePlan':
         return  ResolverMainPage.degreeSearch(arg)
+    elif init == "OnlineServices":
+        return ResolverMainPage.OnlineServices()
+    elif init == "StaffServices":
+        return ResolverMainPage.StaffServices()
+    elif init == "Job":
+        return ResolverMainPage.JobServices()   
     else:
         return 0
