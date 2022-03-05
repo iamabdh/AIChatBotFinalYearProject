@@ -8,37 +8,52 @@ let socket = io()
 let animationCounter = 1
 let animationBubbleDelay = 20
 let loading = false
+let allowRecord = true
 
 socket.on('resolved', (msg)=>{
-    // console.log(msg)
     botResponse(msg, false)
 })
 
 
 sendMsg.onkeydown = (e) =>{
-    if(e.keyCode == 13){
-        e.preventDefault();
-  
-      //No mix ups with upper and lowercases
-      var input = userInput.value
-  
-      //Empty textarea fix
-      if(input.length > 0) {
-        userResponse(input)
-        userInput.value = ""
-      }
-    }
-};
 
-submitButton.onclick = (e) => {
-    e.preventDefault();
+  if (userInput.value.length > 1) {
+    submitButton.value = "send"
+    allowRecord = false
+  }else {
+    allowRecord = true
+    submitButton.value = "record"
+  }
+
+  if(!allowRecord) {
+    if(e.keyCode === 13){
+      e.preventDefault();
+
+    //No mix ups with upper and lowercases
     var input = userInput.value
-  
+
     //Empty textarea fix
     if(input.length > 0) {
       userResponse(input)
       userInput.value = ""
     }
+  }
+  }
+};
+
+
+submitButton.onclick = (e) => {
+    alert(allowRecord)
+    // if(!allowRecord){
+    //   e.preventDefault();
+    //   var input = userInput.value
+    //
+    //   //Empty textarea fix
+    //   if(input.length > 0) {
+    //     userResponse(input)
+    //     userInput.value = ""
+    //   }
+    // }
 }
   
 const userResponse = (message) => {
