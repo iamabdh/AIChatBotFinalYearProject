@@ -151,6 +151,15 @@ const botResponse = (message, botFlag) => {
       responseChuncked = "Choose position ?"
     }
 
+
+    //  for degree plan flag 17 as correct response flag 27 as wrong response
+     else if (objectResponsed.flag == 17) {
+      window.open(objectResponsed.content,  "_blank")
+      responseChuncked = "Redirect to: " +  objectResponsed.content  
+     } else if (objectResponsed.flag == 27) {
+      responseChuncked = objectResponsed.content  
+     }
+
     newChat.innerHTML =  responseChuncked
 
 

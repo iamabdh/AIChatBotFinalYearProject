@@ -42,8 +42,9 @@
         "context_set": ""
       },
       {"tag": "DegreePlan",
-        "patterns": ["degree plan", "degree plans","plan"],
-        "response": ["To get the degree plan, write the year followed by 'Degree Plan'. For example: 2020 degree plan"],
+        "patterns": ["degree plan", "degree plans","plan", "degree", "degree plan for ece", "degree plan for electrical 2020 2018 2021 2019", "degree plan for civil in 2020", "degree plan in", "degree plan ecce", "degree in civil", "degree plan industrial"],
+        "response": [0],
+        "flag": 7,
         "context_set": ""
       },
       {"tag": "about",
