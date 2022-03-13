@@ -25,6 +25,24 @@ class ResolverMainPage:
             listYeareDegree=yearDegree.split()
             year=listYeareDegree[0]
         return degreePlanF.degreePlan(year)
+    def courseSearch(name):
+         from webScraping import courseSearch
+         listingName = name.split()
+         listname=listingName[0]+listingName[1]
+         if (listname[:4]=="ECCE")or(listname[:4]=="ecce"):
+            return courseSearch.searchCourse(listname)
+         elif (listname[:4]=="AREN")or(listname[:4]=="aren"):
+            return courseSearch.searchCourseArc(listname)
+         elif (listname[:4]=="CIVL")or(listname[:4]=="civl"):
+            return courseSearch.searchCourseCIVL(listname)
+         elif (listname[:4]=="MEIE")or(listname[:4]=="meie"):
+            return courseSearch.searchCourseIndust(listname)
+         elif (listname[:4]=="MCTE")or(listname[:4]=="mcte"):
+            return courseSearch.searchCourseMechat(listname)
+         elif (listname[:4]=="CHPE")or(listname[:4]=="chpe"):
+            return courseSearch.searchCourseChem(listname)
+         elif (listname[:4]=="PNGE")or(listname[:4]=="pnge"):
+            return courseSearch.searchCoursePetro(listname)
     
     def JobServices():
         from webScraping.Services import Services

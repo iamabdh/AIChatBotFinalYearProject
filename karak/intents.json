@@ -92,6 +92,13 @@
         "init": "searchFF"
       },
       {"tag": "CourseSearch",
+        "patterns": ["ECCE","ecce","CIVL","civl","MEIE","meie","PNGE","pnge","MCTE","mcte","CHPE","chpe"],
+        "flag" : 8, 
+        "response": [0],
+        "context_set": "",
+        "init": "searchCourse"
+      },
+      {"tag": "CourseSearch",
         "patterns": ["ECCE","ecce"],
         "flag" : 4, 
         "response": [0],
