@@ -641,6 +641,33 @@
         "response": [0],
         "context_set": "",
         "init": "Job"
-      } 
+      },
+      {
+        "tag" : "MainLibIntro",
+        "patterns": ["what is introduction about main library in squ", "introduction main library", "squ main library", "main library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "introdctionmivi"
+      },
+      {
+        "tag" : "MainLibraryvission",
+        "patterns": ["what is introduction about main vission library in squ", "vission main library", "squ vission library", "vission library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "Vission"
+      } ,
+      {
+      "tag" : "medicallibraryintervew",
+      "patterns": ["what is introduction about main vission library in squ", "vission main library", "squ vission library", "vission library"],
+      "response": [0],
+      "flag": 1,
+      "context_set": "",
+      "init": "Medicallibrary",
+      "required": "Overview"
+      }
   ]
   }
