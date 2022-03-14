@@ -1,4 +1,4 @@
-
+let socket = io()
 let tableView = document.querySelector('.table-view')
 let tableContent = document.querySelector('.table-content')
 const dialog = document.querySelector("dialog");
@@ -45,12 +45,17 @@ const UnresolvedQueries = async () => {
 }
 
 UnresolvedQueries()
-
+socket.on('notResolved', ()=> {UnresolvedQueries()})
 
 // load user infos to page 
 
 const LoadUserData = async () => {
+    const res = await fetch("/e/dashboard/user");
+    const retriveData = await res.json()
+    userName.innerHTML = retriveData
 
 }
 
+
+LoadUserData()
 

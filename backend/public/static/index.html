@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>AI Chat Bot</title>
 </head>
 <body>
@@ -16,14 +17,14 @@
         </div>
      
         <div class="contaier-form-box">
-            <!-- <div class="loading-bar"><div></div><div></div><div></div></div> -->
-            <form action="" id="chatform">
+            <div id="chatform">
                 <textarea placeholder="Ask me Question!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
-                <input class="submit-button" type="submit" value="send">
-            </form>
+                <input class="submit-button" type="submit" value="record">
+            </div>
         </div>
     </div>
     <script src="/node_modules/socket.io/client-dist/socket.io.js"></script>
     <script src="/public/script/app.js"></script>
+    <script src="/public/script/handlingSpeechReco.js"></script>
 </body>
 </html>

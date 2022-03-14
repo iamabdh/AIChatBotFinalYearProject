@@ -1,0 +1,42 @@
+{"intents": [
+    {
+        "tag": "electrical",
+        "patterns": ["department of electrical", "electrical", "computer", "department of electrical and computer enginnering", "network", "power", "communications and signal", "signal", "ECE", "ECCE", "electronic"],
+        "parameter": ["Electrical-and-Computer-Engineering"]
+    }, 
+    {
+        "tag": "civil",
+        "patterns": ["department of civil", "civil", "civil engineering", "cae"],
+        "parameter": ["-Civil-Engineering"]
+    }, 
+    {
+        "tag": "industrial",
+        "patterns": ["department of industrial engineering", "industrial", "MIE", "department of MIE"],
+        "parameter": ["Industrial-Engineering"]
+    }, 
+    {
+        "tag": "Architectural",
+        "patterns": ["department of architectural engineering", "arch", "arch engineering department", "CAED", "architectural", "AREN"],
+        "parameter": ["Architectural-Engineering"]
+    }, 
+    {
+        "tag": "chemical",
+        "patterns": ["department of chemical and process engineering", "chemical department", "process department", "CHPE", "department CHPE", "process", "chemical"],
+        "parameter": ["Chemical-and-Process-Engineering"]
+    }, 
+    {
+        "tag": "mechanical",
+        "patterns": ["department of mechanical engineering", "mechanical", "department of MIE", "MIE"],
+        "parameter": ["Mechanical-Engineering"]
+    }, 
+    {
+        "tag": "petroleum",
+        "patterns": ["department of petroleum and natural gas engineering", "department of petroleum", "petroleum", "department of natural gas", "natural", "gas", "department PNGE", "PNGE"],
+        "parameter": ["Petroleum-and-Natural-Gas-Engineering"]
+    },
+    {
+        "tag": "mechatronics",
+        "patterns": ["department of mechatronics engineering", "mechatronics", "department of MCE", "MCE"],
+        "parameter": ["Mechatronics-Engineering"]
+    }
+]}

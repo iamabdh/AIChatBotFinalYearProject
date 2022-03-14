@@ -11,6 +11,7 @@ currentDir = os.path.dirname(os.path.realpath(__file__))
 parrentDir = os.path.dirname(currentDir)
 sys.path.append(parrentDir)
 
+import brain
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open(f'{currentDir}/intents.json').read())
@@ -18,39 +19,6 @@ intents = json.loads(open(f'{currentDir}/intents.json').read())
 words = pickle.load(open(f'{currentDir}/words.pkl', 'rb'))
 classes = pickle.load(open(f'{currentDir}/classes.pkl', 'rb'))
 model = load_model(f'{currentDir}/chatbotmodel.h5')
-
-
-def cleanUpSent(sent):
-    sentence_words = nltk.word_tokenize(sent)
-    sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
-    return sentence_words
-
-def bagOfWords(sent):
-    sentence_words = cleanUpSent(sent)
-    bag = [0]*len(words)
-
-    for w in sentence_words:
-        for i, word in enumerate(words):
-            if word == w:
-                bag[i] = 1
-
-    print(np.array(bag))
-    return np.array(bag)
-
-
-def predictClass(sent):
-    bagOfWord = bagOfWords(sent)
-    prediction = model.predict(np.array([bagOfWord]))[0]
-    print(prediction)
-    errorThershold = 0.7
-    results = [[i, r] for i, r in enumerate(prediction) if r > errorThershold]
-    results.sort(key = lambda x : x[1], reverse = True)
-    print(results) 
-    return_list = []
-    for r in results:
-        return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
-
-    return return_list 
 
 
 def getResponses(intents_list, intents_json, quires = None):
@@ -157,6 +125,21 @@ def getResponses(intents_list, intents_json, quires = None):
                                 'flag' : 55
                             }
 
+                    elif i['flag'] == 7:
+                        from falafel.falafelResolver import degreePlanResolver
+                        objectResponse = degreePlanResolver(quires)
+                    elif i['flag'] == 8:
+                        """
+
+                        """
+                        from webScraping import resolverMainWeb as res
+                        dataObj = res.resloverIntents(i['init'], quires)
+                        if dataObj != 0:
+                            objectResponse = {
+                                "CourseSearch": dataObj,
+                                'flag' :   8
+                            }
+
 
 
                         
@@ -183,7 +166,7 @@ app = Flask(__name__)
 def getData():
     message = request.get_json()
     message = message.get('msg')
-    ints = predictClass(message.lower())
+    ints = brain.brain(words, classes, model).predictClass(message.lower())
     print(ints)
     response = getResponses(ints, intents, message)
     return json.dumps({'result' : response})

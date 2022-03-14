@@ -5,41 +5,38 @@ parrentDir = os.path.dirname(currentDir)
 sys.path.append(parrentDir)
 
 
-
-
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import unicodedata
+from datetime import date
 
-def degreePlan(year):
-    url='https://www.squ.edu.om/engineering/Academic/Undergraduate-Programs/Electrical-and-Computer-Engineering'
-    degreelinks=[]
-    degreePage = urlopen(url ) 
+
+def degreePlan(department, year) -> dict:
+    """
+    :param year:
+    :param department: which dept currently user looking for in particular
+    :return: msg
+    """
+    url = f'https://www.squ.edu.om/engineering/Academic/Undergraduate-Programs/{department}'
+    mainUrl = 'https://www.squ.edu.om'
+    degreePage = urlopen(url)
     html = degreePage.read().decode('utf-8')
-    degree_html = BeautifulSoup(html, "html.parser")
-    degreePlan_html = degree_html.find_all('div', {'id': 'dnn_ctr6031_View_Index_plLicense'})[0].find_all('a')
-    url1='https://www.squ.edu.om'
-    degreeLinks=[]
-    for link in degreePlan_html:
-        degreeLinks.append(link.get('href'))
+    degree_html = BeautifulSoup(html, "html.parser").find_all('div', {'class': 'resp_margin'})[2].find_all('a')
+    degreeLinks = []
+    for link in degree_html:
+        degreeLinks.append(mainUrl + link.get('href'))
 
-    degreeYear=year
-    if (degreeYear=='2021') :
-        return {'The degree Link: ': url1+degreeLinks[0]}
-    elif (degreeYear=='2020') :
-        return {'The degree Link: ': url1+degreeLinks[1]}
-    elif (degreeYear=='2019') :
-        return {'The degree Link: ': url+degreeLinks[2]}
-    elif (degreeYear=='2018') :
-        return {'The degree Link: ': url1+degreeLinks[3]}
-    elif (degreeYear=='2017') :
-        return {'The degree Link: ': url1+degreeLinks[4]}
-    elif (degreeYear=='2016') :
-        return {'The degree Link: ': url1+degreeLinks[5]}
-    elif (degreeYear=='2015') :
-        return {'The degree Link: ': url1+degreeLinks[6]}
+    # since only latest available degree plan previous year
+    previousYear = date.today().year - 1
+    yearDisplacement = previousYear - year
+
+    if yearDisplacement >= (len(degreeLinks) - 1) | (yearDisplacement < len(degreeLinks)):
+        return {
+            'flag': 27,
+            'content': 'Unfortunately, degree plan not available'
+        }
     else:
-        return 0
-
-
-
+        return {
+            'flag': 17,
+            'content': degreeLinks[yearDisplacement]
+        }

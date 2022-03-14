@@ -102,7 +102,7 @@ io.on("connection", (socket) => {
             console.log("query unresolved added to DB: ", query)
           })
           .catch(err => console.log(err))
-          io.sockets.emit("notResolved", );
+          io.sockets.emit("notResolved", )
         }
         io.sockets.to(socket.id).emit("resolved", result);
       })
