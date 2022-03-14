@@ -128,6 +128,17 @@ def getResponses(intents_list, intents_json, quires = None):
                     elif i['flag'] == 7:
                         from falafel.falafelResolver import degreePlanResolver
                         objectResponse = degreePlanResolver(quires)
+                    elif i['flag'] == 8:
+                        """
+
+                        """
+                        from webScraping import resolverMainWeb as res
+                        dataObj = res.resloverIntents(i['init'], quires)
+                        if dataObj != 0:
+                            objectResponse = {
+                                "CourseSearch": dataObj,
+                                'flag' :   8
+                            }
 
 
 
