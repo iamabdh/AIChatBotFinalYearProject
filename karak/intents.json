@@ -98,13 +98,6 @@
         "context_set": "",
         "init": "searchCourse"
       },
-      {"tag": "CourseSearch",
-        "patterns": ["ECCE","ecce"],
-        "flag" : 4, 
-        "response": [0],
-        "context_set": "",
-        "init": "searchCourse"
-      },
       {"tag": "welcomeElectricl",
         "patterns": ["about electrical engineering","what is about electrical","tell me about electrical engineering","electrical engineering", "ece", "what about ece department"],
         "flag" : 1, 

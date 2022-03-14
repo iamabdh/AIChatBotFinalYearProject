@@ -160,6 +160,13 @@ const botResponse = (message, botFlag) => {
       responseChuncked = objectResponsed.content  
      }
 
+     else if (objectResponsed.flag == 8){
+       objectResponsed.CourseSearch.forEach(item => responseChuncked += item + '<br>')
+     }
+     else if (objectResponsed.flag == 88){
+      responseChuncked=objectResponsed.ERROR
+    }
+
     newChat.innerHTML =  responseChuncked
 
 

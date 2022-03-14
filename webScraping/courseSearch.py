@@ -44,6 +44,7 @@ def searchCourse(course):
                         info=info[1:]
 
                         return info
+    return 0
     
     
 
@@ -256,4 +257,4 @@ def searchCoursePetro(course):
     
 
 
-# print(searchCoursePetro("pnge4512"))
+# print(searchCoursePetro("PNGE4101"))

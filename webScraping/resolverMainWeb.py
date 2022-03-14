@@ -25,7 +25,7 @@ class ResolverMainPage:
             listYeareDegree=yearDegree.split()
             year=listYeareDegree[0]
         return degreePlanF.degreePlan(year)
-    def courseSearch(name):
+    def CourseSearch(name):
          from webScraping import courseSearch
          listingName = name.split()
          listname=listingName[0]+listingName[1]
@@ -96,13 +96,6 @@ class ResolverMainPage:
     def engineerPetro():
         from webScraping.scrapingENG2 import Engineer
         return Engineer.PetroEng()
-    def courseSearch(name):
-         from webScraping import courseSearch
-         if name is not None:
-            listingName = name.split()
-            listname=listingName[0]+listingName[1]
-         return courseSearch.searchCourse(listname)
-
 
 
 
@@ -141,9 +134,11 @@ def resloverIntents(init, arg = None):
         return ResolverMainPage.OnlineServices()
     elif init == "StaffServices":
         return ResolverMainPage.StaffServices()
-    elif int == 'searchCourse':
-        return  ResolverMainPage.courseSearch(arg)
+    elif init == 'searchCourse':
+        return  ResolverMainPage.CourseSearch(arg)
     elif init == "Job":
         return ResolverMainPage.JobServices()   
     else:
         return 0
+
+print(ResolverMainPage.CourseSearch("aren 4101"))
