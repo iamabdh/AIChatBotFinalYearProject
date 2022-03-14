@@ -96,7 +96,15 @@ class ResolverMainPage:
     def engineerPetro():
         from webScraping.scrapingENG2 import Engineer
         return Engineer.PetroEng()
-
+    def mainLibrary():
+        from webScraping.libaryServices import Libraries
+        return Libraries.MainLibrary()
+    def OmaniLibrary():
+        from webScraping.libaryServices import Libraries
+        return Libraries.Omanilibrary()
+    def Medicallibrary():
+        from webScraping.libaryServices import Libraries
+        return Libraries.Medicallibrary()
 
 
 
@@ -131,13 +139,17 @@ def resloverIntents(init, arg = None):
     elif init == 'degreePlan':
         return  ResolverMainPage.degreeSearch(arg)
     elif init == "OnlineServices":
-        return ResolverMainPage.OnlineServices()
+        return ResolverMainPage.OnlineServices() 
     elif init == "StaffServices":
         return ResolverMainPage.StaffServices()
     elif init == 'searchCourse':
         return  ResolverMainPage.CourseSearch(arg)
     elif init == "Job":
-        return ResolverMainPage.JobServices()   
+        return ResolverMainPage.JobServices()
+    elif init == "MainLibrary":
+        return ResolverMainPage.mainLibrary()   
+    elif init == "Medicallibrary":
+        return ResolverMainPage.Medicallibrary()
     else:
         return 0
 
