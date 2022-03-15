@@ -27,7 +27,18 @@ listOfRole = [
     'Coordinator and follow up specialist',
     'Coordinator',
     'Visiting',
-    'Faculty'
+    'Faculty',
+    "Superintendent", 
+    "Senior",
+    "Medical",
+    "Lab",
+    "Biomedical",
+    "Chief", 
+    "Head of Department",
+    "Head", "Department", "Consultant", "medicine",
+    "Specialist", "COORDINATOR", "House", "Social", "Psychologist", "Clinical", "Technologist", 
+    "Science", "Hospital"
+
 ]
 
 
@@ -291,6 +302,67 @@ def Eco(name):
         })
     return objNames
 
+def Med(name):
+    objNames = {}
+
+    mainUrl = "https://www.squ.edu.om/medicine/Staff-directory/"
+    url = [
+        "Allied-Health-Sciences-Department-staff",
+        "Anesthesia-and-Intensive-care-Department-staff",
+        "Behavioral-Medicine-Department-staff",
+        "Biochemistry-Department-staff",
+        "Child-Health-Department-staff",
+        "Family-Medicine-and-Public-Health-Department-staff",
+        "Genetics-Department-staff",
+        "Human-Clinical-Anatomy-Department-staff",
+        "Medical-Education-Informatics-Department-staff",
+        "Obstetrics-Gynecology-Department-staff",
+        "Ophthalmology-Department-staff",
+        "Pathology-Department-staff",
+        "Pharmacology-Clinical-Pharmacy-Department-staff",
+        "Physiology-Department-staff",
+        "Radiology-Molecular-Imaging-Department-staff",
+        "Surgery-Department-staff"
+
+    ]
+    drListNames = handlingContent('tr', mainUrl, url, name)
+    if not drListNames:
+        return 0
+    for pIndex, pItem in enumerate(drListNames):
+        roleNo = None
+        roomNo = None
+        email = None
+        mobileNo = None
+
+        for index, item in enumerate(pItem):
+            if "Title:" in item:
+                splitTitle = item.split(":")[-1].strip()
+                if len(list(set(listOfRole) & set(splitTitle.split()))) > 0:
+                    roleNo = splitTitle
+
+            # check its Room No.
+            if 'Office No.' in item:
+                roomNo = item.split(".")[-1].strip()
+            if 'Mobile Telephone No.' in item:
+                mobileNo = index + 1
+                if '+' != str(pItem[mobileNo])[0]:
+                    mobileNo = None
+            for indexEmail in item:
+                if '@' in indexEmail:
+                    email = item.split(":")[-1].strip()
+                    break
+        objNames.update({
+            pIndex: {
+                'name': str(pItem[0]),
+                'role': 'Not listed' if roleNo == None else roleNo,
+                'roomNo': 'Not listed' if roomNo == None else roomNo,
+                'Mobile': 'Not listed' if mobileNo == None else str(pItem[mobileNo]),
+                'email': 'Not listed' if email == None else email
+            }
+        })
+    return objNames
+
+
 
 def searchFF(name, content=None):
     objNamesTotal = {}
@@ -298,6 +370,7 @@ def searchFF(name, content=None):
     secSearch = Sec(name)
     artSearch = Art(name)
     ecoSearch = Eco(name)
+    medSearch = Med(name)
     if engSearch is not None:
         objNamesTotal['College of Engineering'] = engSearch
     if secSearch is not None:
@@ -306,6 +379,8 @@ def searchFF(name, content=None):
         objNamesTotal['College Of Art'] = artSearch
     if ecoSearch is not None:
         objNamesTotal['College Of Economic'] = ecoSearch
+    if medSearch is not None:
+        objNamesTotal['College of Medicine and Health Sciences'] = medSearch
 
     if objNamesTotal:
         return objNamesTotal
