@@ -355,8 +355,8 @@ def Med(name):
             pIndex: {
                 'name': str(pItem[0]),
                 'role': 'Not listed' if roleNo == None else roleNo,
-                'roomNo': 'Not listed' if roomNo == None else roomNo,
-                'Mobile': 'Not listed' if mobileNo == None else str(pItem[mobileNo]),
+                'room': 'Not listed' if roomNo == None else roomNo,
+                'mobile': 'Not listed' if mobileNo == None else str(pItem[mobileNo]),
                 'email': 'Not listed' if email == None else email
             }
         })
