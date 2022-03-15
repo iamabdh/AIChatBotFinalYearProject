@@ -255,6 +255,3 @@ def searchCoursePetro(course):
 
                         return info
     
-
-
-# print(searchCoursePetro("PNGE4101"))
