@@ -653,7 +653,7 @@
       },
       {
         "tag" : "MainLibraryvission",
-        "patterns": ["what is introduction about main vission library in squ", "vission main library", "squ vission library", "vission library"],
+        "patterns": ["what is the main vission library in squ", "vission main library", "squ vission library", "main library vission"],
         "response": [0],
         "flag": 1,
         "context_set": "",
@@ -661,13 +661,518 @@
         "required": "Vission"
       } ,
       {
-      "tag" : "medicallibraryintervew",
-      "patterns": ["what is introduction about main vission library in squ", "vission main library", "squ vission library", "vission library"],
-      "response": [0],
-      "flag": 1,
-      "context_set": "",
-      "init": "Medicallibrary",
-      "required": "Overview"
-      }
+        "tag" : "MainLibrarymission",
+        "patterns": ["what is the main missipn library in squ", "mission main library", "squ mission library", "main library mission"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "Mission"
+      } ,
+      {
+        "tag" : "mainlibraryvalueIntroduction",
+        "patterns": ["what is introduction of value of main library in squ", "introduction of value main library","value's introduction of main library","Value Main Library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "value Introduction"
+      } ,
+      {
+        "tag" : "mainlibraryValue",
+        "patterns": ["Value of main library", "main library value", "squ main library value", "what is the value of main library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "value"
+      } ,
+      {
+        "tag" : "objectiveintroduction",
+        "patterns": ["what is introduction about objective main library in squ", "objective introduction main library", "objective introduction main library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "objective introduction"
+      } ,
+      {
+        "tag" : "mainlibraryObjective",
+        "patterns": ["what is objective about main library", "Objective Main Library", " objectives of main library", "objective main library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "objective"
+      } ,
+      {
+        "tag" : "mainlibaryintroduction",
+        "patterns": ["introduction of main library", "what is the introduction of main library", "squ main library", "Introduction Main Library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "libary introduction"
+      } ,
+      {
+        "tag" : "mainlibraryusers",
+        "patterns": ["users of main library", "user of main library", "main library users", "Main Users library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "library users"
+      } ,
+      {
+        "tag" : "mainlibraeystaff",
+        "patterns": ["what is staff about main library", "staff main library", "main library staff", "staff of main library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "libraey staff"
+      } ,
+      {
+        "tag" : "mainlibraryDirection",
+        "patterns": ["where is the main library", "how can i found main library", "map of main library", "the direction of main library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "direction"
+      } ,
+      {
+        "tag" : "Contactsmainlibrary",
+        "patterns": ["contact us main library", "main library contucts", "main library phone number", "email of main library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "Contacts"
+      } ,
+      {
+        "tag" : "medicallibraryintervew",
+        "patterns": ["what is medicall library", "overview medicall library", "medicall library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Medicallibrary",
+        "required": "Overview"
+      },
+      {
+        "tag" : "medicallibraryvission",
+        "patterns": ["what is vission medicall library", "vission medicall library", "squ vission medicall library", "vission of medicall library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Medicallibrary",
+        "required": "vision1"
+      },
+      {
+        "tag" : "medicallibrarymission",
+        "patterns": ["what is mission medical library", "mission main library", "squ mission medical library", "mission of medicall library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Medicallibrary",
+        "required": "mission1"
+      },
+      {
+        "tag" : "medicallibraryobjective",
+        "patterns": ["what is the objective of medicall library", "objective medicall library", "Objective Medicall Library", "objective of medicall library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Medicallibrary",
+        "required": "objective1"
+      },
+      {
+        "tag" : "medicalcontactslibrary",
+        "patterns": ["contact us medicall library", "medicall library contucts", "medicall library phone number", "email of medicall library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Medicallibrary",
+        "required": "medicalcontacts"
+      },
+      {
+        "tag" : "medicallibraryusefullink",
+        "patterns": ["useful link of medicall library", "link of medicall library", "useful links of medicall library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Medicallibrary",
+        "required": "usefullink"
+      },
+      {
+        "tag" : "omanilibraryintrocuctonCenter",
+        "patterns": ["what is introduction about omani library ", "introduction omani library", "introducton of omani library", "omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "introcucton Center"
+      },
+      {
+        "tag" : "omanilibraryobjectives",
+        "patterns": ["what is objective of omani lobrary in SQU", "objective of omani library", "omani library objective", "Objective of Omani Library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "objectives library"
+      },
+      {
+        "tag" : "omanilibrarybulding",
+        "patterns": ["the bulding of omani library", "bulding omani library", "omani library bulding"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "bulding"
+      },
+      {
+        "tag" : "omanilibrarypolicies",
+        "patterns": ["policies of omani library", "omani library policies", "Omani Library Policies"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "library policies"
+      },
+      {
+        "tag" : "omanilibraryCirculationService",
+        "patterns": ["circulation service of omani library", "service of omani library", "services of omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "Circulation Service"
+      },
+      {
+        "tag" : "omanilibraryintrocuctonCenteravailable",
+        "patterns": ["circulation of omani library", "Circulation available in omani library", "Circulation of omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "Circulation is available for"
+      },
+      {
+        "tag" : "omanilibraryCirculationrules",
+        "patterns": ["circulation rules in omani library", "Circulation rules of omani library", "Circulation rules of omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "Circulation rules"
+      },
+      {
+        "tag" : "omanilibraryReferenceService",
+        "patterns": ["reference service in omani library", "Reference Service of omani library", "omani library reference service"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "Reference Service"
+      },
+      {
+        "tag" : "omanilibraryComputers",
+        "patterns": ["computers in omani library","computers", "computers of omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "Computers"
+      },
+      {
+        "tag" : "omanilibrarycomputerwirles",
+        "patterns": ["computer wirles in omani library", "computers wirles of omani library","computer wirles"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "computer wirles"
+      },
+      {
+        "tag" : "omanilibraryIntroductoryTours",
+        "patterns": ["Introductory Tours", "Introductory Tours in omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "Introductory Tours"
+      },
+      {
+        "tag" : "omanilibraryrules",
+        "patterns": ["rules of omani library", "omani library and its rules", "whay is the rules in omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "rules"
+      },
+      {
+        "tag" : "omanilibraryusefullinks",
+        "patterns": ["useful link of omani library", "link of omani library", "useful links of omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "useful links"
+      },
+      {
+        "tag" : "omanilibraryAskLibrarian",
+        "patterns": ["email of omani library", "telephone of omani library", "email omani library", "Tel omani library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "Ask a Librarian"
+      },
+      {
+        "tag" : "ScienceslibraryAboutlibrary",
+        "patterns": ["Social Sciences and Art library", "Art library", "Social Sciences library", "Art and Social Sciences library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "About the library"
+      },
+      {
+        "tag" : "Scienceslibrarymission",
+        "patterns": ["mission of Social Sciences library", "mission of Art library", "mission Art and Social Sciences library", "mission of Art and Social Sciences library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "library mission"
+      },
+      {
+        "tag" : "ScienceslibraryObjactives",
+        "patterns": ["objective of Social Sciences library", "objective of Art library", "objective Art and Social Sciences library", "objective of Art and Social Sciences library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "Library Objactives"
+      },
+      {
+        "tag" : "Scienceslibraryobjactive",
+        "patterns": ["objective of Social Sciences library", "objective of Art library", "objective Art and Social Sciences library", "objective of Art and Social Sciences library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "library objactive"
+      },
+      {
+        "tag" : "ScienceslibraryInformationServices",
+        "patterns": ["Information Services", "introduction of information services", "information services of art and social sciences library", "vission library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "Information Services"
+      },
+      {
+        "tag" : "Scienceslibraryintroductionborrow",
+        "patterns": ["borrowing policy", "Borrowing Policy", "Borrowing Policy of art", "Borrowing Policy of Sciences"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "introduction borrow"
+      },
+      {
+        "tag" : "ScienceslibraryBooks",
+        "patterns": ["books of art and sciences library", "Books of Art and Social Sciences library", "Books in Art and Social Sciences library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "Books"
+      },
+      {
+        "tag" : "ScienceslibraryReference",
+        "patterns": ["references of art and sciences library", "References of Art and Social Sciences library", "References in Art and Social Sciences library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "Reference"
+      },
+      {
+        "tag" : "ScienceslibraryJournals",
+        "patterns": ["journals of art and sciences library", "Journals of Art and Social Sciences library", "Journals in Art and Social Sciences library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "Journals"
+      },
+      {
+        "tag" : "Scienceslibrarytheborrowingsoftware",
+        "patterns": ["the borrowing software of art and sciences library", "Borrowing Software", "the borrowing software"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "the borrowing software"
+      },
+      {
+        "tag" : "Scienceslibrarylibrarystaffdirectory",
+        "patterns": ["Library Staff Directory"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "library staff directory"
+      },
+      {
+        "tag" : "Scienceslibrarycontacts:",
+        "patterns": ["email of art and sciences library", "telephone art and sciences library", "Tel  art and sciences library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "library contacts of art"
+      },
+      {
+        "tag" : "EducationlibraryVission",
+        "patterns": ["what is the vission on education library", "vission educaton library", "vission of educaton library","Vission of Educaton Library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Vission of education library"
+      },
+      {
+        "tag" : "Educationlibrarymissio",
+        "patterns": ["what is the mission on education library", "mission educaton library", "mission of educaton library","Mission of Educaton Library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Mission of education library"
+      },
+      {
+        "tag" : "EducationlibraryObjective",
+        "patterns": ["what is the objective on education library", "objective educaton library", "objective of educaton library","objective of Educaton Library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "objective of education library"
+      },
+      {
+        "tag" : "Educationlibraryintroduction",
+        "patterns": ["introduction of library service", "introduction of library service ", "library Service of education library "],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "introduction of library Service"
+      },
+      {
+        "tag" : "EducationlibraryLoanService",
+        "patterns": ["Loan Service", "loan service", "loan service of education library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Loan Service"
+      },
+      {
+        "tag" : "EducationlibraryReferencesinformationservice",
+        "patterns": ["references and information service of education library", "references of education library", "References in Education library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "References and information service"
+      },
+      {
+        "tag" : "EducationlibraryPrintedBook",
+        "patterns": ["Printed Book", "printed book of education library", "printed book"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Printed Book"
+      },
+      {
+        "tag" : "EducationlibraryE-book",
+        "patterns": ["E-book", "e-books","e book"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "E-book"
+      },
+      {
+        "tag" : "EducationlibraryElectronicPeriodicals",
+        "patterns": ["Electronic Periodicals", "electronic periodicals", "electronic periodicals of eduication library", "electronic periodicals in eduication library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Electronic Periodicals"
+      },
+      {
+        "tag" : "EducationlibraryDatabases",
+        "patterns": ["Databases", "databases", "Databases of Education library", "databases of education libraray"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Databases"
+      },
+      {
+        "tag" : "EducationlibraryPhotocopyandreproductionservice",
+        "patterns": ["Photocopy and reproduction service","Photocopy service", "reproduction service"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Photocopy and reproduction service"
+      },
+      {
+        "tag" : "EducationlibraryComputersandInternetservice",
+        "patterns": ["Computers in Education library", "internet service in education library", "Computers and Internet Service of Education library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Computers and Internet service"
+      },
+      {
+        "tag" : "EducationlibraryCurrentAwarenessService",
+        "patterns": ["Current Awareness Service", "current awareness service", "Current Awareness Service od education library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Current Awareness Service"
+      },
+      {
+        "tag" : "EducationlibraryOtherservices",
+        "patterns": ["Other Services", "other services", "other services of education library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "Other services"
+      },
+      {
+        "tag" : "Educationlibrarycontacs",
+        "patterns": ["email of education library", "telephone of education library", "email education library", "Tel education library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Educationlibrary",
+        "required": "education library contacs us"
+
+               
   ]
   }

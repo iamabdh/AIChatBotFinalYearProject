@@ -533,7 +533,7 @@ class Libraries():
             all_text9 += text1.text +'\n'
 
         scienceslibrar.update({
-                "About the Library:" :{
+                "the borrowing software:" :{
                      "subText" : [str(all_text9)]
                  },
         })
@@ -549,7 +549,7 @@ class Libraries():
             all_text10 += text1.text +'\n'
             
         scienceslibrar.update({
-                "About the Library:" :{
+                "library staff directory" :{
                      "subText" : [str(all_text10)]
                  },
         })
@@ -568,7 +568,7 @@ class Libraries():
 
         
         scienceslibrar.update({
-                "About the Library:" :{
+                "library contacts of art" :{
                      "subText" : [str(all_text11)]
                  },
         })
