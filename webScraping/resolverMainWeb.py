@@ -163,5 +163,3 @@ def resloverIntents(init, arg = None):
         return ResolverMainPage.Educationlibrary()
     else:
         return 0
-
-print(ResolverMainPage.CourseSearch("aren 4101"))
