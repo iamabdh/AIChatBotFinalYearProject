@@ -106,7 +106,7 @@ const botResponse = (message, botFlag) => {
       responseChuncked = objectResponsed.response
     } 
 
-    else if (objectResponsed.flag ==20) {
+    else if (objectResponsed.flag ==404) {
       responseChuncked = objectResponsed.response
     }
     else if(objectResponsed.flag == 1){

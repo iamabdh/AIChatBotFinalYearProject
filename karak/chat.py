@@ -147,18 +147,12 @@ def getResponses(intents_list, intents_json, quires = None):
                         
                         
     except IndexError:
-        """
-        check spelling correction based on shawarma module
-        """
-        from shawarma import CorrectSpelling
-        
-
         objectResponse = {
             'response' :"I don't understand!",
-            'flag' : 20
+            'flag' : 404
             }
 
-    return json.dumps(objectResponse)
+    return objectResponse
 
 print("BOT IS RUNNING")
 
@@ -177,7 +171,17 @@ def getData():
     ints = brain.brain(words, classes, model).predictClass(message.lower())
     print(ints)
     response = getResponses(ints, intents, message)
-    return json.dumps({'result' : response})
+    if response["flag"] == 404:
+        """
+        check spelling correction based on shawarma module
+        """
+        from shawarma.CorrectSpelling import CorrectSpelling
+        correctIntent = CorrectSpelling(message).spell()
+        print("corrected word: ",correctIntent)
+        ints = brain.brain(words, classes, model).predictClass(correctIntent.lower())
+        response = getResponses(ints, intents, correctIntent)
+
+    return json.dumps({'result' : json.dumps(response)})
 
 
 
