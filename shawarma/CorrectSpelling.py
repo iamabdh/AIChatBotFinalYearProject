@@ -5,6 +5,12 @@
 Copyright (c) 2007-2016 Peter Norvig
 MIT license: www.opensource.org/licenses/mit-license.php
 """
+# add directories for calling submodule
+import os, sys
+currentDir = os.path.dirname(os.path.realpath(__file__))
+parrentDir = os.path.dirname(currentDir)
+sys.path.append(parrentDir)
+
 import re
 from collections import Counter
 
@@ -15,7 +21,8 @@ def words(text):
     """
     return re.findall(r'\w+', text.lower())
 
-WORDS = Counter(words(open('data.txt').read()))
+# file name
+WORDS = Counter(words(open(f'{currentDir}/data.txt').read()))
 
 
 def Probability(word, NoW=sum(WORDS.values())):

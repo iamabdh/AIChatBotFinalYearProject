@@ -147,6 +147,12 @@ def getResponses(intents_list, intents_json, quires = None):
                         
                         
     except IndexError:
+        """
+        check spelling correction based on shawarma module
+        """
+        from shawarma import CorrectSpelling
+        
+
         objectResponse = {
             'response' :"I don't understand!",
             'flag' : 20
