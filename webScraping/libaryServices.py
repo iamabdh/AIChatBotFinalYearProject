@@ -79,14 +79,14 @@ class Libraries():
             },
             "value":{
                 "subText" : [],
-                "extends": value
+                "extend": value
             },
             "objective introduction":{
                 "subText":[str(objectiveintroduction)]
             },
             "objective":{
                 "subText": [],
-                "extends":objctive
+                "extend":objctive
             },
         })
 ###
@@ -120,11 +120,11 @@ class Libraries():
                 },
                 "library users":{
                     "subText": [],
-                    "extends":users
+                    "extend":users
                 },
                 "libraey staff":{
                     "subText": [],
-                    "extends":staff
+                    "extend":staff
                 },
                 
             })
@@ -232,7 +232,7 @@ class Libraries():
         medicallibrary.update({
                 "usefullink" :{
                      "subText" : [],
-                     "extends":Useful
+                     "extend":Useful
                  },
         })
         return medicallibrary
@@ -269,7 +269,7 @@ class Libraries():
                 },
                 "objectives library":{
                     "subText":[],
-                    "extends":objectiveslibrary
+                    "extend":objectiveslibrary
                 },
                 "bulding":{
                     "subText":[str(bulding)]
@@ -336,11 +336,11 @@ class Libraries():
                  },
                 "Circulation is available for":{
                     "subText":[],
-                    "extends":Cir
+                    "extend":Cir
                  },
                  "Circulation rules":{
                     "subText":[],
-                    "extends":Circ
+                    "extend":Circ
                  },
                 "Reference Service":{
                      "subText":[str(ReferenceService)]
@@ -350,14 +350,14 @@ class Libraries():
                 },
                 "computer wirles":{
                 "subText":[],
-                "extends":Com
+                "extend":Com
                 },
                 "Introductory Tours":{
                 "subText":[str(IntroductoryTour)]
                 },
                 "rules":{
                 "subText":[],
-                "expends":r
+                "extend":r
                 },
                 
             }) 
@@ -446,7 +446,7 @@ class Libraries():
                  },
                      "Library Objactives" :{
                      "subText" : [],
-                     "extends":LibraryObjactives
+                     "extend":LibraryObjactives
                  },
                      "library objactive" :{
                      "subText" : [str(LibraryObjact)]
@@ -507,16 +507,16 @@ class Libraries():
                  },
                      "Books" :{
                      "subText" : [],
-                     "extends":Books
+                     "extend":Books
                  },
                      
                      "Reference" :{
                      "subText" : [],
-                     "extends":Reference
+                     "extend":Reference
                  },
                      " Journals" :{
                      "subText" : [],
-                     "extends": Journals
+                     "extend": Journals
                  
                  },
 
@@ -604,7 +604,7 @@ class Libraries():
             },
             "objective of education library":{
                 "subText" : [],
-                "extends": ObJeC
+                "extend": ObJeC
                  },
         })
 ####
