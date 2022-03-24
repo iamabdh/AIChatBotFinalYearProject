@@ -11,7 +11,7 @@ from tensorflow.keras.optimizers import SGD
 
 
 lemmatizer = WordNetLemmatizer()
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open('karakDatabase/intents.json').read())
 
 # initlize three list 
 words =  list()
@@ -36,8 +36,8 @@ words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in ign
 words = sorted(list(set(words))) # remove any duplication 
 classes = sorted(set(classes))
 
-pickle.dump(words, open('words.pkl', 'wb'))
-pickle.dump(classes, open('classes.pkl', 'wb'))
+pickle.dump(words, open('karakPickle/words.pkl', 'wb'))
+pickle.dump(classes, open('karakPickle/classes.pkl', 'wb'))
 
 
 training = list()
@@ -75,5 +75,5 @@ sgd = SGD(lr=0.01, decay = 1e-6, momentum=0.5, nesterov=True)
 
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 hist = model.fit(np.array(train_x), np.array(train_y), epochs=600, batch_size=10, verbose=1)
-model.save('chatbotmodel.h5', hist)
+model.save('karakModel/chatbotmodel.h5', hist)
 print('done!')

@@ -55,7 +55,6 @@ submitButton.onclick = (e) => {
     //   }
     // }
 }
-  
 const userResponse = (message) => {
 
     //create input
