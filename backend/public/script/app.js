@@ -160,8 +160,11 @@ const botResponse = (message, botFlag) => {
      }
 
      else if (objectResponsed.flag == 8){
-       objectResponsed.CourseSearch.forEach(item => responseChuncked += item + '<br>')
-     }
+      responseChuncked +='CourseTitle: ' +  objectResponsed.CourseTitle + '<br/>'
+      responseChuncked += 'CourseCredits: ' + objectResponsed.CourseCredits + '<br/>'
+      responseChuncked += 'PreRequisiteCourses: ' + objectResponsed.PreRequisiteCourses + '<br/>'
+      responseChuncked += 'CourseDescription: ' + objectResponsed.CourseDescription + '<br/>'
+           }
      else if (objectResponsed.flag == 88){
       responseChuncked=objectResponsed.ERROR
     }
