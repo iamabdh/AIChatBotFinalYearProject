@@ -15,4 +15,31 @@ router.get("/feedData", (req, res) => {
     })
 })
 
+
+router.post("/uploadNewFeedback", (req, res) => {
+    for(let feedIDItem in req.body) {
+        FeedbackSchema.findById(feedIDItem).then(res => {
+            if (res.mcqType){
+                new FeedbackFilled({
+                    questionID : feedIDItem,
+                    mcqType: true,
+                    answerIndex: parseInt(req.body[feedIDItem])
+                }).save().then(res => {
+                    console.log("new feedback entered to DB: ", res)
+                }).catch(err => console.log(err))
+            } else {
+                new FeedbackFilled({
+                    questionID : feedIDItem,
+                    mcqType: false,
+                    userTextTyped: req.body[feedIDItem]
+                }).save().then(res => {
+                    console.log("new feedback entered to DB: ", res)
+                }).catch(err => console.log(err))
+            }
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+})
+
 module.exports = router
