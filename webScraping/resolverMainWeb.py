@@ -99,6 +99,18 @@ class ResolverMainPage:
     def Scienceslibrary():
         from webScraping.libaryServices import Libraries
         return Libraries.Scienceslibrary()
+    def CEPSlibrary():
+        from webScraping.libaryServices import Libraries
+        return Libraries.CEPSlibrary()
+    def Mosquelibrary():
+        from webScraping.libaryServices import Libraries
+        return Libraries.Mosquelibrary()
+    def VisitorsInfo():
+        from webScraping.hospital import Hospital
+        return Hospital.VisitorsInfo()
+    def PatientInfo():
+        from webScraping.hospital import Hospital
+        return Hospital.PatientInfo()
 
 
 def resloverIntents(init, arg = None):
@@ -147,7 +159,15 @@ def resloverIntents(init, arg = None):
         return ResolverMainPage.OmaniLibrary()
     elif init == "Scienceslibrary":
         return ResolverMainPage.Scienceslibrary()
+    elif init == "CEPSlibrary":
+        return ResolverMainPage.CEPSlibrary()
     elif init == "Educationlibrary":
         return ResolverMainPage.Educationlibrary()
+    elif init == "Mosquelibrary":
+        return ResolverMainPage.Mosquelibrary()
+    elif init == "VisitorsInfo":
+        return ResolverMainPage.VisitorsInfo()
+    elif init == "PatientInfo":
+        return ResolverMainPage.PatientInfo()
     else:
         return 0

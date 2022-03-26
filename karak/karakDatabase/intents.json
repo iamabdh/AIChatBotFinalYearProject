@@ -649,7 +649,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "introdctionmivi"
+        "required": "introdction of main library"
       },
       {
         "tag" : "MainLibraryvission",
@@ -751,6 +751,15 @@
         "required": "Contacts"
       } ,
       {
+        "tag" : "openhourmainlibrary",
+        "patterns": ["opining hours of main library", "main library opening hour", "at which time main library open", "at which time the main library open","Main Library Opening Hour"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "MainLibrary",
+        "required": "opening hour of main library"
+      } ,
+      {
         "tag" : "medicallibraryintervew",
         "patterns": ["what is medicall library", "overview medicall library", "medicall library"],
         "response": [0],
@@ -766,7 +775,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "vision1"
+        "required": "vision of medicall library"
       },
       {
         "tag" : "medicallibrarymission",
@@ -775,7 +784,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "mission1"
+        "required": "mission of medicall library"
       },
       {
         "tag" : "medicallibraryobjective",
@@ -784,7 +793,16 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "objective1"
+        "required": "objective of medicall library"
+      },
+      {
+        "tag" : "openhourmedicalllibrary",
+        "patterns": ["opining hours of medicall library", "medicall library opening hour", "at which time medicall library open", "at which time the medicall library open","Medicall Library Opening Hour"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Medicallibrary",
+        "required": "opening hour of medicall library"
       },
       {
         "tag" : "medicalcontactslibrary",
@@ -793,16 +811,16 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "medicalcontacts"
+        "required": "medicall library contacts"
       },
       {
         "tag" : "medicallibraryusefullink",
-        "patterns": ["useful link of medicall library", "link of medicall library", "useful links of medicall library"],
+        "patterns": ["links of medicall library", "link of medicall library", "useful links of medicall library"],
         "response": [0],
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "usefullink"
+        "required": "useful link of medicall library"
       },
       {
         "tag" : "omanilibraryintrocuctonCenter",
@@ -922,6 +940,15 @@
         "required": "useful links"
       },
       {
+        "tag" : "openhourOSClibrary",
+        "patterns": ["opining hours of omani library", "omani library opening hour", "at which time omani library open", "at which time the omani library open","Omani Library Opening Hour"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Omanilibrary",
+        "required": "OSC opening hour"
+      },
+      {
         "tag" : "omanilibraryAskLibrarian",
         "patterns": ["email of omani library", "telephone of omani library", "email omani library", "Tel omani library"],
         "response": [0],
@@ -1028,6 +1055,15 @@
         "context_set": "",
         "init": "Scienceslibrary",
         "required": "library staff directory"
+      },
+      {
+        "tag" : "openhourartlibrary",
+        "patterns": ["opining hours of art library", "sciences library opening hour", "at which time art and sciences library open", "at which time the art library open","Art and Sciences Library Opening Hour"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Scienceslibrary",
+        "required": "art and sciences library opening hour"
       },
       {
         "tag" : "Scienceslibrarycontacts:",
@@ -1172,7 +1208,103 @@
         "context_set": "",
         "init": "Educationlibrary",
         "required": "education library contacs us"
+      },
+      {
+        "tag" : "mosqlibrarycontacs",
+        "patterns": ["email of mosque library", "telephone of mosque library", "email mosque library", "Tel mosque library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Mosquelibrary",
+        "required": "mosque library contucts us"
+      },
+      {
+        "tag" : "mosqlibraryopenhour",
+        "patterns": ["opining hours of mosque library", "mosque library opening hour", "at which time mosque library open", "at which time the mosque library open","Mosque Library Opening Hour"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "Mosquelibrary",
+        "required": "mosque library opening hour"
 
-      }            
-  ]
-  }
+      },
+      {
+        "tag" : "cepslibraryopenhour",
+        "patterns": ["opining hours of CEPS library", "CEPS library opening hour", "at which time CEPS library open", "at which time the CEPS library open","CEPS Library Opening Hour"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "CEPSlibrary",
+        "required": "CEPS library open Hour"
+
+      },
+      {
+        "tag" : "cepslibraryabout",
+        "patterns": ["about CEPS ", "mission CEPS library", "CEPS library mission" ,"what is the CEPS vission library in squ", "vission CEPS library", "CEPS library vission"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "CEPSlibrary",
+        "required": "CEPS library about "
+
+      },
+      {
+        "tag" : "cepslibraryCirculation",
+        "patterns": ["circulation of CEPS library", "Circulation available in CEPS library", "Circulation of CEPS library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "CEPSlibrary",
+        "required": "CEPS library inrodction Circulation Policy "
+
+      },
+      {
+        "tag" : "cepslibrarpolicy",
+        "patterns": ["circulation policy of CEPS library", "Circulation policy available in CEPS library", "Circulation Policy of CEPS library"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "CEPSlibrary",
+        "required": "CEPS Circulation Policy "
+
+      },
+      {
+        "tag" : "visitortable",
+        "patterns": ["When can i visit patients","visiting hours", "Visiting A Patient", "Visiting ICU Patients","visiting a patient","Blood Bank Working Time","blood bank working time","the time for visit a patient"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "VisitorsInfo",
+        "required": "visitors table "
+
+      },
+      {
+        "tag" : "visitorparamcytable",
+        "patterns": ["Pharmacy Working Time", "pharmacy working time", "pharmacy","Pharmacy","the time for working pharmacy","Emergency Pharmacy Working Time","emergency pharmacy working time","Discharge Pharmacy Working Time","discharge pharmacy working time"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "VisitorsInfo",
+        "required": "paramcy table "
+
+      },
+      {
+        "tag" : "patientbirth",
+        "patterns": ["birth certificate", "the procedures to get a birth certificate", "Birth Certificate"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "PatientInfo",
+        "required": "procedures to get a birth certificate "
+
+      },
+      {
+        "tag" : "patientdith",
+        "patterns": ["Death Certificate", "death certificate", "procedures to get death certificate"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "PatientInfo",
+        "required": "Procedures to get death certificate"
+
+      },
