@@ -7,6 +7,7 @@ sys.path.append(parrentDir)
 from email.headerregistry import Address
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup as bs
 
 class Libraries():
     
@@ -64,7 +65,7 @@ class Libraries():
         
 
         mainlibrary.update({
-            "introdctionmivi" :{
+            "introdction of main library" :{
                 "subText" : [str(introduction)]
             },
             "Vission":{
@@ -147,6 +148,43 @@ class Libraries():
                  },
              })
 ######
+
+        url = "https://www.squ.edu.om/libraries/SQU-Libraries/Main-Library/Library-Opening-Hours"
+        openingHourHtml = bs(urlopen(url).read().decode("utf-8"), "html.parser").find_all('table')[0].find_all('tr')
+
+        firstTable, secondTable, thirdTable =  openingHourHtml[0].find_all('td'), openingHourHtml[1].find_all('td'), openingHourHtml[2].find_all('td')
+
+        openingHour = str()
+
+        for index, item in enumerate(firstTable):
+            if index == 0:
+                openingHour +=item.text +": "
+            elif index == len(firstTable) - 1:
+                openingHour += item.text 
+            else:
+                openingHour += item.text + " "
+        for index, item in enumerate(secondTable):
+            if index == 0:
+                openingHour +=item.text +": "
+            elif index == len(secondTable) - 1:
+                openingHour += item.text + "\n"
+            else:
+                openingHour += item.text + " "
+
+        for index, item in enumerate(thirdTable):
+            if index == 0:
+                openingHour +=item.text +": "
+            elif index == len(thirdTable) - 1:
+                openingHour += item.text + "\n"
+            else:
+                openingHour += item.text + " "
+        
+        mainlibrary.update({
+                "opening hour of main library" :{
+                     "subText" : [str(openingHour)]
+                },
+        })
+        
         pagemainContactUs = urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/Main-Library/Library-Contacts') 
         html4 = pagemainContactUs.read().decode('utf-8')
         contmainlibary_html = BeautifulSoup(html4, "html.parser")
@@ -191,17 +229,53 @@ class Libraries():
                      "subText" : [str(Overview)]
                  },
                 
-                "vision1":{
+                "vision of medicall library":{
                     "subText":[str(vision1)]
                 },
-                "mission1":{
+                "mission of medicall library":{
                     "subText":[str(mission1)]
                 },
-                "objective1":{
+                "objective of medicall library":{
                     "subText":[str(objective1)]
                 },
             })
     
+        page222 = urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/Medical-Library/Library-Opening-Hours') 
+        htm222 = page222.read().decode('utf-8')
+        openmedical = BeautifulSoup(htm222, "html.parser")
+        openmedical_html = openmedical.find_all('div',{'id':'dnn_TopPane'})[0]
+        dayopen=openmedical_html.find_all('span')
+        timeopen=openmedical_html.find_all('h1')
+
+        dayyopen=''
+
+        for i in dayopen[1:3]:
+            dayyopen +=f'{i.text}'
+
+        timeeopen=''
+
+        for i in timeopen[2]:
+            timeeopen +=f'{i.text}'
+        daytime=dayyopen+timeeopen
+
+
+        dayyopen1=''
+
+        for i in dayopen[2:4]:
+            dayyopen1 +=f'{i.text}'
+
+        timeeopen1=''
+
+        for i in timeopen[1]:
+            timeeopen1 +=f'{i.text}'
+        daytime1=dayyopen1+timeeopen1
+
+        DayTime=daytime+'\n'+daytime1
+        medicallibrary.update({
+                "opening hour of medicall library" :{
+                     "subText" : [str(DayTime)]
+                 },
+        })
         pagemedicContactUs = urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/Medical-Library/Library-Contacts') 
         html6 = pagemedicContactUs.read().decode('utf-8')
         contMedlibary_html = BeautifulSoup(html6, "html.parser")
@@ -213,7 +287,7 @@ class Libraries():
 
         
         medicallibrary.update({
-                "medicalcontacts" :{
+                "medicall library contacts" :{
                      "subText" : [str(all_text2)]
                  },
         })
@@ -230,7 +304,7 @@ class Libraries():
         
         
         medicallibrary.update({
-                "usefullink" :{
+                "useful link of medicall library" :{
                      "subText" : [],
                      "extend":Useful
                  },
@@ -377,7 +451,109 @@ class Libraries():
                      "subText" : [str(all_text5)]
                  },
         })
+        page333 = urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/Omani-Studies-Center-Library/Library-Opening-Hours') 
+        htm333 = page333.read().decode('utf-8')
+        openOSC = BeautifulSoup(htm333, "html.parser")
+        openOSC_html = openOSC.find_all('div',{'id':'dnn_TopPane'})[0]
+        dayopen3=openOSC_html.find_all('span')
+        timeopen3 = openOSC_html.find_all('table')[0].find_all('tr')
+        timeopen4 = openOSC_html.find_all('table')[1].find_all('tr')
+        timeopen5 = openOSC_html.find_all('table')[2].find_all('tr')
+
+        firsTable33=timeopen3[0].find_all('td')
+        secondTable33=timeopen3[1].find_all('td')
+
+
+        dayyopen3=''
+
+        for i in dayopen3[1:3]:
+            dayyopen3 +=f'{i.text}'
+
+
+
+        openingHour33 = str()
+
+        for index, item in enumerate(firsTable33):
+            if index == 0:
+                openingHour33 +=item.text +": "
+            elif index == len(firsTable33) - 1:
+                openingHour33 += item.text + "\n"
+            else:
+                openingHour33 += item.text + " "
+        for index, item in enumerate(secondTable33):
+            if index == 0:
+                openingHour33 +=item.text +": "
+            elif index == len(secondTable33) - 1:
+                openingHour33 += item.text + "\n"
+            else:
+                openingHour33 += item.text + " "         
+        SpringFallSemesters=dayyopen3+ "\n"+openingHour33  
+
+
+
+        dayyopen4=''
+
+        for i in dayopen3[4]:
+            dayyopen4 +=f'{i.text}'
+
+        firsTable44=timeopen4[0].find_all('td')
+        secondTable44=timeopen4[1].find_all('td')
+
+        openingHour44 = str()
+
+        for index, item in enumerate(firsTable44):
+            if index == 0:
+                openingHour44 +=item.text +": "
+            elif index == len(firsTable44) - 1:
+                openingHour44 += item.text + "\n"
+            else:
+                openingHour44 += item.text + " "
+        for index, item in enumerate(secondTable44):
+            if index == 0:
+                openingHour44 +=item.text +": "
+            elif index == len(secondTable44) - 1:
+                openingHour44 += item.text + "\n"
+            else:
+                openingHour44 += item.text + " "   
+        SummerSemester=dayyopen4 + "\n"+openingHour44    
+
+
+
+
+
+        dayyopen5=''
+
+        for i in dayopen3[6]:
+            dayyopen5 +=f'{i.text}'
+
+        firsTable55=timeopen5[0].find_all('td')
+        secondTable55=timeopen5[1].find_all('td')
+
+        openingHour55 = str()
+
+        for index, item in enumerate(firsTable55):
+            if index == 0:
+                openingHour55 +=item.text +": "
+            elif index == len(firsTable55) - 1:
+                openingHour55 += item.text + "\n"
+            else:
+                openingHour55 += item.text + " "
+        for index, item in enumerate(secondTable55):
+            if index == 0:
+                openingHour55 +=item.text +": "
+            elif index == len(secondTable55) - 1:
+                openingHour55 += item.text + "\n"
+            else:
+                openingHour55 += item.text + " "  
+        MonthRamadan=dayyopen5+ "\n"+openingHour55
+
+        OSClibraryopen=SpringFallSemesters+ "\n"+SummerSemester+ "\n"+MonthRamadan
         
+        omanilibrary.update({
+                "OSC opening hour" :{
+                     "subText" : [str(OSClibraryopen)]
+                 },
+        })
         pageAskLibrarian = urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/Omani-Studies-Center-Library/Ask-a-Librarian')
         html13 = pageAskLibrarian.read().decode('utf-8')
         Asklib= BeautifulSoup(html13, "html.parser")
@@ -387,7 +563,7 @@ class Libraries():
         all_text6=str()
         for text1 in libhtm1ask:
             all_text6 += text1.text +'\n'
-            print(all_text6)
+            
         omanilibrary.update({
                 "Ask a Librarian" :{
                      "subText" : [str(all_text6)]
@@ -557,6 +733,109 @@ class Libraries():
 
 ###
 
+        page444 = urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/College-of-Art-Social-Sciences-Library/Library-Opening-Hours') 
+        htm444 = page444.read().decode('utf-8')
+        openArt = BeautifulSoup(htm444, "html.parser")
+        openArt_html = openArt.find_all('div',{'id':'dnn_TopPane'})[0]
+        dayopen6=openArt_html.find_all('span')
+        timeopen6 = openArt_html.find_all('table')[0].find_all('tr')
+        timeopen7 = openArt_html.find_all('table')[1].find_all('tr')
+        timeopen8 = openArt_html.find_all('table')[2].find_all('tr')
+
+        firsTable66=timeopen6[0].find_all('td')
+        secondTable66=timeopen6[1].find_all('td')
+
+
+        dayyopen6=''
+
+        for i in dayopen6[1:3]:
+            dayyopen6 +=f'{i.text}'
+
+
+
+        openingHour66 = str()
+
+        for index, item in enumerate(firsTable66):
+            if index == 0:
+                openingHour66 +=item.text +": "
+            elif index == len(firsTable66) - 1:
+                openingHour66 += item.text + "\n"
+            else:
+                openingHour66 += item.text + " "
+        for index, item in enumerate(secondTable66):
+            if index == 0:
+                openingHour66 +=item.text +": "
+            elif index == len(secondTable66) - 1:
+                openingHour66 += item.text + "\n"
+            else:
+                openingHour66 += item.text + " "         
+        SpringFallSemesterss=dayyopen6+ "\n"+openingHour66  
+
+
+
+        dayyopen7=''
+
+        for i in dayopen6[4]:
+            dayyopen7 +=f'{i.text}'
+
+        firsTable77=timeopen7[0].find_all('td')
+        secondTable77=timeopen7[1].find_all('td')
+
+        openingHour77 = str()
+
+        for index, item in enumerate(firsTable77):
+            if index == 0:
+                openingHour77 +=item.text +": "
+            elif index == len(firsTable77) - 1:
+                openingHour77 += item.text + "\n"
+            else:
+                openingHour77 += item.text + " "
+        for index, item in enumerate(secondTable77):
+            if index == 0:
+                openingHour77 +=item.text +": "
+            elif index == len(secondTable77) - 1:
+                openingHour77 += item.text + "\n"
+            else:
+                openingHour77 += item.text + " "   
+        SummerSemesterr=dayyopen7 + "\n"+openingHour77    
+
+
+
+
+
+        dayyopen8=''
+
+        for i in dayopen6[6]:
+            dayyopen8 +=f'{i.text}'
+
+        firsTable88=timeopen8[0].find_all('td')
+        secondTable88=timeopen8[1].find_all('td')
+
+        openingHour88 = str()
+
+        for index, item in enumerate(firsTable88):
+            if index == 0:
+                openingHour88 +=item.text +": "
+            elif index == len(firsTable88) - 1:
+                openingHour88 += item.text + "\n"
+            else:
+                openingHour88 += item.text + " "
+        for index, item in enumerate(secondTable88):
+            if index == 0:
+                openingHour88 +=item.text +": "
+            elif index == len(secondTable88) - 1:
+                openingHour88 += item.text + "\n"
+            else:
+                openingHour88 += item.text + " "  
+        MonthRamadann=dayyopen8+ "\n"+openingHour88
+
+        Artlibraryopen=SpringFallSemesterss+ "\n"+SummerSemesterr+ "\n"+MonthRamadann
+        
+        scienceslibrar.update({
+                "art and sciences library opening hour" :{
+                     "subText" : [str(Artlibraryopen)]
+                 },
+        })
         pageArtLibraryContacts= urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/College-of-Art-Social-Sciences-Library/Library-Contacts') 
         html20 = pageArtLibraryContacts.read().decode('utf-8')
         contactsSQU_html = BeautifulSoup(html20, "html.parser")
@@ -700,6 +979,185 @@ class Libraries():
             },
         })
         return educationlibrary
+
+    def Mosquelibrary():
+        mosquelibrary ={}
+
+        url3 = "https://www.squ.edu.om/libraries/SQU-Libraries/Mosque-Library/Library-Opening-Hours"
+        openingHourHtml3 = bs(urlopen(url3).read().decode("utf-8"), "html.parser").find_all('table')[0].find_all('tr')
+
+        firstTable3, secondTable3, thirdTable3,fourtable3,fivetable3 =  openingHourHtml3[1].find_all('td'), openingHourHtml3[2].find_all('td'), openingHourHtml3[3].find_all('td'),openingHourHtml3[4].find_all('td'),openingHourHtml3[5].find_all('td')
+
+        openingHour3 = str()
+
+        for index, item in enumerate(firstTable3):
+            if index == 0:
+                openingHour3 +=item.text +": "
+            elif index == len(firstTable3) - 1:
+                openingHour3 += item.text +"\n"
+        else:
+                openingHour3 += item.text + " "
+        for index, item in enumerate(secondTable3):
+            if index == 0:
+                openingHour3 +=item.text +": "
+            elif index == len(secondTable3) - 1:
+                openingHour3 += item.text + "\n"
+            else:
+                openingHour3 += item.text + " "
+
+        for index, item in enumerate(thirdTable3):
+            if index == 0:
+                openingHour3 +=item.text +": "
+            elif index == len(thirdTable3) - 1:
+                openingHour3 += item.text + "\n"
+            else:
+                openingHour3 += item.text + " "
+        for index, item in enumerate(fourtable3):
+            if index == 0:
+                openingHour3 +=item.text +": "
+            elif index == len(fourtable3) - 1:
+                openingHour3 += item.text + "\n"
+            else:
+                openingHour3 += item.text + " "
+        for index, item in enumerate(fivetable3):
+            if index == 0:
+                openingHour3 +=item.text +": "
+            elif index == len(fivetable3) - 1:
+                openingHour3 += item.text + "\n"
+            else:
+                openingHour3 += item.text + " "
+
+
+        mosquelibrary.update({
+            "mosque library opening hour" :{
+                "subText" : [str(openingHour3)]
+            },
+        })
+        mosquelibrarypage = urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/Mosque-Library/Library-Contacts') 
+        mosquelibrarypage_html = mosquelibrarypage.read().decode('utf-8')
+        mosquelibary_html = BeautifulSoup(mosquelibrarypage_html, "html.parser")
+        mosquecontacs_html = mosquelibary_html.find_all('div',{'id':'dnn_ctr7847_ContentPane'})[0]
+        contucsmosque=mosquecontacs_html.find_all('p')
+        all_text44=str()
+        for text1 in contucsmosque:
+            all_text44 += text1.text +'\n'
+
+        mosquelibrary.update({
+            "mosque library contucts us" :{
+                "subText" : [str(all_text44)]
+            },
+        })
+        return mosquelibrary
+
+    def CEPSlibrary():
+        cepslibrary={}
+        CEPSlibrarypage = urlopen('https://www.squ.edu.om/libraries/SQU-Libraries/CEPS-Library/About') 
+        CEPSlibrarypage_html = CEPSlibrarypage.read().decode('utf-8')
+        CEPSlibary_html = BeautifulSoup(CEPSlibrarypage_html, "html.parser")
+        aboutCEPS_html = CEPSlibary_html.find_all('div',{'id':'dnn_ctr11782_HtmlModule_lblContent'})[0]
+        aboutCEPS=aboutCEPS_html.find_all('p')
+        intrCEPS=''
+
+        for i in aboutCEPS[0:9]:
+            intrCEPS +=f'{i.text}'
+
+        vissionCEPS=''
+        for i in aboutCEPS[9:11]:
+            vissionCEPS +=f'{i.text}'
+        missionCEPS=''
+
+        for i in aboutCEPS[11:13]:
+            missionCEPS +=f'{i.text}'
+        CEPSmissivissinintro=intrCEPS+vissionCEPS+'\n'+missionCEPS
+        
+        Circulationintro=aboutCEPS[15].text
+        CirculationCEPS=aboutCEPS_html.find_all('ul')[0].find_all('li')
+
+        CirCEPS=list()
+        for item in CirculationCEPS:
+            CirCEPS.append(item.text)
+        
+        cepslibrary.update({
+            "CEPS library about " :{
+                "subText" : [str(CEPSmissivissinintro)]
+            },
+            "CEPS library inrodction Circulation Policy " :{
+                "subText" : [str(Circulationintro)]
+            },
+            "CEPS Circulation Policy " :{
+                "subText" : [],
+                "extend": CirCEPS
+            },
+        })
+###########################
+        url1 = "https://www.squ.edu.om/libraries/SQU-Libraries/CEPS-Library/Library-Hours"
+        openingHourHtml1 = bs(urlopen(url1).read().decode("utf-8"), "html.parser").find_all('table')[0].find_all('tr')
+
+        firstTable1, secondTable1, thirdTable1 =  openingHourHtml1[0].find_all('td'), openingHourHtml1[1].find_all('td'), openingHourHtml1[2].find_all('td')
+
+        openingHour1 = str()
+
+        for index, item in enumerate(firstTable1):
+            if index == 0:
+                openingHour1 +=item.text +": "
+            elif index == len(firstTable1) - 1:
+                openingHour1 += item.text 
+            else:
+                openingHour1 += item.text + " "
+        for index, item in enumerate(secondTable1):
+            if index == 0:
+                openingHour1 +=item.text +": "
+            elif index == len(secondTable1) - 1:
+                openingHour1 += item.text + "\n"
+            else:
+                openingHour1 += item.text + " "
+
+        for index, item in enumerate(thirdTable1):
+            if index == 0:
+                openingHour1 +=item.text +": "
+            elif index == len(thirdTable1) - 1:
+                openingHour1 += item.text + "\n"
+            else:
+                openingHour1 += item.text + " "
+
+
+        firstTable2, secondTable2, thirdTable2 =  openingHourHtml1[3].find_all('td'), openingHourHtml1[4].find_all('td'), openingHourHtml1[5].find_all('td')
+
+        openingHour2 = str()
+
+        for index, item in enumerate(firstTable2):
+            if index == 0:
+                openingHour2 +=item.text +": "
+            elif index == len(firstTable2) - 1:
+                openingHour2 += item.text 
+            else:
+                openingHour1 += item.text + " "
+        for index, item in enumerate(secondTable2):
+            if index == 0:
+                openingHour2 +=item.text +": "
+            elif index == len(secondTable2) - 1:
+                openingHour2 += item.text + "\n"
+            else:
+                openingHour2 += item.text + " "
+
+        for index, item in enumerate(thirdTable2):
+            if index == 0:
+                openingHour2 +=item.text +": "
+            elif index == len(thirdTable2) - 1:
+                openingHour2 += item.text + "\n"
+            else:
+                openingHour2 += item.text + " "
+
+        OpenHour=openingHour1+openingHour2
+        
+        cepslibrary.update({
+            "CEPS library open Hour " :{
+                "subText" : [str(OpenHour)]
+            },
+        })
+        return cepslibrary
+
+
 
 
 
