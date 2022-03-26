@@ -17,6 +17,7 @@ const authRoutes = require("./routes/authRoutes");
 const authLogDashboard = require("./routes/authLogDashboard");
 const mongoose = require("mongoose");
 const QueryUnresolved = require("./models/unresolvedQuerySchema");
+const feedbackRoutes = require("./routes/feedbackRoutes");
 const expressSession = require("express-session");
 const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
@@ -48,6 +49,7 @@ app.get("/mainPage", (req, res) => {
 // set up routes
 app.use("/user", authRoutes);
 app.use("/e", authLogDashboard);
+app.use("/feedback", feedbackRoutes);
 
 io.on("connection", (socket) => {
   console.log("user connected: ", socket.id);
