@@ -1,13 +1,21 @@
 <template>
-  <Header />
-  <div class="title-brand">
-    AI ChatBot Feedback
-  </div>
-  <div class="hint-before-start">
-    We are students from SQU working with ChatBot for providing information in a more easy way than traditional to SQU’students. Please fill out the questionnaire and it won’t take more than 2 minutes.
-  </div>
-  <div class="container-feedback">
-    <FormHandler v-bind:feedbackData = "retriveFeedback"/>
+  <div class="main-container">
+    <Header />
+    <div class="title-brand-container">
+      <div class="title-brand">
+        AI ChatBot Feedback
+      </div>
+      <div class="image-landing-container">
+        <img src="./assets/undraw_customer_survey_re_v9cj.svg" alt="" width="500">
+      </div>
+    </div>
+    <div class="hint-before-start">
+      We are students from SQU working with ChatBot for providing information in a more easy way than traditional to SQU’students.
+      Please fill out the questionnaire and it won’t take more than 2 minutes.
+    </div>
+    <div class="container-feedback">
+      <FormHandler v-bind:feedbackData = "retriveFeedback"/>
+    </div>
   </div>
 </template>
 
@@ -17,6 +25,7 @@ import Header from './components/header'
 import FormHandler from "@/components/form.handler";
 export default {
   name: 'App',
+  title: 'AI Chatbot Feedback',
   components: {FormHandler, Header},
   data () {
     return {
@@ -39,4 +48,41 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Quattrocento&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #ffffff;
+}
+
+.title-brand-container{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 50px;
+
+}
+
+.title-brand {
+  font-family: Abril Fatface;
+  font-size: 35px;
+  color: #007cf6;
+  margin-bottom: 20px;
+}
+.hint-before-start {
+  font-family: Josefin Sans;
+  font-size: 20px;
+  margin: 0 auto;
+  width:  80%;
+  line-height: 1.5;
+}
+.container-feedback {
+  margin: 0 auto;
+  width: 80%;
+  font-family: Quattrocento;
+  font-size: 20px;
+}
 </style>
