@@ -4,7 +4,11 @@ const router = require("express").Router();
 const FeedbackSchema = require("../models/feedbackSchema")
 const FeedbackFilled = require("../models/feedbackFilledSchema")
 
+// redirect user to feedback page upon request
 
+router.get("/feed", (req, res) => {
+    res.redirect("http://127.0.0.1:8080/")
+})
 
 
 router.get("/feedData", (req, res) => {
