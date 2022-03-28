@@ -3,11 +3,12 @@ const PathToStatic = path.join(__dirname, "../");
 const router = require("express").Router();
 const FeedbackSchema = require("../models/feedbackSchema")
 const FeedbackFilled = require("../models/feedbackFilledSchema")
+const express = require("express");
+const app = express()
 
 // redirect user to feedback page upon request
-
 router.get("/feed", (req, res) => {
-    res.redirect("http://127.0.0.1:8080/")
+    res.redirect("index.html")
 })
 
 

@@ -45,7 +45,7 @@ def degreePlanResolver(intent):
     if not year:
         return {
             'flag': 27,
-            'content': 'You may type year in wrong way. Please type the year properly :)'
+            'content': 'For searching degree plan please provide the department and the year for example: degree plan of electrical 2020'
         }
     else:
         return degreePlan(parameter[0], int(year[0]))

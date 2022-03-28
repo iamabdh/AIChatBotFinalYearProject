@@ -1,3 +1,4 @@
+from crypt import methods
 import json, pickle
 import numpy as np
 import nltk
@@ -40,12 +41,20 @@ def getData():
         from shawarma.CorrectSpelling import CorrectSpelling
         correctIntent = CorrectSpelling(message).spell()
         print("corrected word: ", correctIntent)
-        response = {
+        ints = brain.brain(words, classes, model).predictClass(correctIntent.lower())
+        if ints:
+            # found response that may resolve wrong query 
+            # saveInts is used to perform standard query request without repeating ML code again
+            response = {
             'response': correctIntent,
             'flag': 9,
+            'savedInts': ints
         }
-        # ints = brain.brain(words, classes, model).predictClass(correctIntent.lower())
-        # response = responseHandler.getResponses(ints, intents, correctIntent)
+        else:
+            response = {
+            'response': "I don't understand!",
+            'flag': 404
+        }
 
     return json.dumps({'result': json.dumps(response)})
 
@@ -67,6 +76,16 @@ def getInitData():
         'notInit': False,
         'additional': objectDataInit.get('additional')})
     return json.dumps({'result': objectResponse})
+
+# this post route for flag 9 that is used to handle uncorrected query 
+@app.route('/getDataWithInts', methods=['POST'])
+def getDataWithInts():
+    objectDataWithInts = request.get_json()
+    ints = objectDataWithInts.get('savedInts')
+    clickedSuggestion = objectDataWithInts('clickedSuggestion')
+    response = responseHandler.getResponses(ints, intents, clickedSuggestion)
+    return json.dumps({'result': json.dumps(response)})
+
 
 
 if __name__ == '__main__':

@@ -71,21 +71,6 @@ const userResponse = (message) => {
     socket.emit('requestToResolve', message)
 }
 
-// this function is used to create button for responsing 
-// now mainly used to correct un resolved query 
-
-const createBubbleToRequestResolve = (input) => {
-  let newButtonContainer = document.createElement('div');
-  newButtonContainer.classList.add('container-user-button'); 
-  let newButton = document.createElement('button');
-  newButton.classList.add('userButton');
-  newButton.onclick = () => {
-    userResponse(input)
-  }
-  newButton.innerHTML = input;
-  newButtonContainer.appendChild(newButton)  
-  chatList.appendChild(newButtonContainer)
-}
 
 
 
@@ -402,6 +387,33 @@ const listPositionOnCard = (positionData) => {
   chatList.appendChild(newButtonContainer)
   
 }
+
+
+
+
+// flag 9
+
+// this function is used to create button for responsing 
+// now mainly used to correct un resolved query 
+
+const createBubbleToRequestResolve = (input, savedInts) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button'); 
+  let newButton = document.createElement('button');
+  newButton.classList.add('userButton');
+  newButton.onclick = () => {    
+    userResponse(input)
+    responseToServerButton = {
+      clickedSuggestion : input,
+      savedInts: savedInts
+    }
+    socket.emit('requestProceedSuggestion', responseToServerButton)
+  }
+  newButton.innerHTML = input;
+  newButtonContainer.appendChild(newButton)  
+  chatList.appendChild(newButtonContainer)
+}
+
 
 function animateBotOutput() {
   chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";

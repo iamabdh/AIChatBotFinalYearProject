@@ -51,6 +51,7 @@ app.use("/user", authRoutes);
 app.use("/e", authLogDashboard);
 app.use("/feedback", feedbackRoutes);
 
+
 io.on("connection", (socket) => {
   console.log("user connected: ", socket.id);
 
@@ -69,7 +70,7 @@ io.on("connection", (socket) => {
       linker: true,
       init: null,
       notInit: true,
-      additional: ["About", "FAQ", "Library", "Degree Plan", "Search Faculty"],
+      additional: ["About", "Guide", "Library", "Degree Plan", "Search Faculty"],
     })
   );
 
@@ -132,6 +133,26 @@ io.on("connection", (socket) => {
         io.sockets.to(socket.id).emit("resolved", err);
       });
   });
+
+  // user click suggestion query that corrected ==> flag 9
+  socket.on("requestProceedSuggestion", (requestToResolveSuggestion) => {
+    request({
+      method: "POST",
+      uri: "http://127.0.0.1:5000/getDataWithInts",
+      body: requestToResolveSuggestion,
+      json: true,
+    })
+      .then((parsedBody) => {
+        console.log(parsedBody);
+        let result;
+        result = parsedBody["result"];
+        io.sockets.to(socket.id).emit("resolved", result);
+      })
+      .catch((err) => {
+        console.log(err);
+        io.sockets.to(socket.id).emit("resolved", err);
+      });
+  })
 });
 
 server.listen(3000, () => {
