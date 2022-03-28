@@ -20,7 +20,7 @@ submitButton.onclick = () => {
                 userInput.value = transcript
             }
             if(isFinished[0]){
-                userResponse(transcript)
+                userResponse(transcript[0])
                 userInput.value = ""
                 userInput.disabled  = false
                 UnrecodingState()

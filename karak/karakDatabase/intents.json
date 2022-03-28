@@ -1307,4 +1307,6 @@
         "init": "PatientInfo",
         "required": "Procedures to get death certificate"
 
-      },
+      }
+  ]
+}

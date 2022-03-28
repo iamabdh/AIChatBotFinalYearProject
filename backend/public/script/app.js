@@ -71,6 +71,23 @@ const userResponse = (message) => {
     socket.emit('requestToResolve', message)
 }
 
+// this function is used to create button for responsing 
+// now mainly used to correct un resolved query 
+
+const createBubbleToRequestResolve = (input) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button'); 
+  let newButton = document.createElement('button');
+  newButton.classList.add('userButton');
+  newButton.onclick = () => {
+    userResponse(input)
+  }
+  newButton.innerHTML = input;
+  newButtonContainer.appendChild(newButton)  
+  chatList.appendChild(newButtonContainer)
+}
+
+
 
 const userResponseWithButton = (input, init, arrayButton) => {
    //create input
@@ -158,16 +175,19 @@ const botResponse = (message, botFlag) => {
      } else if (objectResponsed.flag == 27) {
       responseChuncked = objectResponsed.content  
      }
-
      else if (objectResponsed.flag == 8){
       responseChuncked +='CourseTitle: ' +  objectResponsed.CourseTitle + '<br/>'
       responseChuncked += 'CourseCredits: ' + objectResponsed.CourseCredits + '<br/>'
       responseChuncked += 'PreRequisiteCourses: ' + objectResponsed.PreRequisiteCourses + '<br/>'
       responseChuncked += 'CourseDescription: ' + objectResponsed.CourseDescription + '<br/>'
-           }
+    }
      else if (objectResponsed.flag == 88){
       responseChuncked=objectResponsed.ERROR
-    }
+    } 
+    else if (objectResponsed.flag == 9) {
+      responseChuncked= "Do you mean ?"
+      createBubbleToRequestResolve(objectResponsed.response)
+    } 
 
     newChat.innerHTML =  responseChuncked
 

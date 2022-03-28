@@ -40,8 +40,12 @@ def getData():
         from shawarma.CorrectSpelling import CorrectSpelling
         correctIntent = CorrectSpelling(message).spell()
         print("corrected word: ", correctIntent)
-        ints = brain.brain(words, classes, model).predictClass(correctIntent.lower())
-        response = responseHandler.getResponses(ints, intents, correctIntent)
+        response = {
+            'response': correctIntent,
+            'flag': 9,
+        }
+        # ints = brain.brain(words, classes, model).predictClass(correctIntent.lower())
+        # response = responseHandler.getResponses(ints, intents, correctIntent)
 
     return json.dumps({'result': json.dumps(response)})
 
