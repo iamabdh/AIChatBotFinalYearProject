@@ -120,7 +120,7 @@
         "response": [0],
         "context_set": "",
         "init": "Electrical",
-        "required" : "missionElectrical"
+        "required" : "MissionElectrical"
       },
       {"tag": "objectivesElectrical",
         "patterns": ["electrical engineering objectives","what are the objectives of electrical engineering","electrical objectives"],
@@ -128,7 +128,7 @@
         "response": [0],
         "context_set": "",
         "init": "Electrical",
-        "required" : "objectivesElectrical"
+        "required" : "ObjectivesElectrical"
       },
       {"tag": "QualityAssuranceElectrical",
         "patterns": ["Quality Assurance of electrical engineering","what is the Quality Assurance of electrical engineering","electrical Quality Assurance","Quality Assurance electrical engineering"],
@@ -152,7 +152,7 @@
         "response": [0],
         "context_set": "",
         "init": "Electrical",
-        "required" : "aboutECE"
+        "required" : "AboutECE"
       },
       {"tag": "commonCourseECE",
         "patterns": ["common courses in ece","general courses in ece","electrical common courses","ece courses"],
@@ -160,7 +160,7 @@
         "response": [0],
         "context_set": "",
         "init": "Electrical",
-        "required" : "commonCourseECE"
+        "required" : "CommonCourseECE"
       },
       {"tag": "CSPcourse",
         "patterns": ["csp courses","Communications and Signal Processing Courses","courses csp"],
@@ -200,7 +200,7 @@
         "response": [0],
         "context_set": "",
         "init": "Electrical",
-        "required" : "trainCourse"
+        "required" : "TrainCourse"
       },
       {"tag": "ECEstudentOutcomes",
         "patterns": ["what are the outcomes of electrical engineering students","outcome of electrical engineering students","ece outcomes"],
@@ -208,7 +208,7 @@
         "response": [0],
         "context_set": "",
         "init": "Electrical",
-        "required" : "outcomesOfECEstudents"
+        "required" : "OutcomesOfECEstudents"
       },
 
       {"tag": "CAEwlcome",
@@ -233,7 +233,7 @@
         "response": [0],
         "context_set": "",
         "init": "CivilandArch",
-        "required" : "missionCivil-and-Architectural-Engineering"
+        "required" : "MissionCivil-and-Architectural-Engineering"
       },
     
       {"tag": "QualityCivilandArchitecturalEngineering",
@@ -260,7 +260,7 @@
         "init": "CivilandArch",
         "required" : "Advisory Board Responsibilities Civil-and-Architectura"
       },
-      {"tag": "civilEngineeringOverview",
+      {"tag": "CivilEngineeringOverview",
         "patterns": ["overview of civil engineering","overview civil"],
         "flag" : 1, 
         "response": [0],
@@ -274,7 +274,7 @@
         "response": [0],
         "context_set": "",
         "init": "CivilEngineering",
-        "required" : "civilEngineeringCommonCourses"
+        "required" : "CivilEngineeringCommonCourses"
       },
       {"tag": "civilEngineeringSpecialCourses",
         "patterns": ["special courses in civil engineering","civil special courses"],
@@ -282,7 +282,7 @@
         "response": [0],
         "context_set": "",
         "init": "CivilEngineering",
-        "required" : "civilEngineeringSpecialCourses"
+        "required" : "CivilEngineeringSpecialCourses"
       },
       {"tag": "civilEngineeringTraining",
         "patterns": ["training in civil engineering","civil training"],
@@ -290,7 +290,7 @@
         "response": [0],
         "context_set": "",
         "init": "CivilEngineering",
-        "required" : "civilEngineeringTraining"
+        "required" : "CivilEngineeringTraining"
       },
       {"tag": "civilEngineeringOutcomes",
         "patterns": ["students outcomes in Civil Engineering","students in civil engineering","civil engineering outcomes"],
@@ -298,7 +298,7 @@
         "response": [0],
         "context_set": "",
         "init": "CivilEngineering",
-        "required" : "civilEngineeringOutcomes"
+        "required" : "CivilEngineeringOutcomes"
       },
       {"tag": "ArchitecturalEngineeringOverview",
         "patterns": ["about architectural engineering","Architectural Engineering","overview architectural","architectural"],
@@ -338,7 +338,7 @@
         "response": [0],
         "context_set": "",
         "init": "MechEngineering",
-        "required" : "mechanicalEngineeringOverview"
+        "required" : "MechanicalEngineeringOverview"
       },
       {"tag": "mechanicalEngineeringCommonCourses",
         "patterns": ["common courses in mechanical engineering","common courses mechanical engineering","common courses mechanical"],
@@ -346,7 +346,7 @@
         "response": [0],
         "context_set": "",
         "init": "MechEngineering",
-        "required" : "mechanicalEngineeringCommonCourses"
+        "required" : "MechanicalEngineeringCommonCourses"
       },
       {"tag": "mechanicalEngineeringSpecialCourses",
         "patterns": ["special courses in mechanical engineering","mechanical special courses"],
@@ -354,7 +354,7 @@
         "response": [0],
         "context_set": "",
         "init": "MechEngineering",
-        "required" : "mechanicalEngineeringSpecialCourses"
+        "required" : "MechanicalEngineeringSpecialCourses"
       },
       {"tag": "mechanicalEngineeringTraining",
         "patterns": ["training course in mechanical engineering","training mechanical engineering","mechanical engineering training"],
@@ -362,7 +362,7 @@
         "response": [0],
         "context_set": "",
         "init": "MechEngineering",
-        "required" : "mechanicalEngineeringTraining"
+        "required" : "MechanicalEngineeringTraining"
       },
       {"tag": "mechanicalEngineeringOutcomes",
         "patterns": ["students outcomes in mechanical engineering","students in mechanical engineering","mechanical engineering outcomes"],
@@ -370,7 +370,7 @@
         "response": [0],
         "context_set": "",
         "init": "MechEngineering",
-        "required" : "mechanicalEngineeringOutcomes"
+        "required" : "MechanicalEngineeringOutcomes"
       },
       
       {"tag": "MIEwlcome",
@@ -395,7 +395,7 @@
         "response": [0],
         "context_set": "",
         "init": "MechandIndus",
-        "required" : "missionMechanical-and-Industrial"
+        "required" : "MissionMechanical-and-Industrial"
       },
     
       {"tag": "QualityAssuranceMechanicalandIndustrial",
@@ -436,7 +436,7 @@
         "response": [0],
         "context_set": "",
         "init": "Petr&Chem",
-        "required" : "missionPetroleum-and-Chemical"
+        "required" : "MissionPetroleum-and-Chemical"
       },
     
       {"tag": "QualityAssurancePetroleumandChemical",
@@ -461,7 +461,7 @@
         "response": [0],
         "context_set": "",
         "init": "IndustEngineering",
-        "required" : "industerialEngineeringOverview"
+        "required" : "IndusterialEngineeringOverview"
       },
       {"tag": "industerialEngineeringCommonCourses",
         "patterns": ["common courses in industerial engineer","common courses industerial engineer","common courses mindusterial"],
@@ -469,7 +469,7 @@
         "response": [0],
         "context_set": "",
         "init": "IndustEngineering",
-        "required" : "industerialEngineeringCommonCourses"
+        "required" : "IndusterialEngineeringCommonCourses"
       },
       {"tag": "industerialEngineeringSpecialCourses",
         "patterns": ["special courses in industerial engineering","industerial special courses"],
@@ -477,7 +477,7 @@
         "response": [0],
         "context_set": "",
         "init": "IndustEngineering",
-        "required" : "industerialEngineeringSpecialCourses"
+        "required" : "IndusterialEngineeringSpecialCourses"
       },
       {"tag": "industerialEngineeringTraining",
         "patterns": ["training course in industerial engineering","training industerial engineering","industerial engineering training"],
@@ -485,7 +485,7 @@
         "response": [0],
         "context_set": "",
         "init": "IndustEngineering",
-        "required" : "industerialEngineeringTraining"
+        "required" : "IndusterialEngineeringTraining"
       },
       {"tag": "industerialEngineeringOutcomes",
         "patterns": ["students outcomes in industerial engineering","students in industerial engineering","industerial engineering outcomes"],
@@ -493,7 +493,7 @@
         "response": [0],
         "context_set": "",
         "init": "IndustEngineering",
-        "required" : "industerialEngineeringOutcomes"
+        "required" : "IndusterialEngineeringOutcomes"
       },
 
       {"tag": "MechatronicsEngineeringOverview",
