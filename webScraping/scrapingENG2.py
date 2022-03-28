@@ -30,7 +30,7 @@ class Engineer():
         
         # store every infos in aboutObj
         aboutElectricl.update({
-            "ECEwelcom" : {
+            "ECE welcom" : {
                 "subText" : [str(ECEwelcom_text)],
         }
      })
@@ -48,13 +48,13 @@ class Engineer():
             ECE_VM_extends[index]=ECE_VM_extends[index].text
 
         aboutElectricl.update({
-            "VisionElectrical":{
+            "Vision Electrical":{
                 "subText":[str(ECE_VM_subText[1].text)]
             },
-            "MissionElectrical":{
+            "Mission Electrical":{
                 "subText":[str(ECE_VM_subText[4].text)]
             },
-            "ObjectivesElectrical":{
+            "Objectives Electrical":{
                 "subText":[],
                 "extend":ECE_VM_extends
             },
@@ -67,7 +67,7 @@ class Engineer():
         ECE_QA_subText = ECE_QAParagragh_html[0].text.strip().split("   ")[0]
         
         aboutElectricl.update({
-            "QualityAssuranceElectrical" : {
+            "Quality Assurance Electrical" : {
             "subText" : [str(ECE_QA_subText)],
         }
      })
@@ -110,33 +110,30 @@ class Engineer():
         
 
         aboutElectricl.update({
-            "AboutECE":{
+            "About ECE":{
                 "subText":[ECE_About_subtext],
             },
-            "CommonCourseECE":{
+            "Common Courses ECE":{
                 "subText":[commonCourseECE],
         
             },
-            "CSPcourse":{
+            "CSP Courses":{
                 "subText":[CSPcourse],
             },
-            "CSNcourse":{
+            "CSN Courses":{
                 "subText":[CSNcourse],
             },
-            "EICcourse":{
+            "EIC Courses":{
                 "subText":[EICcourse],
             },
-            "PSEcourse":{
+            "PSE Courses":{
                 "subText":[PSEcourse],
             },
             
-            "PSEcourse":{
-                "subText":[PSEcourse],
-            }, 
-            "TrainCourse":{
+            "Train Course":{
                 "subText":[trainCourse],
             }, 
-            "OutcomesOfECEstudents":{
+            "Outcomes Of ECE Students":{
                 "subText":ECE_About_outcomes,
             }    
         })
@@ -153,7 +150,7 @@ class Engineer():
         
         # store every infos in aboutObj
         aboutCivilandArch.update({
-            "CAEwlcome" : {
+            "CAE Wlcome" : {
                 "subText" : [str(CAEwelcom_text)],
         }
      })
@@ -169,10 +166,10 @@ class Engineer():
             CAE_VM_extends[index]=CAE_VM_extends[index].text
 
         aboutCivilandArch.update({
-            "VisionCivil-and-Architectural-Engineering":{
+            "Vision Civil and Architectural Engineering":{
                 "subText":[str(CAE_VM_subText[0].text)]
             },
-            "MissionCivil-and-Architectural-Engineering":{
+            "Mission Civil and Architectural Engineering":{
                 "subText":[str(CAE_VM_subText[2].text)],
                 "extend":CAE_VM_extends
             },
@@ -184,7 +181,7 @@ class Engineer():
         CAE_QA_subText = CAE_QAParagragh_html[0].text.strip().split("   ")[0]
         
         aboutCivilandArch.update({
-            "QualityAssurance Civil-and-Architectural-Engineering" : {
+            "Quality Assurance Civil and Architectural Engineering" : {
             "subText" : [str(CAE_QA_subText)],
         }
      })
@@ -200,44 +197,12 @@ class Engineer():
             CAE_IAB_extend[index]=CAE_IAB_extend[index].text
 
         aboutCivilandArch.update({
-            "Industrial Advisory Board Civil-and-Architectura":{
+            "Industrial Advisory Board Civil and Architectura":{
                 "subText":[str(CAE_IAB_subtext[0].text), str(CAE_IAB_subtext[1].text)],
             },
             
         })
-        page100= urlopen(url + 'engineering/Academic/Undergraduate-Programs/-Civil-Engineering')
-        html100 = page100.read().decode('utf-8')
-        CAE_About_html = BeautifulSoup(html100, "html.parser")
-        CAE_AboutParagragh_html = CAE_About_html.find_all('div', {'id': 'ResponsiveTabs_6029'})
-        CAE_About = CAE_AboutParagragh_html[0].find_all('p')
-        CAE_AboutOverview=CAE_About[0].text
-        CAEcommonCourses=CAE_About[26].text
-        civilSpecialCoreses=CAE_About[29].text
-        civilTraining=CAE_About[32].text
-        civilOutcomes = CAE_AboutParagragh_html[0].find_all('li')[6:9]
-        for index in range(0,len(civilOutcomes)):
-            civilOutcomes[index]=civilOutcomes[index].text
-        aboutCivilandArch.update({
-            "CivilEngineeringOverview":{
-                "subText":[CAE_AboutOverview]
-            },
-            "CivilEngineeringCommonCourses":{
-                "subText":[CAEcommonCourses],
-                "extend":[]
-            },
-            "CivilEngineeringSpecialCourses":{
-                "subText":[civilSpecialCoreses],
-                "extend":[]
-            },
-            "CivilEngineeringTraining":{
-                "subText":[civilTraining],
-                "extend":[]
-            },
-            "CivilEngineeringOutcomes":{
-                "subText":civilOutcomes,
-                "extend":[]
-            },
-        })
+        
         return aboutCivilandArch
     def CivilEng():
         aboutCivil={}
@@ -254,22 +219,22 @@ class Engineer():
         for index in range(0,len(civilOutcomes)):
             civilOutcomes[index]=civilOutcomes[index].text
         aboutCivil.update({
-            "civilEngineeringOverview":{
+            "Civil Engineering Overview":{
                 "subText":[CAE_AboutOverview]
             },
-            "civilEngineeringCommonCourses":{
+            "Civil Engineering Common Courses":{
                 "subText":[CAEcommonCourses],
                 "extend":[]
             },
-            "civilEngineeringSpecialCourses":{
+            "Civil Engineering Special Courses":{
                 "subText":[civilSpecialCoreses],
                 "extend":[]
             },
-            "civilEngineeringTraining":{
+            "Civil Engineering Training":{
                 "subText":[civilTraining],
                 "extend":[]
             },
-            "civilEngineeringOutcomes":{
+            "Civil Engineering Outcomes":{
                 "subText":civilOutcomes,
                 "extend":[]
             },
@@ -288,22 +253,22 @@ class Engineer():
         ArchTrainingCourse=Arch_About[34].text
         ArchOutcomes=Arch_About[37].text+Arch_About[38].text+Arch_About[39].text
         ArchObject.update({
-            "ArchitecturalEngineeringOverview":{
+            "Architectural Engineering Overview":{
                 "subText":[ArchText]
             },
-            "ArchitecturalEngineeringCommonCourses":{
+            "Architectural Engineering CommonCourses":{
                 "subText":[ArchCommonCourses],
                 "extend":[]
             },
-            "ArchitecturalEngineeringSpecialCourses":{
+            "Architectural Engineering SpecialCourses":{
                 "subText":[ArchSpecialCourses],
                 "extend":[]
             },
-            "ArchitecturalEngineeringTraining":{
+            "Architectural Engineering Training":{
                 "subText":[ArchTrainingCourse],
                 "extend":[]
             },
-            "ArchitecturalEngineeringOutcomes":{
+            "Architectural Engineering Outcomes":{
                 "subText":[ArchOutcomes],
                 "extend":[]
             },
@@ -331,22 +296,22 @@ class Engineer():
         for index in range(0,len(MechOutcomes)):
             MechOutcomes[index]=MechOutcomes[index].text
         Mechobject.update({
-            "MechanicalEngineeringOverview":{
+            "Mechanical Engineering Overview":{
                 "subText":[Mech_text]
             },
-            "MechanicalEngineeringCommonCourses":{
+            "Mechanical Engineering Common Courses":{
                 "subText":[MechCommonCourses],
                 "extend":[]
             },
-            "MechanicalEngineeringSpecialCourses":{
+            "Mechanical Engineering Special Courses":{
                 "subText":[MechSpecialCourses],
                 "extend":[]
             },
-            "MechanicalEngineeringTraining":{
+            "Mechanical Engineering Training":{
                 "subText":[MechTrainingCourse],
                 "extend":[]
             },
-            "MechanicalEngineeringOutcomes":{
+            "Mechanical Engineering Outcomes":{
                 "subText":MechOutcomes,
                 "extend":[]
             },
@@ -371,22 +336,22 @@ class Engineer():
             IndustOutcomes[index]=IndustOutcomes[index].text
 
         Industobject.update({
-            "IndusterialEngineeringOverview":{
+            "Industerial Engineering Overview":{
                 "subText":[Indust_text]
             },
-            "IndusterialEngineeringCommonCourses":{
+            "Industerial Engineering Common Courses":{
                 "subText":[IndustCommonCourses],
                 "extend":[]
             },
-            "IndusterialEngineeringSpecialCourses":{
+            "Industerial Engineering Special Courses":{
                 "subText":[IndustSpecialCourses],
                 "extend":[]
             },
-            "IndusterialEngineeringTraining":{
+            "Industerial Engineering Training":{
                 "subText":[IndustTrainingCourse],
                 "extend":[]
             },
-            "IndusterialEngineeringOutcomes":{
+            "Industerial Engineering Outcomes":{
                 "subText":IndustOutcomes,
                 "extend":[]
             },
@@ -405,7 +370,7 @@ class Engineer():
         
         
         aboutMechanicalandIndustrial.update({
-            "MIEwlcome" : {
+            "MIE Wlcome" : {
                 "subText" : [str(MIEwelcom_text)],
         }
         })
@@ -421,10 +386,10 @@ class Engineer():
             MIE_VM_extends[index]=MIE_VM_extends[index].text
 
         aboutMechanicalandIndustrial.update({
-            "VisionMechanical-and-Industrial":{
+            "Vision Mechanical and Industrial":{
                 "subText":[str(MIE_VM_subText[1].text)]
             },
-            "MissionMechanical-and-Industrial":{
+            "Mission Mechanical and Industrial":{
                 "subText":[str(MIE_VM_subText[4].text)],
                 "extend":MIE_VM_extends
             },
@@ -436,7 +401,7 @@ class Engineer():
         MIE_QA_subText = MIE_QAParagragh_html[0].text.strip().split("   ")[0]
         
         aboutMechanicalandIndustrial.update({
-            "QualityAssurance Mechanical-and-Industrial-Engineering" : {
+            "Quality Assurance Mechanical and Industrial Engineering" : {
             "subText" : [str(MIE_QA_subText)],
         }
      })
@@ -452,7 +417,7 @@ class Engineer():
             MIE_IAB_extend[index]=MIE_IAB_extend[index].text
 
         aboutMechanicalandIndustrial.update({
-            "Industrial Advisory Board Mechanical-and-Industrial":{
+            "Industrial Advisory Board Mechanical and Industrial":{
                 "subText":[str(MIE_IAB_subtext[0].text)],
                 "extend":str(MIE_IAB_extend)
             }
@@ -478,22 +443,22 @@ class Engineer():
 
 
         Mechatroobject.update({
-            "MechatronicsEngineeringOverview":{
+            "Mechatronics Engineering Overview":{
                 "subText":[Mechatro_text]
             },
-            "MechatronicsEngineeringCommonCourses":{
+            "Mechatronics Engineering Common Courses":{
                 "subText":[MechatroCommonCourses],
                 "extend":[]
             },
-            "MechatronicsEngineeringSpecialCourses":{
+            "Mechatronics Engineering Special Courses":{
                 "subText":[MechatroSpecialCourses],
                 "extend":[]
             },
-            "MechatronicsEngineeringTraining":{
+            "Mechatronics Engineering Training":{
                 "subText":[MechatroTrainingCourse],
                 "extend":[]
             },
-            "MechatronicsEngineeringOutcomes":{
+            "Mechatronics Engineering Outcomes":{
                 "subText":MechatroOutcomes,
                 "extend":[]
             },
@@ -517,22 +482,22 @@ class Engineer():
             ChemOutcomes[index]=ChemOutcomes[index].text
 
         ChemObject.update({
-            "ChemicalEngineeringOverview":{
+            "Chemical Engineering Overview":{
                 "subText":[ChemText]
             },
-            "ChemicalEngineeringCommonCourses":{
+            "Chemical Engineering Common Courses":{
                 "subText":[ChemCommonCourses],
                 "extend":[]
             },
-            "ChemicalEngineeringSpecialCourses":{
+            "Chemical Engineering Special Courses":{
                 "subText":[ChemSpecialCourses],
                 "extend":[]
             },
-            "ChemicalEngineeringTraining":{
+            "Chemical Engineering Training":{
                 "subText":[ChemTrainingCourse],
                 "extend":[]
             },
-            "ChemicalEngineeringOutcomes":{
+            "Chemical Engineering Outcomes":{
                 "subText":ChemOutcomes,
                 "extend":[]
             },
@@ -558,22 +523,22 @@ class Engineer():
             PetroOutcomes[index]=PetroOutcomes[index].text
 
         PetroObject.update({
-            "PetroleumEngineeringOverview":{
+            "Petroleum Engineering Overview":{
                 "subText":[PetroText]
             },
-            "PetroleumEngineeringCommonCourses":{
+            "Petroleum Engineering Common Courses":{
                 "subText":[PetroCommonCourses],
                 "extend":[]
             },
-            "PetroleumEngineeringSpecialCourses":{
+            "Petroleum Engineering Special Courses":{
                 "subText":[PetroSpecialCourses],
                 "extend":[]
             },
-            "PetroleumEngineeringTraining":{
+            "Petroleum Engineering Training":{
                 "subText":[PetroTrainingCourse],
                 "extend":[]
             },
-            "PetroleumEngineeringOutcomes":{
+            "Petroleum Engineering Outcomes":{
                 "subText":PetroOutcomes,
                 "extend":[]
             },
@@ -594,7 +559,7 @@ class Engineer():
         
         
         aboutPetroleumChemical.update({
-            "PCEwlcome" : {
+            "PCE Wlcome" : {
                 "subText" : [str(PCEwelcom_text)],
         }
      })
@@ -611,10 +576,10 @@ class Engineer():
             MIE_VM_extends[index]=MIE_VM_extends[index].text
 
         aboutPetroleumChemical.update({
-            "VisionPetroleum-and-Chemical":{
+            "Vision Petroleum and Chemical":{
                 "subText":[str(PCE_VM_subText[1].text)]
             },
-            "MissionPetroleum-and-Chemical":{
+            "Mission Petroleum and Chemical":{
                 "subText":[str(PCE_VM_subText[3].text),str(PCE_VM_subText[4].text)],
                 "extend":MIE_VM_extends
             },
@@ -627,7 +592,7 @@ class Engineer():
         PCE_QA_subText = PCE_QAParagragh_html[0].text.strip().split("   ")[0]
         
         aboutPetroleumChemical.update({
-            "QualityAssurance Petroleum-and-Chemical" : {
+            "QualityAssurance Petroleum and Chemical" : {
             "subText" : [str(PCE_QA_subText)],
             }
         })
@@ -639,7 +604,7 @@ class Engineer():
         PCE_IAB_subtext = PCE_IABParagragh_html[0].find_all('p')
 
         aboutPetroleumChemical.update({
-            "Industrial Advisory Board Petroleum-and-Chemical":{
+            "Industrial Advisory Board Petroleum and Chemical":{
                 "subText":[str(PCE_IAB_subtext[0].text),str(PCE_IAB_subtext[1].text)],
                 "extend":[]
             }
