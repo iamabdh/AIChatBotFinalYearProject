@@ -72,6 +72,8 @@ const userResponse = (message) => {
 }
 
 
+
+
 const userResponseWithButton = (input, init, arrayButton) => {
    //create input
    var newChat = document.createElement('li');
@@ -158,16 +160,19 @@ const botResponse = (message, botFlag) => {
      } else if (objectResponsed.flag == 27) {
       responseChuncked = objectResponsed.content  
      }
-
      else if (objectResponsed.flag == 8){
       responseChuncked +='CourseTitle: ' +  objectResponsed.CourseTitle + '<br/>'
       responseChuncked += 'CourseCredits: ' + objectResponsed.CourseCredits + '<br/>'
       responseChuncked += 'PreRequisiteCourses: ' + objectResponsed.PreRequisiteCourses + '<br/>'
       responseChuncked += 'CourseDescription: ' + objectResponsed.CourseDescription + '<br/>'
-           }
+    }
      else if (objectResponsed.flag == 88){
       responseChuncked=objectResponsed.ERROR
-    }
+    } 
+    else if (objectResponsed.flag == 9) {
+      responseChuncked= "Do you mean ?"
+      createBubbleToRequestResolve(objectResponsed.response)
+    } 
 
     newChat.innerHTML =  responseChuncked
 
@@ -382,6 +387,33 @@ const listPositionOnCard = (positionData) => {
   chatList.appendChild(newButtonContainer)
   
 }
+
+
+
+
+// flag 9
+
+// this function is used to create button for responsing 
+// now mainly used to correct un resolved query 
+
+const createBubbleToRequestResolve = (input, savedInts) => {
+  let newButtonContainer = document.createElement('div');
+  newButtonContainer.classList.add('container-user-button'); 
+  let newButton = document.createElement('button');
+  newButton.classList.add('userButton');
+  newButton.onclick = () => {    
+    userResponse(input)
+    responseToServerButton = {
+      clickedSuggestion : input,
+      savedInts: savedInts
+    }
+    socket.emit('requestProceedSuggestion', responseToServerButton)
+  }
+  newButton.innerHTML = input;
+  newButtonContainer.appendChild(newButton)  
+  chatList.appendChild(newButtonContainer)
+}
+
 
 function animateBotOutput() {
   chatList.lastElementChild.style.animationDelay= (animationCounter * animationBubbleDelay)+"ms";

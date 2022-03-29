@@ -1,4 +1,4 @@
 backend/feedback/node_modules/
 backend/config/
-
+backend/feedback/dist/
 *.env
