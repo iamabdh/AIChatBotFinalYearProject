@@ -100,7 +100,7 @@ class Hospital():
         
                 
         visitorsinfo.update({
-                "visitors table" :{
+                "Visitors Table" :{
                      "subText" : [str(opvisitors)]
                         
                  },
@@ -157,7 +157,7 @@ class Hospital():
 
         paramcyhour=openingHour11+openingHour12+openingHour13
         visitorsinfo.update({
-                "paramcy table" :{
+                "Paramcy Table" :{
                      "subText" : [str(paramcyhour)]
                         
                  },
@@ -190,11 +190,11 @@ class Hospital():
 
         print(all_text00)
         patientinfo.update({
-                "Procedures to get a birth certificate" :{
+                "Procedures To Get A Birth Certificate" :{
                      "subText" : [str(all_text000)]
                         
                  },
-                "Procedures to get death certificate" :{
+                "Procedures To get Death Certificate" :{
                      "subText" : [str(all_text00)]
                         
                  },

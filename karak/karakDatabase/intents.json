@@ -649,7 +649,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "introdction of main library"
+        "required": "Introdction of Main Library"
       },
       {
         "tag" : "MainLibraryvission",
@@ -676,7 +676,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "value Introduction"
+        "required": "Value Introduction"
       } ,
       {
         "tag" : "mainlibraryValue",
@@ -685,7 +685,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "value"
+        "required": "Value of Main Library"
       } ,
       {
         "tag" : "objectiveintroduction",
@@ -694,7 +694,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "objective introduction"
+        "required": "Objective Introduction"
       } ,
       {
         "tag" : "mainlibraryObjective",
@@ -703,7 +703,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "objective"
+        "required": "Objective of Main library"
       } ,
       {
         "tag" : "mainlibaryintroduction",
@@ -712,7 +712,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "libary introduction"
+        "required": "Libary Introduction"
       } ,
       {
         "tag" : "mainlibraryusers",
@@ -721,7 +721,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "library users"
+        "required": "Library Users"
       } ,
       {
         "tag" : "mainlibraeystaff",
@@ -730,7 +730,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "libraey staff"
+        "required": "Libraey Staff"
       } ,
       {
         "tag" : "mainlibraryDirection",
@@ -739,7 +739,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "direction"
+        "required": "Direction of Main Library"
       } ,
       {
         "tag" : "Contactsmainlibrary",
@@ -748,7 +748,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "Contacts"
+        "required": "Contacts of Main Library"
       } ,
       {
         "tag" : "openhourmainlibrary",
@@ -757,7 +757,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "opening hour of main library"
+        "required": "Opening Hours of Main Library"
       } ,
       {
         "tag" : "medicallibraryintervew",
@@ -775,7 +775,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "vision of medicall library"
+        "required": "Vision of Medicall Library"
       },
       {
         "tag" : "medicallibrarymission",
@@ -784,7 +784,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "mission of medicall library"
+        "required": "Mission of Medicall Library"
       },
       {
         "tag" : "medicallibraryobjective",
@@ -793,7 +793,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "objective of medicall library"
+        "required": "Objective of Medicall Library"
       },
       {
         "tag" : "openhourmedicalllibrary",
@@ -802,7 +802,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "opening hour of medicall library"
+        "required": "Opening Hours of Medicall Library"
       },
       {
         "tag" : "medicalcontactslibrary",
@@ -811,7 +811,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "medicall library contacts"
+        "required": "Medicall Library Contacts"
       },
       {
         "tag" : "medicallibraryusefullink",
@@ -820,7 +820,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "useful link of medicall library"
+        "required": "Useful Links of Medicall Library"
       },
       {
         "tag" : "omanilibraryintrocuctonCenter",
@@ -829,7 +829,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "introcucton Center"
+        "required": "Introcucton Center"
       },
       {
         "tag" : "omanilibraryobjectives",
@@ -838,7 +838,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "objectives library"
+        "required": "Objectives of Omani Library"
       },
       {
         "tag" : "omanilibrarybulding",
@@ -847,7 +847,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "bulding"
+        "required": "Bulding"
       },
       {
         "tag" : "omanilibrarypolicies",
@@ -856,7 +856,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "library policies"
+        "required": "Library Policies"
       },
       {
         "tag" : "omanilibraryCirculationService",
@@ -874,7 +874,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "Circulation is available for"
+        "required": "Circulation is Available for"
       },
       {
         "tag" : "omanilibraryCirculationrules",
@@ -883,7 +883,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "Circulation rules"
+        "required": "Circulation Rules"
       },
       {
         "tag" : "omanilibraryReferenceService",
@@ -910,7 +910,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "computer wirles"
+        "required": "Computer Wirles"
       },
       {
         "tag" : "omanilibraryIntroductoryTours",
@@ -928,7 +928,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "rules"
+        "required": "Rules"
       },
       {
         "tag" : "omanilibraryusefullinks",
@@ -937,7 +937,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "useful links"
+        "required": "Useful links of Omani Library"
       },
       {
         "tag" : "openhourOSClibrary",
@@ -946,7 +946,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "OSC opening hour"
+        "required": "OSC Opening Hours"
       },
       {
         "tag" : "omanilibraryAskLibrarian",
@@ -955,7 +955,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "Ask a Librarian"
+        "required": "Contacts of Omani Library"
       },
       {
         "tag" : "ScienceslibraryAboutlibrary",
@@ -964,7 +964,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "About the library"
+        "required": "About The Library"
       },
       {
         "tag" : "Scienceslibrarymission",
@@ -973,7 +973,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "library mission"
+        "required": "Mission of Sciences Library"
       },
       {
         "tag" : "ScienceslibraryObjactives",
@@ -982,7 +982,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "Library Objactives"
+        "required": "Objactives of Sciences Library"
       },
       {
         "tag" : "Scienceslibraryobjactive",
@@ -991,7 +991,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "library objactive"
+        "required": "Library Objactive"
       },
       {
         "tag" : "ScienceslibraryInformationServices",
@@ -1009,7 +1009,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "introduction borrow"
+        "required": "Introduction of Borrow"
       },
       {
         "tag" : "ScienceslibraryBooks",
@@ -1045,7 +1045,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "the borrowing software"
+        "required": "The Borrowing Software"
       },
       {
         "tag" : "Scienceslibrarylibrarystaffdirectory",
@@ -1054,7 +1054,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "library staff directory"
+        "required": "Library Staff Directory"
       },
       {
         "tag" : "openhourartlibrary",
@@ -1063,7 +1063,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "art and sciences library opening hour"
+        "required": "Art and Sciences Library Opening Hours"
       },
       {
         "tag" : "Scienceslibrarycontacts:",
@@ -1072,7 +1072,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Scienceslibrary",
-        "required": "library contacts of art"
+        "required": "Library Contacts of Art"
       },
       {
         "tag" : "EducationlibraryVission",
@@ -1081,7 +1081,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Educationlibrary",
-        "required": "Vission of education library"
+        "required": "Vission of Education Library"
       },
       {
         "tag" : "Educationlibrarymissio",
@@ -1090,7 +1090,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Educationlibrary",
-        "required": "Mission of education library"
+        "required": "Mission of Education Library"
       },
       {
         "tag" : "EducationlibraryObjective",
@@ -1099,7 +1099,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Educationlibrary",
-        "required": "objective of education library"
+        "required": "Objective of Education Library"
       },
       {
         "tag" : "Educationlibraryintroduction",
@@ -1126,7 +1126,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Educationlibrary",
-        "required": "References and information service"
+        "required": "References and Information Service"
       },
       {
         "tag" : "EducationlibraryPrintedBook",
@@ -1171,7 +1171,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Educationlibrary",
-        "required": "Photocopy and reproduction service"
+        "required": "Photocopy and Reproduction Service"
       },
       {
         "tag" : "EducationlibraryComputersandInternetservice",
@@ -1180,7 +1180,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Educationlibrary",
-        "required": "Computers and Internet service"
+        "required": "Computers and Internet Service"
       },
       {
         "tag" : "EducationlibraryCurrentAwarenessService",
@@ -1198,7 +1198,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Educationlibrary",
-        "required": "Other services"
+        "required": "Other Services"
       },
       {
         "tag" : "Educationlibrarycontacs",
@@ -1207,7 +1207,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Educationlibrary",
-        "required": "education library contacs us"
+        "required": "Education Library Contacs"
       },
       {
         "tag" : "mosqlibrarycontacs",
@@ -1216,7 +1216,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Mosquelibrary",
-        "required": "mosque library contucts us"
+        "required": "Mosque Library Contucts"
       },
       {
         "tag" : "mosqlibraryopenhour",
@@ -1225,7 +1225,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Mosquelibrary",
-        "required": "mosque library opening hour"
+        "required": "Mosque Library Opening Hours"
 
       },
       {
@@ -1235,7 +1235,7 @@
         "flag": 1,
         "context_set": "",
         "init": "CEPSlibrary",
-        "required": "CEPS library open Hour"
+        "required": "CEPS Library Opening Hours"
 
       },
       {
@@ -1245,7 +1245,7 @@
         "flag": 1,
         "context_set": "",
         "init": "CEPSlibrary",
-        "required": "CEPS library about "
+        "required": "About CEPS Library"
 
       },
       {
@@ -1255,7 +1255,7 @@
         "flag": 1,
         "context_set": "",
         "init": "CEPSlibrary",
-        "required": "CEPS library inrodction Circulation Policy "
+        "required": "CEPS library Inrodction of Circulation Policy "
 
       },
       {
@@ -1275,7 +1275,7 @@
         "flag": 1,
         "context_set": "",
         "init": "VisitorsInfo",
-        "required": "visitors table "
+        "required": "Visitors Table "
 
       },
       {
@@ -1285,7 +1285,7 @@
         "flag": 1,
         "context_set": "",
         "init": "VisitorsInfo",
-        "required": "paramcy table "
+        "required": "Paramcy Table "
 
       },
       {
@@ -1295,7 +1295,7 @@
         "flag": 1,
         "context_set": "",
         "init": "PatientInfo",
-        "required": "procedures to get a birth certificate "
+        "required": "Procedures To Get A Birth Certificate "
 
       },
       {
@@ -1305,7 +1305,7 @@
         "flag": 1,
         "context_set": "",
         "init": "PatientInfo",
-        "required": "Procedures to get death certificate"
+        "required": "Procedures To Get Death Certificate"
 
       }
   ]

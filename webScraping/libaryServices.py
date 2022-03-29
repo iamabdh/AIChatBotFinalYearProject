@@ -65,7 +65,7 @@ class Libraries():
         
 
         mainlibrary.update({
-            "introdction of main library" :{
+            "Introdction of Main Library" :{
                 "subText" : [str(introduction)]
             },
             "Vission":{
@@ -74,18 +74,18 @@ class Libraries():
             "Mission":{
                 "subText":[str(mission)]
             },
-            "value Introduction":{
+            "Value Introduction":{
                 "subText":[str(valuIntroduction)]
           
             },
-            "value":{
+            "Value of Main Library":{
                 "subText" : [],
                 "extend": value
             },
-            "objective introduction":{
+            "Objective Introduction":{
                 "subText":[str(objectiveintroduction)]
             },
-            "objective":{
+            "Objective of Main Library":{
                 "subText": [],
                 "extend":objctive
             },
@@ -115,15 +115,15 @@ class Libraries():
         
 
         mainlibrary.update({
-                "libary introduction" :{
+                "Libary Introduction" :{
                      "subText" : [str(libaryintro)]
                  
                 },
-                "library users":{
+                "Library Users":{
                     "subText": [],
                     "extend":users
                 },
-                "libraey staff":{
+                "Libraey Staff":{
                     "subText": [],
                     "extend":staff
                 },
@@ -143,7 +143,7 @@ class Libraries():
         
                 
         mainlibrary.update({
-                "direction" :{
+                "Direction of Main Library" :{
                      "subText" : [str(all_text1)]
                  },
              })
@@ -180,7 +180,7 @@ class Libraries():
                 openingHour += item.text + " "
         
         mainlibrary.update({
-                "opening hour of main library" :{
+                "Opening Hours of Main Library" :{
                      "subText" : [str(openingHour)]
                 },
         })
@@ -193,7 +193,7 @@ class Libraries():
         
                 
         mainlibrary.update({
-                "Contacts" :{
+                "Contacts of Main Library" :{
                      "subText" : [str(contactUS)]
                         
                  },
@@ -229,13 +229,13 @@ class Libraries():
                      "subText" : [str(Overview)]
                  },
                 
-                "vision of medicall library":{
+                "Vision of Medicall Library":{
                     "subText":[str(vision1)]
                 },
-                "mission of medicall library":{
+                "Mission of Medicall Library":{
                     "subText":[str(mission1)]
                 },
-                "objective of medicall library":{
+                "Objective of Medicall Library":{
                     "subText":[str(objective1)]
                 },
             })
@@ -272,7 +272,7 @@ class Libraries():
 
         DayTime=daytime+'\n'+daytime1
         medicallibrary.update({
-                "opening hour of medicall library" :{
+                "Opening Hours of Medicall Library" :{
                      "subText" : [str(DayTime)]
                  },
         })
@@ -287,7 +287,7 @@ class Libraries():
 
         
         medicallibrary.update({
-                "medicall library contacts" :{
+                "Medicall Library Contacts" :{
                      "subText" : [str(all_text2)]
                  },
         })
@@ -304,7 +304,7 @@ class Libraries():
         
         
         medicallibrary.update({
-                "useful link of medicall library" :{
+                "Useful Links of Medicall Library" :{
                      "subText" : [],
                      "extend":Useful
                  },
@@ -337,15 +337,15 @@ class Libraries():
             bulding +=f'{i.text}'
         
         omanilibrary.update({
-                "introcucton Center" :{
+                "Introcucton Center" :{
                      "subText" : [str(introcuctonCenter)]
                      
                 },
-                "objectives library":{
+                "Objectives of Omani Library":{
                     "subText":[],
                     "extend":objectiveslibrary
                 },
-                "bulding":{
+                "Bulding":{
                     "subText":[str(bulding)]
                 },
                 
@@ -361,7 +361,7 @@ class Libraries():
             all_text3 += text1.text +'\n'
 
         omanilibrary.update({
-                "library policies" :{
+                "Library Policies" :{
                      "subText" : [str(all_text3)]
                  },
         })
@@ -408,11 +408,11 @@ class Libraries():
                 "Circulation Service" :{
                      "subText" : [str(CirculationService)]
                  },
-                "Circulation is available for":{
+                "Circulation is Available for":{
                     "subText":[],
                     "extend":Cir
                  },
-                 "Circulation rules":{
+                 "Circulation Rules":{
                     "subText":[],
                     "extend":Circ
                  },
@@ -422,14 +422,14 @@ class Libraries():
                 "Computers":{
                     "subText":[str(Computers)]
                 },
-                "computer wirles":{
+                "Computer Wirles":{
                 "subText":[],
                 "extend":Com
                 },
                 "Introductory Tours":{
                 "subText":[str(IntroductoryTour)]
                 },
-                "rules":{
+                "Rules":{
                 "subText":[],
                 "extend":r
                 },
@@ -447,7 +447,7 @@ class Libraries():
             all_text5 += text1.text +'\n'
 
         omanilibrary.update({
-                "useful links" :{
+                "Useful links of Omani Library" :{
                      "subText" : [str(all_text5)]
                  },
         })
@@ -550,7 +550,7 @@ class Libraries():
         OSClibraryopen=SpringFallSemesters+ "\n"+SummerSemester+ "\n"+MonthRamadan
         
         omanilibrary.update({
-                "OSC opening hour" :{
+                "OSC Opening Hours" :{
                      "subText" : [str(OSClibraryopen)]
                  },
         })
@@ -565,7 +565,7 @@ class Libraries():
             all_text6 += text1.text +'\n'
             
         omanilibrary.update({
-                "Ask a Librarian" :{
+                "Contacts of Omani Library" :{
                      "subText" : [str(all_text6)]
                  },
         })
@@ -586,7 +586,7 @@ class Libraries():
             all_text7 += text1.text +'\n'
            
             scienceslibrar.update({
-                "About the library" :{
+                "About The Library" :{
                      "subText" : [str(all_text7)]
                  },
 
@@ -617,14 +617,14 @@ class Libraries():
             LibraryObjact +=f'{i.text}'
         
         scienceslibrar.update({
-                "library mission" :{
+                "Mission of Sciences Library" :{
                      "subText" : [str(MissionObject)]
                  },
-                     "Library Objactives" :{
+                     "Objactives of Sciences Library" :{
                      "subText" : [],
                      "extend":LibraryObjactives
                  },
-                     "library objactive" :{
+                     "Library Objactive" :{
                      "subText" : [str(LibraryObjact)]
                  
                  },
@@ -678,7 +678,7 @@ class Libraries():
             Journals.append(item.text)
             
         scienceslibrar.update({
-                "introduction borrow" :{
+                "Introduction of Borrow" :{
                      "subText" : [str(introductionborrow)]
                  },
                      "Books" :{
@@ -709,7 +709,7 @@ class Libraries():
             all_text9 += text1.text +'\n'
 
         scienceslibrar.update({
-                "the borrowing software:" :{
+                "The Borrowing Software:" :{
                      "subText" : [str(all_text9)]
                  },
         })
@@ -725,7 +725,7 @@ class Libraries():
             all_text10 += text1.text +'\n'
             
         scienceslibrar.update({
-                "library staff directory" :{
+                "Library Staff Directory" :{
                      "subText" : [str(all_text10)]
                  },
         })
@@ -832,7 +832,7 @@ class Libraries():
         Artlibraryopen=SpringFallSemesterss+ "\n"+SummerSemesterr+ "\n"+MonthRamadann
         
         scienceslibrar.update({
-                "art and sciences library opening hour" :{
+                "Art and Sciences Library Opening Hours" :{
                      "subText" : [str(Artlibraryopen)]
                  },
         })
@@ -847,7 +847,7 @@ class Libraries():
 
         
         scienceslibrar.update({
-                "library contacts of art" :{
+                "Library Contacts of Art" :{
                      "subText" : [str(all_text11)]
                  },
         })
@@ -874,14 +874,14 @@ class Libraries():
             ObJeC.append(item.text)
             
         educationlibrary.update({
-            "Vission of education library" :{
+            "Vission of Education Library" :{
                 "subText" : [str(VISIon)]
             },
-            "Mission of education library":{
+            "Mission of Education Library":{
                 "subText":[str(LibMis)]
             
             },
-            "objective of education library":{
+            "Objective of Education Library":{
                 "subText" : [],
                 "extend": ObJeC
                  },
@@ -918,13 +918,13 @@ class Libraries():
         
 
         educationlibrary.update({
-            "introduction of library Service" :{
+            "Introduction of Library Service" :{
                 "subText" : [str(LiSe1)]
             },
             "Loan Service":{
                 "subText":[str(LiSe2)]
             },
-            "References and information service":{
+            "References and Information Service":{
                 "subText":[str(LiSe3)]
             },
             "Printed Book":{
@@ -944,11 +944,11 @@ class Libraries():
                 "subText":[str(LiSe7)]
           
             },
-            "Photocopy and reproduction service":{
+            "Photocopy and Reproduction Service":{
                 "subText":[str(LiSe8)]
           
             },
-            "Computers and Internet service":{
+            "Computers and Internet Service":{
                 "subText":[str(LiSe9)]
           
             },
@@ -956,7 +956,7 @@ class Libraries():
                 "subText":[str(LiSe10)]
           
             },
-            "Other services":{
+            "Other Services":{
                 "subText":[str(LiSe11)]
           
             },
@@ -974,7 +974,7 @@ class Libraries():
 
             
         educationlibrary.update({
-            "education library contacs us" :{
+            "Education Library Contacs" :{
                 "subText" : [str(all_text12)]
             },
         })
@@ -1029,7 +1029,7 @@ class Libraries():
 
 
         mosquelibrary.update({
-            "mosque library opening hour" :{
+            "Mosque Library Opening Hours" :{
                 "subText" : [str(openingHour3)]
             },
         })
@@ -1043,7 +1043,7 @@ class Libraries():
             all_text44 += text1.text +'\n'
 
         mosquelibrary.update({
-            "mosque library contucts us" :{
+            "Mosque Library Contucts" :{
                 "subText" : [str(all_text44)]
             },
         })
@@ -1078,10 +1078,10 @@ class Libraries():
             CirCEPS.append(item.text)
         
         cepslibrary.update({
-            "CEPS library about " :{
+            "About CEPS library " :{
                 "subText" : [str(CEPSmissivissinintro)]
             },
-            "CEPS library inrodction Circulation Policy " :{
+            "CEPS Library Inrodction of Circulation Policy " :{
                 "subText" : [str(Circulationintro)]
             },
             "CEPS Circulation Policy " :{
@@ -1151,7 +1151,7 @@ class Libraries():
         OpenHour=openingHour1+openingHour2
         
         cepslibrary.update({
-            "CEPS library open Hour " :{
+            "CEPS Library Opening Hours " :{
                 "subText" : [str(OpenHour)]
             },
         })
