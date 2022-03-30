@@ -644,7 +644,7 @@
       },
       {
         "tag" : "MainLibIntro",
-        "patterns": ["what is introduction about main library in squ", "introduction main library", "squ main library", "main library"],
+        "patterns": ["what is introduction about main library in squ", "introduction main library", "squ main library", "main library", "main", "library"],
         "response": [0],
         "flag": 1,
         "context_set": "",
@@ -1306,6 +1306,16 @@
         "context_set": "",
         "init": "PatientInfo",
         "required": "Procedures To Get Death Certificate"
+
+      }, 
+      {
+        "tag" : "guide",
+        "patterns": ["guide", "guidenes", "how chat bot working", "how it works", "manul", "chatbot manul", "guidbook", "instruction"],
+        "response": [0],
+        "flag": 1,
+        "context_set": "",
+        "init": "guide",
+        "required": "Main Guide"
 
       }
   ]

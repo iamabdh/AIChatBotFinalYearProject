@@ -6,6 +6,9 @@ parrentDir = os.path.dirname(currentDir)
 sys.path.append(parrentDir)
 
 class ResolverMainPage:
+    def Guide():
+        from webScraping import guide
+        return guide.guide()
 
     def AboutPage():
         from webScraping import aboutPage
@@ -114,8 +117,9 @@ class ResolverMainPage:
 
 
 def resloverIntents(init, arg = None):
-
-    if init == 'AboutSQU':
+    if init == 'guide':
+        return ResolverMainPage.Guide()
+    elif init == 'AboutSQU':
         return ResolverMainPage.AboutPage()
     elif init == 'Electrical':
         return ResolverMainPage.engineerECE()

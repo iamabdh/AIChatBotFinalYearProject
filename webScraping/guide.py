@@ -13,7 +13,7 @@ that may written by user end
 
 def guide():
     return {
-        "Main Guide ": {
+        "Main Guide": {
             "subText": ["Hi This guide message you can select any topics you want to search: "]
         },
         "Library Search": {
