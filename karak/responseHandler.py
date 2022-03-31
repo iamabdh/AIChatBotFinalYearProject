@@ -117,7 +117,7 @@ def getResponses(intents_list, intents_json, quires=None):
                     elif i['flag'] == 8:
                         from webScraping import resolverMainWeb as res
                         dataObj = res.resloverIntents(i['init'], quires)
-                        if dataObj != 0:
+                        if dataObj:
                             objectResponse = {
                                 "CourseSearch": dataObj,
                                 'flag': 8
