@@ -115,7 +115,7 @@ class Libraries():
         
 
         mainlibrary.update({
-                "Libary Introduction" :{
+                "Library Introduction" :{
                      "subText" : [str(libaryintro)]
                  
                 },
@@ -123,7 +123,7 @@ class Libraries():
                     "subText": [],
                     "extend":users
                 },
-                "Libraey Staff":{
+                "Library Staff":{
                     "subText": [],
                     "extend":staff
                 },
@@ -229,7 +229,7 @@ class Libraries():
                      "subText" : [str(Overview)]
                  },
                 
-                "Vision of Medicall Library":{
+                "Vission of Medicall Library":{
                     "subText":[str(vision1)]
                 },
                 "Mission of Medicall Library":{
@@ -337,7 +337,7 @@ class Libraries():
             bulding +=f'{i.text}'
         
         omanilibrary.update({
-                "Introcucton Center" :{
+                "Introduction Center" :{
                      "subText" : [str(introcuctonCenter)]
                      
                 },
@@ -345,7 +345,7 @@ class Libraries():
                     "subText":[],
                     "extend":objectiveslibrary
                 },
-                "Bulding":{
+                "Building":{
                     "subText":[str(bulding)]
                 },
                 

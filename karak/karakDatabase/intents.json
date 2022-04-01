@@ -712,7 +712,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "Libary Introduction"
+        "required": "Library Introduction"
       } ,
       {
         "tag" : "mainlibraryusers",
@@ -730,7 +730,7 @@
         "flag": 1,
         "context_set": "",
         "init": "MainLibrary",
-        "required": "Libraey Staff"
+        "required": "Library Staff"
       } ,
       {
         "tag" : "mainlibraryDirection",
@@ -775,7 +775,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Medicallibrary",
-        "required": "Vision of Medicall Library"
+        "required": "Vission of Medicall Library"
       },
       {
         "tag" : "medicallibrarymission",
@@ -829,7 +829,7 @@
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "Introcucton Center"
+        "required": "Introduction Center"
       },
       {
         "tag" : "omanilibraryobjectives",
@@ -842,12 +842,12 @@
       },
       {
         "tag" : "omanilibrarybulding",
-        "patterns": ["the bulding of omani library", "bulding omani library", "omani library bulding"],
+        "patterns": ["the building of omani library", "building omani library", "omani library building"],
         "response": [0],
         "flag": 1,
         "context_set": "",
         "init": "Omanilibrary",
-        "required": "Bulding"
+        "required": "Building"
       },
       {
         "tag" : "omanilibrarypolicies",
