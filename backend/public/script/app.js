@@ -161,10 +161,10 @@ const botResponse = (message, botFlag) => {
       responseChuncked = objectResponsed.content  
      }
      else if (objectResponsed.flag == 8){
-      responseChuncked +='CourseTitle: ' +  objectResponsed.CourseTitle + '<br/>'
-      responseChuncked += 'CourseCredits: ' + objectResponsed.CourseCredits + '<br/>'
-      responseChuncked += 'PreRequisiteCourses: ' + objectResponsed.PreRequisiteCourses + '<br/>'
-      responseChuncked += 'CourseDescription: ' + objectResponsed.CourseDescription + '<br/>'
+      responseChuncked +='CourseTitle: ' +  objectResponsed.CourseSearch.CourseTitle + '<br/>'
+      responseChuncked += 'CourseCredits: ' + objectResponsed.CourseSearch.CourseCredits + '<br/>'
+      responseChuncked += 'PreRequisiteCourses: ' + objectResponsed.CourseSearch.PreRequisiteCourses + '<br/>'
+      responseChuncked += 'CourseDescription: ' + objectResponsed.CourseSearch.CourseDescription + '<br/>'
     }
      else if (objectResponsed.flag == 88){
       responseChuncked=objectResponsed.ERROR

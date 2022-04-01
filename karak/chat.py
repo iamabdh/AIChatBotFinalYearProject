@@ -62,7 +62,6 @@ def getData():
 @app.route('/getInitData', methods=['POST'])
 def getInitData():
     objectDataInit = request.get_json()
-
     from webScraping import resolverMainWeb as res
     dataObj = res.resloverIntents(objectDataInit.get('initData'))
     subText = dataObj.get(objectDataInit.get('required')).get('subText')
@@ -77,12 +76,12 @@ def getInitData():
         'additional': objectDataInit.get('additional')})
     return json.dumps({'result': objectResponse})
 
-# this post route for flag 9 that is used to handle uncorrected query 
+# this post route for flag 9 that is used to handle uncorrected query
 @app.route('/getDataWithInts', methods=['POST'])
 def getDataWithInts():
     objectDataWithInts = request.get_json()
     ints = objectDataWithInts.get('savedInts')
-    clickedSuggestion = objectDataWithInts('clickedSuggestion')
+    clickedSuggestion = objectDataWithInts.get('clickedSuggestion')
     response = responseHandler.getResponses(ints, intents, clickedSuggestion)
     return json.dumps({'result': json.dumps(response)})
 

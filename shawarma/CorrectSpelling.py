@@ -58,7 +58,10 @@ class CorrectSpelling:
 
 
   def correction(self, word):
-      return max(self.candidates(word))
+      try:
+        return max(self.candidates(word))
+      except:
+          return self.query
 
   def candidates(self, word):
       return self.known([word]) or self.known(self.edits1(word)) or self.known(self.edits2(word) or [word])

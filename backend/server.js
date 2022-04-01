@@ -63,7 +63,7 @@ io.on("connection", (socket) => {
         "&#128075; Hello:. This is a ChatBot developped by ECE Dept Students as FYP",
         "You can ask me anything related to SQU and I will try my best",
         "",
-        "Please note that this is a Beta version so you might not get full information but as log files will be maintained for unanswered queries for imporvement. Enjoy",
+        "Please note that this is a Beta version so you might not get full information but as log files will be maintained for unanswered queries for imporvement. Enjoy! <br> <br> Please fill <a href = ''> feedback </a> :)",
       ],
       extend: [],
       flag: 1,
