@@ -92,7 +92,7 @@
         "init": "searchFF"
       },
       {"tag": "CourseSearch",
-        "patterns": ["find course","search course", "ECCE","ecce","CIVL","civl","MEIE","meie","PNGE","pnge","MCTE","mcte","CHPE","chpe","AREN","aren","CAMS","cams","MASF","masf","ANVS","anvs","NREC","nrec","SWAE","swae","FSHN","fshn","PLNT","plnt","DEFE","defe","MUSC","musc","ARAB","arab","ENGL","engl","TRAN","tran","GEOG","geog","HIST","hist","THAR","thar","ARCH","arch","MASS","mass","TOUR","tour","PHIL","phil","SOCY","socy","SOWK","sowk","INFO","info","BCOM","bcom","ACCT","acct","IRSS","irss","POLS","pols","ECON","econ","FINA","fina","INFS","infs","POMG","pomg","STAT","stat","MRKT","mrkt","MNGT","mngt","TECH","tech","EDUC","educ","CUTM","cutm","PSYC","psyc","ISLM","islm","ARED","ared","ECED","eced","PHED","phed","ENGR","engr","CRLW","crlw","PULW","pulw","COLW","colw","PLLW","pllw","ICHS","ichs","MEDI","medi","MDLS","mdls","BIOC","bioc","IMMU","immu","MICR","micr","DRUG","drug","PHAR","phar","PHYL","phyl","MEDP","medp","EPIS","epis","HAEM","haem","GENT","gent","NURS","nurs","SCIE","scie","BIOL","biol","CHEM","chem","ERSC","ersc","GEOP","geop","COMP","comp","MATH","math","PHYS","phys","STAT","stat","FPCS","fpcs","FPMT","fpmt","FPEH","fpeh","FPEL","fpel","LANC","lanc","FPES","fpes","LANK","lank"],
+        "patterns": ["find course","search course", "how to find course", "which course", "course details", "ecce", "civl", "meie", "pnge", "mcte", "chpe", "aren"],
         "flag" : 8, 
         "response": [0],
         "context_set": "",
@@ -734,7 +734,7 @@
       } ,
       {
         "tag" : "mainlibraryDirection",
-        "patterns": ["where is the main library", "how can i found main library", "map of main library", "the direction of main library"],
+        "patterns": ["where is the main library", "how can i found main library", "map of main library", "the direction of main library", "where to find main library"],
         "response": [0],
         "flag": 1,
         "context_set": "",
