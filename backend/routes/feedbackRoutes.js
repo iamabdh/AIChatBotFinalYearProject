@@ -23,6 +23,14 @@ router.get("/feedData", (req, res) => {
     })
 })
 
+router.get("/feedAnswers", (req, res) => {
+    FeedbackFilled.find().then(feedbacks => {
+       res.json(feedbacks)
+    }).catch(err => {
+        console.log(err)
+    })
+})
+
 
 router.post("/uploadNewFeedback", (req, res) => {
     for(let feedIDItem in req.body) {

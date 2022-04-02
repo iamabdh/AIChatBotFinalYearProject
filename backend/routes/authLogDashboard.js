@@ -25,6 +25,7 @@ const authCheck = (req, res, next) => {
 router.get("/dashboard", authCheck, (req, res) => {
   res.sendFile(PathToStatic + "/public/static/dashboard.html");
 });
+
 router.get("/dashboard/user", authCheck, (req, res) => {
   const token = req.cookies.jwt;
   if (token) {
@@ -45,6 +46,7 @@ router.get("/dashboard/user", authCheck, (req, res) => {
     res.redirect("/user/login")
   }
 })
+
 router.get("/dashboard/data", authCheck, (req, res) => {
   QueryUnresolved.find().sort({_id:-1}).then(queries => {
     res.json(queries)

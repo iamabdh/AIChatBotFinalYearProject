@@ -1,32 +1,8 @@
 let socket = io()
 let tableView = document.querySelector('.table-view')
 let tableContent = document.querySelector('.table-content')
-const dialog = document.querySelector("dialog");
-const addIntentButton = document.querySelector(".add-intent");
-const confirmButton = document.querySelector(".confirm-button");
-const discardButton = document.querySelector(".discard-button");
-const addPattern = document.querySelector(".add-pattern");
-const removePattern = document.querySelector(".remove-pattern");
-let patternZone = document.querySelector(".pattern-zone")
 const userName = document.querySelector(".user-profile .user-name");
-
-
-// addIntentButton.onclick = () => {
-//   dialog.showModal();
-//   numberOfpattern = 0;
-// };
-// discardButton.onclick = () => {
-//   dialog.close();
-// };
-
-// addPattern.onclick = () => {
-//     let newPatternInput = document.createElement("input")
-//     newPatternInput.classList.add("stackInput")
-//     newPatternInput.type = "text"
-//     newPatternInput.name = `pattern_${numberOfpattern++}`
-//     patternZone.appendChild(newPatternInput)
-// }
-
+let tableContentFeed = document.querySelector(".feedback-content")
 
 const UnresolvedQueries = async () => {
     const res = await fetch("/e/dashboard/data");
@@ -53,9 +29,76 @@ const LoadUserData = async () => {
     const res = await fetch("/e/dashboard/user");
     const retriveData = await res.json()
     userName.innerHTML = retriveData
-
 }
-
-
+// function will be triggered when client window gets refreshed
 LoadUserData()
 
+
+
+
+// feedback
+
+const getDataFeedback = async () => {
+    // get feed Questions
+    const getFeedData = await fetch("/feedback/feedData")
+        .then((res) => {return res.json()})
+        .catch((err) => {return err})
+
+    const getFeedAnswers = await fetch("/feedback/feedAnswers")
+        .then((res) => {return res.json()})
+        .catch((err) => {return err})
+    const totalResponses = Object.keys(getFeedAnswers).length / Object.keys(getFeedData).length
+    // populate data as required
+    getFeedData.forEach((questionItem) => {
+        if(questionItem.mcqType) {
+            let totalOfAnswers =  questionItem.answers.length;
+            let answerPercentage = new Array(totalOfAnswers).fill(0);
+            getFeedAnswers.forEach((answerItem) => {
+                if(questionItem._id === answerItem.questionID) {
+                    answerPercentage[answerItem.answerIndex] +=1;
+                }
+            })
+            answerPercentage.forEach((answerPercentageItem, indexItem) => {
+                answerPercentage[indexItem] = ((answerPercentageItem/totalResponses) * 100).toPrecision(2);
+            })
+            createTableFeedback(true, questionItem.question, questionItem.answers, answerPercentage)
+        } else {
+
+        }
+
+    })
+}
+
+getDataFeedback()
+
+const createTableFeedback = (mcqType, question, answers, answersPercentage) => {
+    if (mcqType) {
+        let newTable = document.createElement("table")
+        let newRowQuestion = document.createElement('tr')
+        let rowQuestionContent = document.createElement("th")
+        let newRowHeading = document.createElement("tr")
+        let rowQuestionAnswerHeading =  document.createElement("th")
+        let rowQuestionPercentageHeading = document.createElement("th")
+        rowQuestionContent.innerHTML = question
+        rowQuestionAnswerHeading.innerHTML = "Answers"
+        rowQuestionPercentageHeading.innerHTML = "Percentage"
+        newRowQuestion.appendChild(rowQuestionContent)
+        newRowHeading.appendChild(rowQuestionAnswerHeading)
+        newRowHeading.appendChild(rowQuestionPercentageHeading)
+        newTable.appendChild(newRowQuestion)
+        newTable.appendChild(newRowHeading)
+        answers.forEach((answerItem, indexItem) => {
+          let newRow = document.createElement('tr');
+          let rowAnswer = document.createElement("th");
+          let rowPercentage = document.createElement("th");
+          rowAnswer.innerHTML = `${indexItem + 1} ) ${answerItem}`;
+          rowPercentage.innerHTML= `${answersPercentage[indexItem]}%`;
+          newRow.appendChild(rowAnswer);
+          newRow.appendChild(rowPercentage);
+          newTable.appendChild(newRow)
+        })
+        tableContentFeed.appendChild(newTable)
+    } else {
+
+    }
+}

@@ -49,7 +49,7 @@ tr:first-child {
   background-color: #95a5a6;
 }
 
-td,
+td,title-feedback
 th {
   border: 0px solid #dddddd;
   text-align: left;
@@ -144,4 +144,19 @@ dialog {
 .stackInput {
   display: block;
   margin: 0 53%;
+}
+
+
+.container-feedback-repsponses {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.container-feedback-repsponses .title-feedback {
+  font-size: 25px;
+}
+
+
+.container-feedback-repsponses .feedback-content > table {
+  margin-top: 30px;
 }
