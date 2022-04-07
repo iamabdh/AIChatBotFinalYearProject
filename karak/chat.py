@@ -1,4 +1,3 @@
-from crypt import methods
 import json, pickle
 import numpy as np
 import nltk

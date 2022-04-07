@@ -4,6 +4,7 @@ currentDir = os.path.dirname(os.path.realpath(__file__))
 parrentDir = os.path.dirname(currentDir)
 sys.path.append(parrentDir)
 
+from multiprocessing.pool import ThreadPool
 from bs4 import BeautifulSoup as bs
 from urllib.request import urlopen
 import unicodedata
@@ -366,11 +367,18 @@ def Med(name):
 
 def searchFF(name, content=None):
     objNamesTotal = {}
-    engSearch = Eng(name)
-    secSearch = Sec(name)
-    artSearch = Art(name)
-    ecoSearch = Eco(name)
-    medSearch = Med(name)
+    pool = ThreadPool(processes=5)
+    async_result1 = pool.apply_async(Eng, (name,))
+    async_result2 = pool.apply_async(Sec, (name,))
+    async_result3 = pool.apply_async(Art, (name,))
+    async_result4 = pool.apply_async(Eco, (name,))
+    async_result5 = pool.apply_async(Med, (name,))
+    engSearch = async_result1.get()
+    secSearch = async_result2.get()
+    artSearch = async_result3.get()
+    ecoSearch = async_result4.get()
+    medSearch = async_result5.get()
+
     if engSearch is not None:
         objNamesTotal['College of Engineering'] = engSearch
     if secSearch is not None:
