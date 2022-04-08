@@ -111,6 +111,9 @@ class ResolverMainPage:
     def PatientInfo():
         from webScraping.hospital import Hospital
         return Hospital.PatientInfo()
+    def AboutAR():
+        from webScraping import aboutSQUAR
+        return aboutSQUAR.readAboutSQUAR()
 
 
 def resloverIntents(init, arg = None):
@@ -170,5 +173,7 @@ def resloverIntents(init, arg = None):
         return ResolverMainPage.VisitorsInfo()
     elif init == "PatientInfo":
         return ResolverMainPage.PatientInfo()
+    elif init == "AboutAr":
+        return ResolverMainPage.AboutAR()
     else:
         return 0
