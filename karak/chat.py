@@ -45,15 +45,15 @@ def getData():
             # found response that may resolve wrong query 
             # saveInts is used to perform standard query request without repeating ML code again
             response = {
-            'response': correctIntent,
-            'flag': 9,
-            'savedInts': ints
-        }
+                'response': correctIntent,
+                'flag': 9,
+                'savedInts': ints
+            }
         else:
             response = {
-            'response': "I don't understand!",
-            'flag': 404
-        }
+                'response': "I don't understand!",
+                'flag': 404
+            }
 
     return json.dumps({'result': json.dumps(response)})
 
@@ -75,6 +75,7 @@ def getInitData():
         'additional': objectDataInit.get('additional')})
     return json.dumps({'result': objectResponse})
 
+
 # this post route for flag 9 that is used to handle uncorrected query
 @app.route('/getDataWithInts', methods=['POST'])
 def getDataWithInts():
@@ -83,7 +84,6 @@ def getDataWithInts():
     clickedSuggestion = objectDataWithInts.get('clickedSuggestion')
     response = responseHandler.getResponses(ints, intents, clickedSuggestion)
     return json.dumps({'result': json.dumps(response)})
-
 
 
 if __name__ == '__main__':

@@ -24,7 +24,7 @@ def guide():
             "subText": ["You can type any thing about job will find available positions in SQU."]
         },
         "Course Search": {
-            "subText" :  ["Just type course code follwed by course number such as ECCE4242. All SQU courses are available."],
+            "subText" :  ['Just type course code follwed by course number such as "course search ECCE 4242". All SQU courses are available.'],
         },
          "Faculty Search": {
              "subText": ["For searching faculty just provide Mr. or Dr. Prof. For example Dr. Zia Nadir or if only first name. Faculty College avalible: "],

@@ -32,6 +32,10 @@ textarea {
 }
 
 .container-chat-box {
+    background-image: url("/public/assets/SQU-tower.png");
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: #ddfae0;
      /* background: url("/src/2825471841_f58c2d6a28_z.jpg"); */
     flex-flow: row nowrap;

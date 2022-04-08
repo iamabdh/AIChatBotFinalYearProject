@@ -48,7 +48,7 @@
         "context_set": ""
       },
       {"tag": "about",
-        "patterns": ["about", "about squ", "what is about squ"],
+        "patterns": ["about", "about squ", "what is about squ", "about squ"],
         "flag" : 1, 
         "response": [0],
         "context_set": "",
@@ -92,7 +92,7 @@
         "init": "searchFF"
       },
       {"tag": "CourseSearch",
-        "patterns": ["find course","search course", "how to find course", "which course", "course details", "ecce", "civl", "meie", "pnge", "mcte", "chpe", "aren"],
+        "patterns": ["find course","search course", "how to find course", "which course", "course details", "ecce", "civl", "meie", "pnge", "mcte", "chpe", "aren", "lanc", "cams", "masf", "anvs"],
         "flag" : 8, 
         "response": [0],
         "context_set": "",
