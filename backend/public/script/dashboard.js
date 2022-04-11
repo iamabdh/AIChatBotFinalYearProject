@@ -3,6 +3,7 @@ let tableView = document.querySelector('.table-view')
 let tableContent = document.querySelector('.table-content')
 const userName = document.querySelector(".user-profile .user-name");
 let tableContentFeed = document.querySelector(".feedback-content")
+let TotalResponsesDiv = document.querySelector(".Total-responses")
 
 const UnresolvedQueries = async () => {
     const res = await fetch("/e/dashboard/data");
@@ -48,10 +49,12 @@ const getDataFeedback = async () => {
         .then((res) => {return res.json()})
         .catch((err) => {return err})
     const totalResponses = Object.keys(getFeedAnswers).length / Object.keys(getFeedData).length
+    TotalResponsesDiv.innerHTML = `Total ${totalResponses}`
     // populate data as required
     getFeedData.forEach((questionItem) => {
         if(questionItem.mcqType) {
             let totalOfAnswers =  questionItem.answers.length;
+
             let answerPercentage = new Array(totalOfAnswers).fill(0);
             getFeedAnswers.forEach((answerItem) => {
                 if(questionItem._id === answerItem.questionID) {
