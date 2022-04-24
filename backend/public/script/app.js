@@ -15,9 +15,13 @@ socket.on('resolved', (msg)=>{
 })
 
 
+const isEmptyOrSpaces = (str) => {
+  return str === null || str.match(/^ *$/) !== null;
+}
+
 sendMsg.onkeydown = (e) =>{
 
-  if (userInput.value.length > 1) {
+  if (!isEmptyOrSpaces(userInput.value)) {
     submitButton.value = "send"
     allowRecord = false
   }else {
@@ -25,7 +29,9 @@ sendMsg.onkeydown = (e) =>{
     submitButton.value = "record"
   }
 
+  // 
   if(!allowRecord) {
+    
     if(e.keyCode === 13){
       e.preventDefault();
 
@@ -43,17 +49,45 @@ sendMsg.onkeydown = (e) =>{
 
 
 submitButton.onclick = (e) => {
-    alert(allowRecord)
-    // if(!allowRecord){
-    //   e.preventDefault();
-    //   var input = userInput.value
-    //
-    //   //Empty textarea fix
-    //   if(input.length > 0) {
-    //     userResponse(input)
-    //     userInput.value = ""
-    //   }
-    // }
+    if(!allowRecord){
+      e.preventDefault();
+      var input = userInput.value
+    
+      //Empty textarea fix
+      if(input.length > 0) {
+        userResponse(input)
+        userInput.value = ""
+      }
+    } else if (allowRecord) {
+        let speech = true
+        userInput.disabled  = true
+        submitButton.value = "recording"
+        RecordingState()
+        window.SpeechRecognition = window.webkitSpeechRecognition
+        const recognition = new SpeechRecognition();
+        recognition.interimResults = true;
+        
+        recognition.addEventListener('result', e=> {
+            const transcript = Array.from(e.results)
+                .map(result => result[0])
+                .map(result => result.transcript)
+            const isFinished = Array.from(e.results).map(result => result.isFinal)
+            if (allowRecord) {
+                userInput.value = transcript
+            }
+            if(isFinished[0]){
+                userResponse(transcript[0])
+                userInput.value = ""
+                userInput.disabled  = false
+                UnrecodingState()
+                submitButton.value = "record"
+            }
+        })
+  
+        if (speech == true) {
+            recognition.start();
+        }
+    }
 }
 const userResponse = (message) => {
 
