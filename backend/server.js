@@ -70,7 +70,7 @@ io.on("connection", (socket) => {
       linker: true,
       init: null,
       notInit: true,
-      additional: ["About", "Guide", "Library", "Degree Plan", "Search Faculty"],
+      additional: ["Guide", "About", "Library", "Search Faculty"],
     })
   );
 

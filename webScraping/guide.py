@@ -6,7 +6,7 @@ parrentDir = os.path.dirname(currentDir)
 sys.path.append(parrentDir)
 
 """
-This script used mainly to develop guides to user base o some query
+This script used mainly to develop guides to user base on some query
 that may written by user end 
 """
 
@@ -24,10 +24,13 @@ def guide():
             "subText": ["You can type any thing about job will find available positions in SQU."]
         },
         "Course Search": {
-            "subText" :  ['Just type course code follwed by course number such as "course search ECCE 4242". All SQU courses are available.'],
+            "subText" :  ['Just type course code follwed by course number such as <mark>course search ECCE 4242</mark>. All SQU courses are available.'],
         },
          "Faculty Search": {
-             "subText": ["For searching faculty just provide Mr. or Dr. Prof. For example Dr. Zia Nadir or if only first name. Faculty College avalible: "],
+             "subText": ["For searching faculty just provide Mr or Dr, Prof.  For example <mark>Dr Zia Nadir </mark> or if only first name. Faculty College avalible: "],
              "extend": ["Engineering", "Economic", "Art and Social Sciences", "Medicine", "Science"]
+         }, 
+         "Degree Plan": {
+             "subText": ["For searching degree plan please provide the department and the year for example: <mark>degree plan of electrical 2020</mark>. Degree plan only for college of engineering 👨🏻‍🔧."]
          }
     }

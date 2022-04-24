@@ -636,7 +636,7 @@
       }, 
       {
         "tag" : "JobServices",
-        "patterns": ["Job Services", "job service" , "what are Job services provided by squ", "services squ job", "is there job service", "job", "vacancy job", "careers", "career"],
+        "patterns": ["Job Services", "job service" , "what are Job services provided by squ", "services squ job", "is there job service", "job", "vacancy job", "careers", "career", "jobs"],
         "flag": 5, 
         "response": [0],
         "context_set": "",
@@ -680,7 +680,7 @@
       } ,
       {
         "tag" : "mainlibraryValue",
-        "patterns": ["Value of main library", "main library value", "squ main library value", "what is the value of main library"],
+        "patterns": ["value of main library", "main library value", "squ main library value", "what is the value of main library"],
         "response": [0],
         "flag": 1,
         "context_set": "",
@@ -1058,7 +1058,7 @@
       },
       {
         "tag" : "openhourartlibrary",
-        "patterns": ["opining hours of art library", "sciences library opening hour", "at which time art and sciences library open", "at which time the art library open","Art and Sciences Library Opening Hour"],
+        "patterns": ["opening hours of art library", "sciences library opening hour", "at which time art and sciences library open", "at which time the art library open","Art and Sciences Library Opening Hour"],
         "response": [0],
         "flag": 1,
         "context_set": "",
