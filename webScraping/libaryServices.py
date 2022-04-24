@@ -1078,13 +1078,13 @@ class Libraries():
             CirCEPS.append(item.text)
         
         cepslibrary.update({
-            "About CEPS library " :{
+            "About CEPS library" :{
                 "subText" : [str(CEPSmissivissinintro)]
             },
-            "CEPS Library Inrodction of Circulation Policy " :{
+            "CEPS Library Inrodction of Circulation Policy" :{
                 "subText" : [str(Circulationintro)]
             },
-            "CEPS Circulation Policy " :{
+            "CEPS Circulation Policy" :{
                 "subText" : [],
                 "extend": CirCEPS
             },
@@ -1151,7 +1151,7 @@ class Libraries():
         OpenHour=openingHour1+openingHour2
         
         cepslibrary.update({
-            "CEPS Library Opening Hours " :{
+            "CEPS Library Opening Hours" :{
                 "subText" : [str(OpenHour)]
             },
         })

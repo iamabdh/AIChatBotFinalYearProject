@@ -1094,7 +1094,7 @@
       },
       {
         "tag" : "EducationlibraryObjective",
-        "patterns": ["what is the objective on education library", "objective educaton library", "objective of educaton library","objective of Educaton Library"],
+        "patterns": ["what is the objective on education library", "objective education library", "objective of educaton library","objective of Educaton Library"],
         "response": [0],
         "flag": 1,
         "context_set": "",
@@ -1103,7 +1103,7 @@
       },
       {
         "tag" : "Educationlibraryintroduction",
-        "patterns": ["introduction of library service", "introduction of library service ", "library Service of education library "],
+        "patterns": ["introduction of library service", "introduction of library service ", "library Service of education library", "education library"],
         "response": [0],
         "flag": 1,
         "context_set": "",
@@ -1112,7 +1112,7 @@
       },
       {
         "tag" : "EducationlibraryLoanService",
-        "patterns": ["Loan Service", "loan service", "loan service of education library"],
+        "patterns": ["education loan service", "loan service of education library"],
         "response": [0],
         "flag": 1,
         "context_set": "",
@@ -1211,7 +1211,7 @@
       },
       {
         "tag" : "mosqlibrarycontacs",
-        "patterns": ["email of mosque library", "telephone of mosque library", "email mosque library", "Tel mosque library"],
+        "patterns": ["email of mosque library", "telephone of mosque library", "email mosque library", "Tel mosque library", "mosque library"],
         "response": [0],
         "flag": 1,
         "context_set": "",
@@ -1240,12 +1240,12 @@
       },
       {
         "tag" : "cepslibraryabout",
-        "patterns": ["about CEPS ", "mission CEPS library", "CEPS library mission" ,"what is the CEPS vission library in squ", "vission CEPS library", "CEPS library vission"],
+        "patterns": ["about CEPS ", "mission CEPS library", "CEPS library mission" ,"what is the CEPS vission library in squ", "vission CEPS library", "CEPS library vission", "CEPS vission"],
         "response": [0],
         "flag": 1,
         "context_set": "",
         "init": "CEPSlibrary",
-        "required": "About CEPS Library"
+        "required": "About CEPS library"
 
       },
       {
@@ -1255,7 +1255,7 @@
         "flag": 1,
         "context_set": "",
         "init": "CEPSlibrary",
-        "required": "CEPS library Inrodction of Circulation Policy "
+        "required": "CEPS Library Inrodction of Circulation Policy"
 
       },
       {
@@ -1265,7 +1265,7 @@
         "flag": 1,
         "context_set": "",
         "init": "CEPSlibrary",
-        "required": "CEPS Circulation Policy "
+        "required": "CEPS Circulation Policy"
 
       },
       {

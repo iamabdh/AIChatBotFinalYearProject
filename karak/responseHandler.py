@@ -34,7 +34,9 @@ def getResponses(intents_list, intents_json, quires=None):
                         that will add to result based on quires
                         '''
                         dataObj = res.resloverIntents(i['init'])
-
+                        print("*"*100)
+                        print(dataObj)
+                        print("*"*100)
                         subText = dataObj.get(i['required']).get('subText')
                         extend = dataObj.get(i['required']).get('extend')
 
